@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 10.08 - Planning Minutes</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------10.08 - Planning Minutes------</h4>            
+          </div>          
+
+
+          <form action="/planning/planning-minutes" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>
+
+              <!-- Additional Engagement Card-->                
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Engagement Details</h6>
+                </div>
+                <div class="card-body">
+                    
+                    <label class="small font-weight-bold" for="engagementPartner">Engagement Partner
+                        <input class="form-control form-control-sm" type="text" id="engagementPartner" name="engagementPartner">
+                    </label>
+                    <label class="small font-weight-bold" for="assistingPartner">Assisting Partner
+                        <input class="form-control form-control-sm" type="text" id="assistingPartner" name="assistingPartner">
+                    </label>                
+                                     
+                    <label class="small font-weight-bold" for="date">Date
+                        <input class="form-control form-control-sm" type="date" id="today" name="today" readonly>
+                    </label>
+                    
+                </div>
+              </div>
+
+              <!-- Meeting Attendance Card-->                
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">In Attendance:</h6>
+                </div>
+                <div class="card-body">
+                    
+                    <label class="small font-weight-bold" for="partner">Partner:
+                        <input class="form-control form-control-sm" type="text" id="partner" name="partner">
+                    </label>
+                    <label class="small font-weight-bold" for="assistingPartner2">Assisting Partner:
+                        <input class="form-control form-control-sm" type="text" id="assistingPartner2" name="assistingPartner2">
+                    </label>
+                    
+                    <label class="small font-weight-bold" for="manager">Manager:
+                        <input class="form-control form-control-sm" type="text" id="manager" name="manager">
+                    </label>
+                    <label class="small font-weight-bold" for="senior">Senior:
+                        <input class="form-control form-control-sm" type="text" id="senior" name="senior">
+                    </label>
+
+                    <label class="small font-weight-bold" for="intermediate">Intermediate:
+                        <input class="form-control form-control-sm" type="text" id="intermediate" name="intermediate">
+                    </label>
+                    <label class="small font-weight-bold" for="junior">Junior:
+                        <input class="form-control form-control-sm" type="text" id="junior" name="junior">
+                    </label>
+                    <label class="small font-weight-bold" for="junior2">Junior:
+                        <input class="form-control form-control-sm" type="text" id="junior2" name="junior2">
+                    </label><br>
+                    <label class="small font-weight-bold" for="approvedAuditBudget">Approved Audit Budget:
+                        <input class="form-control form-control-sm" type="text" id="approvedAuditBudget" name="approvedAuditBudget">
+                    </label>
+                    
+                </div>
+              </div>
+
+
+                
+              <!--Section A Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#sectionACard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">SECTION A</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="sectionACard">
+
+                  <div class="card-body">                    
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                          <tbody>
+                            <tr>
+                              <td>
+                                Does the company have a Memorandum of Incorporation?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesA" value="Yes" name="yesNoNAA" checked>
+                                  <label class="custom-control-label" for="radioYesA">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoA" value="No" name="yesNoNAA">
+                                  <label class="custom-control-label" for="radioNoA">No</label>
+                                </div>
+
+                                <!-- End of Radio Buttons -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Does the MOI require a mandatory audit?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesB" value="Yes" name="yesNoNAB" checked>
+                                  <label class="custom-control-label" for="radioYesB">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoB" value="No" name="yesNoNAB">
+                                  <label class="custom-control-label" for="radioNoB">No</label>
+                                </div>
+
+                                <!-- End of Radio Buttons -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Is the company required to be audited as a result of other regulations?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesC" value="Yes" name="yesNoNAC" checked>
+                                  <label class="custom-control-label" for="radioYesC">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoC" value="No" name="yesNoNAC">
+                                  <label class="custom-control-label" for="radioNoC">No</label>
+                                </div>
+
+                                <!-- End of Radio Buttons -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                If the company has an MOI, populate <span class="user-text-red">10.04</span> to determine the company’s public interest score:
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="piScore" cols="150" rows="2" placeholder="Insert PI Score per <10.04>"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Engagement Type?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesE" value="Yes" name="yesNoNAE" checked>
+                                  <label class="custom-control-label" for="radioYesE">Mandatory Audit</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoE" value="No" name="yesNoNAE">
+                                  <label class="custom-control-label" for="radioNoE">Voluntary Audit</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableE" value="N/A" name="yesNoNAE">
+                                  <label class="custom-control-label" for="radioNotApplicableE">Independent Review</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Reporting Framework:
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesF" value="Yes" name="yesNoNAF" checked>
+                                  <label class="custom-control-label" for="radioYesF">The International Financial Reporting Standards for Small and Medium-sized Entities **</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoF" value="No" name="yesNoNAF">
+                                  <label class="custom-control-label" for="radioNoF">The International Financial Reporting Standards</label>
+                                </div>
+
+                                <!-- End of Radio Buttons -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Basis of materiality 
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="basisOfMateriality" cols="150" rows="2"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Will a bank confirmation be requested?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesH" value="Yes" name="yesNoNAH" checked>
+                                  <label class="custom-control-label" for="radioYesH">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoH" value="No" name="yesNoNAH">
+                                  <label class="custom-control-label" for="radioNoH">No</label>
+                                </div>
+                               
+                                <!-- End of Radio Buttons -->
+                                <br>
+                                If the answer is No, what alternative procedures will be performed?
+                                <textarea class="form-control form-control-sm" id="alternativeProcedures" cols="150" rows="2"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Issues that arose in the prior year that need to be addressed? 
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="priorYearIssues" cols="150" rows="2"></textarea>
+                              </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+
+              <!--Gaining Understanding Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#gainingUnderstandingCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">GAINING AN UNDERSTANDING OF BUSINESS</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="gainingUnderstandingCard">
+
+                  <div class="card-body">                    
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                          <tbody>
+                            <tr>
+                              <td>
+                                Description of the client’s business
+                              </td>
+                              <td><textarea class="form-control form-control-sm" id="description" cols="150" rows="2" placeholder="Enter description here..."></textarea></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Has the nature of the client’s business changed from the prior year?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesI" value="Yes" name="yesNoNAI" checked>
+                                  <label class="custom-control-label" for="radioYesI">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoI" value="No" name="yesNoNAI">
+                                  <label class="custom-control-label" for="radioNoI">No</label>
+                                </div>
+
+                                <!-- End of Radio Buttons -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Industry conditions
+                              </td>
+                              <td><textarea class="form-control form-control-sm" id="industryConditions" cols="150" rows="2" placeholder="State industry conditions..."></textarea></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Are the directors and shareholders the same as the prior year?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesJ" value="Yes" name="yesNoNAJ" checked>
+                                  <label class="custom-control-label" for="radioYesJ">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoJ" value="No" name="yesNoNAJ">
+                                  <label class="custom-control-label" for="radioNoJ">No</label>
+                                </div>
+
+                                <!-- End of Radio Buttons -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                List the related parties as well as related party transactions and balances known at planning stage
+                              </td>
+                              <td><textarea class="form-control form-control-sm" id="relatedParties" cols="150" rows="2" placeholder="List relevant data..."></textarea></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Is the company a small business corporation?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesK" value="Yes" name="radioYesNoNAK" checked>
+                                  <label class="custom-control-label" for="radioYesK">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoK" value="No" name="radioYesNoNAK">
+                                  <label class="custom-control-label" for="radioNoK">No</label>
+                                </div>
+
+                                <!-- End of Radio Buttons -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Are there any out-of-the-ordinary legislation requirements?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesL" value="Yes" name="radioYesNoNAL" checked>
+                                  <label class="custom-control-label" for="radioYesL">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoL" value="No" name="radioYesNoNAL">
+                                  <label class="custom-control-label" for="radioNoL">No</label>
+                                </div>
+                                
+
+                                <!-- End of Radio Buttons -->
+                                <br>
+                                If yes, please list here
+                                <textarea class="form-control form-control-sm" id="legislativeRequirements" cols="150" rows="2"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Is the company a going concern at planning stage?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesM" value="Yes" name="radioYesNoNAM" checked>
+                                  <label class="custom-control-label" for="radioYesM">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoM" value="No" name="radioYesNoNAM">
+                                  <label class="custom-control-label" for="radioNoM">No</label>
+                                </div>
+                                
+                                <!-- End of Radio Buttons -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Does the company use a reliable accounting package?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesN" value="Yes" name="radioYesNoNAN" checked>
+                                  <label class="custom-control-label" for="radioYesN">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoN" value="No" name="radioYesNoNAN ">
+                                  <label class="custom-control-label" for="radioNoN">No</label>
+                                </div>
+                                
+                                <!-- End of Radio Buttons -->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                What is the quality of the accounting work?
+                              </td>
+                              <td><textarea class="form-control form-control-sm" id="accountingWork" cols="150" rows="2" placeholder="List relevant data..."></textarea></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                The following cycles have been identified as relevant to the audit - D&I to be performed:
+                              </td>
+                              <td><textarea class="form-control form-control-sm" id="cyclesIdentified" cols="150" rows="2" placeholder="Cycles identified..."></textarea></td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+
+              <!--Risk Assessment Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#riskAssessmentCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">RISK ASSESSMENT</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="riskAssessmentCard">
+
+                  <div class="card-body">                    
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                          <tbody>
+                            <tr>
+                              <td>
+                                INHERENT RISK:
+                              </td>
+                              <td><textarea class="form-control form-control-sm" id="inherentRisk" cols="150" rows="2"></textarea></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                FRAUD RISK:
+                              </td>
+                              <td><textarea class="form-control form-control-sm" id="fraudRisk" cols="150" rows="20" placeholder="State Fraud Risk issues..."></textarea></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                CONTROL RISK:
+                              </td>
+                              <td><textarea class="form-control form-control-sm" id="controlRisk" cols="150" rows="2"></textarea></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                RISKS AT ASSERTION LEVEL:
+                              </td>
+                              <td><textarea class="form-control form-control-sm" id="assertionRisks" cols="150" rows="4"></textarea></td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+
+              <!--Audit Methodology Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#auditMethodologyCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">AUDIT METHODOLOGY</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="auditMethodologyCard">
+
+                  <div class="card-body">                 
+
+                    Detailed approach to be followed:
+                    <br>
+                    <textarea class="form-control form-control-sm" id="detailedApproach" cols="150" rows="30"></textarea>
+                    <br><br>
+
+                    Sample selection
+                    <br>
+                    <textarea class="form-control form-control-sm" id="sampleSelection" cols="150" rows="10"></textarea>
+                    <br><br>
+
+                    Alterations to approach:
+                    <br>
+                    <textarea class="form-control form-control-sm" id="alterations" cols="150" rows="4"></textarea>
+                    <br><br>
+
+                    Responsibility of the audit team:
+                    <br>
+                    <textarea class="form-control form-control-sm" id="responsibility" cols="150" rows="20"></textarea>
+
+                  </div>
+                </div>
+              </div>
+
+              <!--Ethical Considerations Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#ethicalConsiderationsCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">ETHICAL CONSIDERATIONS</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="ethicalConsiderationsCard">
+
+                  <div class="card-body">                 
+
+                    Quality control policies and procedures:
+                    <br>
+                    <textarea class="form-control form-control-sm" id="qualityControl" cols="150" rows="7"></textarea>
+                    <br><br>
+
+                    Client Confidentiality:
+                    <br>
+                    <textarea class="form-control form-control-sm" id="clientConfidentiality" cols="150" rows="3"></textarea>
+                    <br><br>
+
+                    Independence:
+                    <br>
+                    <textarea class="form-control form-control-sm" id="independence" cols="150" rows="4"></textarea>
+                    <br><br>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <!--Final Comments Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#finalCommentsCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">FINAL COMMENTS</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="finalCommentsCard">
+
+                  <div class="card-body">                 
+
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="finalCommentsTable" width="100%" cellspacing="0">
+
+                        <tbody>
+                          <tr>
+                            <td>
+                              Matters for consultation:
+                            </td>
+                            <td><textarea class="form-control form-control-sm" id="mattersForConsultation" cols="80" rows="2"></textarea></tr>
+                          <tr>
+                            <td>
+                              Other note-worthy discussion points:
+                            </td>
+                            <td><textarea class="form-control form-control-sm" id="noteworthyDiscussion" cols="80" rows="2"></textarea></tr>
+                          <tr>
+                            <td>
+                              Will reliance be placed on the work of management/auditor’s experts?
+                            </td>
+                            <td><textarea class="form-control form-control-sm" id="willReliance" cols="80" rows="2"></textarea></tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <textarea class="form-control form-control-sm" id="additionalFinalComments" cols="150" rows="20"></textarea>
+                    
+                  </div>
+                </div>
+              </div>
+              
+               <!-- Presentx Card -->
+               <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">PRESENT AT MEETING & INDEPENDENCE DECLARATION</h6>
+                  </div>
+                  <div class="card-body">
+                    I hereby declare that I comply with the requirements of the IRBA Code of Professional Conduct and the Quality Control Policies and Procedures of the firm.  
+                    <br>
+                    I undertake to promptly notify the firm of circumstances and relationships that can create a threat to independence. 
+                    <br><br>
+                    Signed at _______________________________	on _____________________________________
+                    <br><br>
+                    				
+                  </div>
+                </div>
+
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+  <!--Script to get today's date-->
+  <script>
+    var field = document.querySelector('#today');
+    var date = new Date();
+
+    // Set the date
+    field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + '-' + date.getDate().toString().padStart(2, 0);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 21.40 - Investment Property</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------21.40 - Investment Property------</h4>            
+          </div>          
+
+
+          <form action="/field-work/investment-property" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              <% include partials/engagementCard.ejs %>
+
+
+              <!--Investment Property Card-->
+              <div class="card shadow mb-4">
+
+                    <!-- Card Header - Accordion -->
+                    <a href="#investmentPropertyCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                        <h6 class="m-0 font-weight-bold text-primary">INVESTMENT PROPERTY</h6>
+                    </a>
+    
+                    <!-- Card Content - Collapse -->
+                    <div class="collapse" id="investmentPropertyCard">
+    
+                      <div class="card-body">
+                        <b>Objective:</b>
+                        <br>
+                        To verify that investment property is fairly stated.
+                        <br><br>
+                        <b>Audit Approach:</b>
+                        <br>
+                        1. Select material investment property from the ledger or asset register and:
+                        <br>
+                        (a) Confirm existence of the properties (e.g. by physical inspection);
+                        <br>
+                        (b) Ensure that the client is the beneficial owner of the assets with reference to title deeds, etc;
+                        <br>
+                        2. Select material acquisitions and:
+                        <br>
+                        (a) Agree to supporting documentation;
+                        <br>
+                        (b) Confirm that the acquisition was properly authorised;
+                        <br>
+                        (c) Follow through to the entry in the asset register;
+                        <br>
+                        (d) Ensure all related transactions costs e.g. legal fees have been capitalised correctly;
+                        <br>
+                        (e) If investment property is self constructed ensure all directly-attributable costs required to bring the property to its required working condition have been capitalised as an asset;
+                        <br>
+                        (f) Ensure that no expense items have been capitalised as assets.
+                        <br>
+                        3. Obtain details of any encumbrances of investment property by enquiry of management and inspection of:
+                        <br>
+                        (a) Prior Year working papers;
+                        <br>
+                        (b) Minutes;
+                        <br>
+                        (c) Loan Agreements.                        
+                      </div>
+                    </div>
+                  </div>
+
+              <!--Additions Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#additionsCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">1. ADDITIONS</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="additionsCard">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="additionsTable" width="100%" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>-</th>
+                                <th>2014 Balance</th>
+                                <th>2013 Balance</th>
+                                <th>Traced to title deed</th>
+                                <th>Property detail<br>(for disclosure)</th>
+                                <th>Company is beneficial owner</th>
+                                <th>Existence confirmed</th>
+                                <th>Traced proceeds to bank statement</th>
+                                <th>Traced purchase to supporting documentation</th>
+                                <th>Confirmed authorisation through inspection of minutes</th>
+                                <th>Cost correctly classified</th>
+                              </tr>
+                            </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                  Property 1
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="property12014Bal" name="property12014Bal" value="2,000,000.00">
+                                <input class="user-form-control-fixed-width-red" type="text" id="property12014WPRef" name="property12014WPRef" value="21.20">
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="property12013Bal" name="property12013Bal" value="2,000,000.00">
+                                <input class="user-form-control-fixed-width-green" type="text" id="property12013WPRef" name="property12013WPRef" value="B py afs">
+                              </td>
+                              <td>
+                                  <input class="user-form-control-wider" type="text" id="property1TracedToTitle" name="property1TracedToTitle" value="Y">
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="property1PropertyDetail" value="Erf24...">
+                              </td>
+                              <td>
+                                <input class="user-form-control-wider" type="text" id="property1CompanyIsBeneficialOwned" value="Y">
+                              </td>
+                              <td>
+                                <input class="user-form-control-wider" type="text" id="property1ExistenceConfirmed" value="Y">
+                              </td>
+                              <td>
+                                <input class="user-form-control-wider" type="text" id="property1TracedProceedsToBankStatement" value="NA">
+                              </td>
+                              <td>
+                                <input class="user-form-control-wider" type="text" id="property1TracedPurchaseToSupportingDocumentation" value="NA">
+                              </td>
+                              <td>
+                                <input class="user-form-control-wider" type="text" id="property1ConfirmedAuthorisation" value="NA">
+                              </td>
+                              <td>
+                                <input class="user-form-control-wider" type="text" id="property1CostCorrectlyClassified" value="NA">
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Property 2
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="property22014Bal" value="1,500,000.00">
+                                  <input class="user-form-control-fixed-width-red" type="text" id="property22014WPRef" value="21.20">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="property22013Bal">
+                                  <input class="user-form-control-fixed-width-green" type="text" id="property12013WPRef">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="text" id="property2TracedToTitle" value="Y">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="property2PropertyDetail" value="Erf25...">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-wider" type="text" id="property2CompanyIsBeneficialOwned" value="Y">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-wider" type="text" id="property2ExistenceConfirmed" value="Y">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-wider" type="text" id="property2TracedProceedsToBankStatement" value="Y">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-wider" type="text" id="property2TracedPurchaseToSupportingDocumentation" value="Y">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-wider" type="text" id="property2ConfirmedAuthorisation" value="Y">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-wider" type="text" id="property2CostCorrectlyClassified" value="Y">
+                                </td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div> 
+                  </div>
+                </div>
+              </div>
+
+              <!-- Classification Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#classificationCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">2. CLASSIFICATION</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="classificationCard">
+
+                  <div class="card-body">
+                        <textarea class="form-control form-control-sm" id="classificationText1" cols="50" rows="8"></textarea>
+                        <br><br>
+                        <textarea class="form-control form-control-sm" id="classificationText2" cols="50" rows="5"></textarea>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Encumberances Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#encumberancesCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">3. ENCUMBERANCES</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="encumberancesCard">
+
+                  <div class="card-body">                    
+                    <textarea class="form-control form-control-sm" id="encumberancesText" cols="50" rows="8"></textarea>
+                    <br><br>
+                    The following documents have been inspected for any indication of encumbrances on the investment property:
+                    <br><br>
+                    <div class="table-responsive">
+                            <table class="table table-bordered" id="encumberancesTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>-</th>
+                                        <th>Encumberances Noted</th>
+                                    </tr>
+                                    </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <b>* Prior Year working papers.</b>
+                                  </td>
+                                  <td>
+                                      <textarea class="form-control form-control-sm" id="taxationRisk" cols="80" rows="4"></textarea>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <b>* Minutes.</b>
+                                  </td>
+                                  <td>
+                                      <textarea class="form-control form-control-sm" id="taxationBalanceOrTransactions" cols="80" rows="4"></textarea>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <b>* Loan Agreements.</b>
+                                  </td>
+                                  <td>
+                                      <textarea class="form-control form-control-sm" id="taxationAssertion" cols="80" rows="4"></textarea>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Valuation Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#valuationCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">4. VALUATION</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="valuationCard">
+
+                  <div class="card-body">
+                    <textarea class="form-control form-control-sm" id="valuationText" cols="50" rows="5"></textarea>
+                    <br><br>
+                    <label class="small font-weight-bold" for="valuationModel">The entity's valuation model
+                        <input class="form-control form-control-sm" type="text" id="valuationModel" name="valuationModel">
+                    </label>
+                    <br><br>
+                    <b>Fair value model</b>
+                    <br>
+                    <textarea class="form-control form-control-sm" id="fairValueModelText" cols="50" rows="5"></textarea>
+                    <br><br>
+                    <b>Cost Model</b>
+                    <br>
+                    <textarea class="form-control form-control-sm" id="costModelText" cols="50" rows="5"></textarea>
+                    <br><br>
+                    There is no indication of impairment.
+                  </div>
+                </div>
+              </div>
+
+              <b>Key to ticks</b><br>
+              B py afs - Balance agreed to prior year AFS
+              <br><br>
+
+              <!-- Conclusion Card -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Conclusion:</h6>
+                </div>
+                <div class="card-body">
+                  --
+                </div>
+              </div>
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>

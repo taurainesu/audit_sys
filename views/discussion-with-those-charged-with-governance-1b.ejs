@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 10.08A1b - Discussion With Audit</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------10.08A1b - Discussion With Audit------</h4>            
+          </div>          
+
+
+          <form action="/planning/discussion-with-those-charged-with-governance-1b" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>
+                
+              <!--Going Concern Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#enquiriesCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">ENQUIRIES WITH THOSE CHARGED WITH AUDIT DEPARTMENT</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="enquiriesCard">
+
+                  <div class="card-body">
+                    <b>Objective:</b>
+                    <br>
+                    Gaining understanding of the Audit function for risk - risk assessment.
+                    <br><br>
+                    <label class="small font-weight-bold" for="interviewee">Interviewee name:
+                        <textarea class="form-control form-control-sm" id="interviewee" name="interviewee" cols="40" rows="1"></textarea>
+                    </label>
+                    <br><br>
+
+                    <label class="small font-weight-bold" for="interviwer">Interviewer name:
+                        <textarea class="form-control form-control-sm" id="interviewer" name="interviewer" cols="40" rows="3"></textarea>
+                    </label>
+                    <br><br>
+
+                    <label class="small font-weight-bold" for="today">Date:
+                        <input type="date" class="form-control form-control-sm" id="today" name="today" readonly>
+                    </label>
+
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="openingBalancesTable" width="100%" cellspacing="0">
+                            <thead class="table-header-row">
+                                <tr>
+                                    <th>Question</th>
+                                    <th>Response</th>
+                                    <th>Risk</th>
+                                    <th>Auditor's Response</th>
+                                </tr>
+                            </thead>
+                          <tbody>
+                            <tr>
+                              <td>What is the structure of the internal audit department?</td>
+                              <td contenteditable="true"></td>
+                              <td contenteditable="true"></td>
+                              <td contenteditable="true"></td>                              
+                            </tr>
+                            <tr>
+                                <td>What is scope of your audit?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>                              
+                            </tr>
+                            <tr>
+                                <td>Do you have terms of reference or audit charter?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                            </tr>
+                            <tr>
+                                <td>Do you do spot checks?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                            </tr>
+                            <tr>
+                                <td>What are the qualifications of Internal Audit staff?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                            </tr>
+                            <tr>
+                                <td>Any fraud issues?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>                                                             
+                            </tr>
+                            <tr>
+                                <td>Any other issue of concern that may affect the audit?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>                                                             
+                            </tr>
+                            <tr>
+                                <td>Any litigations and claims?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>                                                             
+                            </tr>
+                            <tr>
+                                <td>Any changes in accounting policies?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>                                                             
+                            </tr>
+                            <tr>
+                                <td>Any subsequent events in 2018?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>                                                             
+                            </tr>
+                            <tr>
+                                <td>Any non compliance with laws and regulations?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>                                                             
+                            </tr>
+                            <tr>
+                                <td>Any known significant related parties?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>                                                             
+                            </tr>
+                            <tr>
+                                <td>Any significant changes during the year?</td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>                                                             
+                            </tr>                        
+
+                          </tbody>
+                          <br><br>
+
+                        </table>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+              
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+   <!--Script to get today's date-->
+   <script>
+        var field = document.querySelector('#today');
+        var date = new Date();
+
+        // Set the date
+        field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + '-' + date.getDate().toString().padStart(2, 0);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 10.45C - Risks At AL SCI</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------10.45C - Risks At AL SCI------</h4>            
+          </div>          
+
+
+          <form action="/planning/risk-assessment-c" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>
+                
+              <!--Risk Analysis Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#riskAnalysisCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">RISK ANALYSIS</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="riskAnalysisCard">
+
+                  <div class="card-body">
+                    <b>Objective:</b>
+                    <br>
+                    To identify risks relating to the audit engagement at assertion level.
+                    <br><br>
+                    <b>Audit Approach:</b>
+                    <br>
+                    - Identify which balances making up the Statement of Comprehensive Income are material to the audit.
+                    <br>
+                    - Assess the risk associated with each of theses balances on an assertion level based on information derived through risk assessment procedures in Section 10.
+                    <br><br>
+
+                    KEY:
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="keyTable" width="100%" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td class="user-text-red">
+                                    SR
+                                </td>
+                                <td>
+                                    The presumed fraud risk in revenue recognition has been analysed and the relevant assertions to which significant risk will be applied are marked and discussed.
+                                </td>
+                            </tr>                            
+                          <tr>
+                            <td class="user-text-red">
+                              TBA
+                            </td>
+                            <td>
+                                Risk identified to be assessed for significance on <span class="user-text-red"><10.45D></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="user-text-green">
+                              NRI
+                            </td>
+                            <td>
+                              Based on the following:
+                              <br>
+                              - Knowledge of the business from prior years experience;
+                              <br>
+                              - Current year risk assessment;
+                              <br>
+                              - There has been no change in management or the accounting team;
+                              <br>
+                              - There has been no change in the accounting system utilised by the client;
+                              <br>
+                              - No major change in the nature of the business has occurred
+                              <br>
+                              No risks have been identified for this assertion.  
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>                    
+                    
+                  </div>
+                </div>
+              </div>
+                   
+            
+              <!--Risks Assessment At Assertion Level Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#risksAtFSLCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">STATEMENT OF COMPREHENSIVE INCOME</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="risksAtFSLCard">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="risksAtFSLTable1" width="100%" cellspacing="0">
+                          <thead class="table-header-row">
+                            <tr>
+                              <th>BALANCES / SECTIONS WITH MATERIAL BALANCES AS MARKED ON <span class="user-text-red"><10.03B></span></th>
+                              <th>COMPLETENESS</th>
+                              <th>OCCURANCE</th>
+                              <th>ACCURACY</th>
+                              <th>CUT-OFF</th>
+                              <th>CLASSIFICATION</th>
+                              <th>PRESENTATION AND DISCLOSURE</th>
+                              <th>DESCRIPTION OF RISK IDENTIFIED</th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                                REVENUE - INVESTMENT AND FINANCE
+                            </td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                          </tr>
+                          <tr>
+                            <td>
+                                COST OF SALES
+                            </td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                          </tr>
+                          <tr>
+                            <td>
+                                OTHER INCOME
+                            </td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                          </tr>
+                          <tr>
+                            <td>
+                                EMPLOYEE COSTS
+                            </td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                          </tr>
+                          <tr>
+                            <td>
+                                OTHER EXPENSES
+                            </td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                          </tr>
+                          <tr>
+                            <td>
+                                FINANCE COSTS
+                            </td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>                    
+                    <br><br> 
+                  </div>
+                </div>               
+              </div>
+              
+               <!-- Conclusion Card -->
+               <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Conclusion:</h6>
+                  </div>
+                  <div class="card-body">
+                    Based on the detail above, we have appropriately identified all risks identified at planning stage.
+                  </div>
+                </div>
+
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>

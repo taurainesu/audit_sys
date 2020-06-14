@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - Client Acceptance</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------Client Acceptance------</h4>            
+          </div>          
+
+
+          <form action="/pre-engagement/client-acceptance" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Engagement Details</h6>
+                </div>
+                <div class="card-body">
+                    <label class="small font-weight-bold" for="company">Company
+                        <input class="form-control form-control-sm" type="text" id="company" name="company">
+                    </label>                    
+                    
+                    <label class="small font-weight-bold" for="engagementYearEnd">Year-End
+                        <input class="form-control form-control-sm" type="text" id="engagementYearEnd" name="engagementYearEnd">
+                    </label>                
+                                     
+                    <label class="small font-weight-bold" for="date">Date
+                        <input class="form-control form-control-sm" type="date" id="today" name="today" readonly>
+                    </label>
+                    
+                </div>
+              </div>
+
+
+
+              <!-- Acceptance Card -->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#acceptanceCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">Acceptance Of Clients</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="acceptanceCard">
+
+                  <div class="card-body">
+                    The following points are considered for each potential client:
+                    <br>
+                      <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>Consideration</th>
+                              <th>Yes/No/Not Applicable</th>
+                              <th>Comments</th>
+                            </tr>
+                          </thead>
+                          <tfoot>
+                            <tr>
+                              <th>Consideration</th>
+                              <th>Yes/No/Not Applicable</th>
+                              <th>Comments</th>
+                            </tr>
+                          </tfoot>
+                          <tbody>
+                            <tr>
+                              <td>
+                                  Did we communicate with existing or previous auditors/providers of professional accountancy services?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesA" value="Yes" name="yesNoNAA" checked>
+                                  <label class="custom-control-label" for="radioYesA">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoA" value="No" name="yesNoNAA">
+                                  <label class="custom-control-label" for="radioNoA">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableA" value="N/A" name="yesNoNAA">
+                                  <label class="custom-control-label" for="radioNotApplicableA">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="communicateCommentsA" name="communicateCommentsA" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Did we ascertain if the prospective client has advised the existing accountant of the proposed change and has given them permission, in writing, to discuss the client’s affairs 
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesB" value="Yes" name="yesNoNAB" checked>
+                                  <label class="custom-control-label" for="radioYesB">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoB" value="No" name="yesNoNAB">
+                                  <label class="custom-control-label" for="radioNoB">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableB" value="N/A" name="yesNoNAB">
+                                  <label class="custom-control-label" for="radioNotApplicableB">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="ascertainCommentsB" name="ascertainCommentsB" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  When we were satisfied with the reply from the client, did we request permission to communicate with the existing accountant?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesC" value="Yes" name="yesNoNAC" checked>
+                                  <label class="custom-control-label" for="radioYesC">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoC" value="No" name="yesNoNAC">
+                                  <label class="custom-control-label" for="radioNoC">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableC" value="N/A" name="yesNoNAC">
+                                  <label class="custom-control-label" for="radioNotApplicableC">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="satisfiedCommentsC" name="satisfiedCommentsC" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  If permission was refused or not given, did we, in the absence of exceptional circumstances, decline the appointment?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesD" value="Yes" name="yesNoNAD" checked>
+                                  <label class="custom-control-label" for="radioYesD">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoD" value="No" name="yesNoNAD">
+                                  <label class="custom-control-label" for="radioNoD">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableD" value="N/A" name="yesNoNAD">
+                                  <label class="custom-control-label" for="radioNotApplicableD">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="permissionCommentsD" name="permissionCommentsD" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  On receipt of permission, did we ask the existing accountant to provide information on any professional reasons that should be known before deciding whether or not we 
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesE" value="Yes" name="yesNoNAE" checked>
+                                  <label class="custom-control-label" for="radioYesE">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoE" value="No" name="yesNoNAE">
+                                  <label class="custom-control-label" for="radioNoE">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableE" value="N/A" name="yesNoNAE">
+                                  <label class="custom-control-label" for="radioNotApplicableE">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="accountantCommentsE" name="accountantCommentsE" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                If we did not receive a reply from the existing accountant within a reasonable time and there was no reason to believe that there were any exceptional circumstances surrounding the proposed change, did we attempt to communicate with the existing accountant?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesF" value="Yes" name="yesNoNAF" checked>
+                                  <label class="custom-control-label" for="radioYesF">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoF" value="No" name="yesNoNAF">
+                                  <label class="custom-control-label" for="radioNoF">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableF" value="N/A" name="yesNoNAF">
+                                  <label class="custom-control-label" for="radioNotApplicableF">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="replyCommentsF" name="replyCommentsF" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Did we have discussions with third parties where necessary?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesG" value="Yes" name="yesNoNAG" checked>
+                                  <label class="custom-control-label" for="radioYesG">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoG" value="No" name="yesNoNAG">
+                                  <label class="custom-control-label" for="radioNoG">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableG" value="N/A" name="yesNoNAG">
+                                  <label class="custom-control-label" for="radioNotApplicableG">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="discussionsCommentsG" name="discussionsCommentsG" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Did we make inquiries of other firm personnel where necessary?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesH" value="Yes" name="yesNoNAH" checked>
+                                  <label class="custom-control-label" for="radioYesH">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoH" value="No" name="yesNoNAH">
+                                  <label class="custom-control-label" for="radioNoH">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableH" value="N/A" name="yesNoNAH">
+                                  <label class="custom-control-label" for="radioNotApplicableH">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="inquiriesCommentsH" name="inquiriesCommentsH" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Did we make inquiries of third parties such as bankers, legal counsel and industry peers, where necessary?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesI" value="Yes" name="yesNoNAI" checked>
+                                  <label class="custom-control-label" for="radioYesI">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoI" value="No" name="yesNoNAI">
+                                  <label class="custom-control-label" for="radioNoI">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableI" value="N/A" name="yesNoNAI">
+                                  <label class="custom-control-label" for="radioNotApplicableI">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="thirdCommentsI" name="thirdCommentsI" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Did we perform the necessary background searches on relevant databases?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesJ" value="Yes" name="yesNoNAJ" checked>
+                                  <label class="custom-control-label" for="radioYesJ">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoJ" value="No" name="yesNoNAJ">
+                                  <label class="custom-control-label" for="radioNoJ">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableJ" value="N/A" name="yesNoNAJ">
+                                  <label class="custom-control-label" for="radioNotApplicableJ">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="backgroundCommentsJ" name="backgroundCommentsJ" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Can an open and honest relationship be maintained with management?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesK" value="Yes" name="yesNoNAK" checked>
+                                  <label class="custom-control-label" for="radioYesK">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoK" value="No" name="yesNoNAK">
+                                  <label class="custom-control-label" for="radioNoK">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableK" value="N/A" name="yesNoNAK">
+                                  <label class="custom-control-label" for="radioNotApplicableK">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="honestCommentsK" name="honestCommentsK" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Can a high risk client be managed with more time and resources?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesL" value="Yes" name="yesNoNAL" checked>
+                                  <label class="custom-control-label" for="radioYesL">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoL" value="No" name="yesNoNAL">
+                                  <label class="custom-control-label" for="radioNoL">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableL" value="N/A" name="yesNoNAL">
+                                  <label class="custom-control-label" for="radioNotApplicableL">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="managedCommentsL" name="managedCommentsL" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Have changes in management occurred during the audit that may raise doubt as to the client’s integrity?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesM" value="Yes" name="yesNoNAM" checked>
+                                  <label class="custom-control-label" for="radioYesM">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoM" value="No" name="yesNoNAM">
+                                  <label class="custom-control-label" for="radioNoM">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableM" value="N/A" name="yesNoNAM">
+                                  <label class="custom-control-label" for="radioNotApplicableM">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="changesCommentsM" name="changesCommentsM" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Are the client’s solvency levels in order?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesN" value="Yes" name="yesNoNAN" checked>
+                                  <label class="custom-control-label" for="radioYesN">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoN" value="No" name="yesNoNAN">
+                                  <label class="custom-control-label" for="radioNoN">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableN" value="N/A" name="yesNoNAN">
+                                  <label class="custom-control-label" for="radioNotApplicableN">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="solvencyCommentsN" name="solvencyCommentsN" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Does the client have a dominant individual affecting audit risk?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesO" value="Yes" name="yesNoNAO" checked>
+                                  <label class="custom-control-label" for="radioYesO">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoO" value="No" name="yesNoNAO">
+                                  <label class="custom-control-label" for="radioNoO">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableO" value="N/A" name="yesNoNAO">
+                                  <label class="custom-control-label" for="radioNotApplicableO">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="dominantCommentsO" name="dominantCommentsO" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Does the client have a history of lawsuits, unfavourable press reports, late financial statements, qualified audit reports and frequent changes to their auditors?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesP" value="Yes" name="yesNoNAP" checked>
+                                  <label class="custom-control-label" for="radioYesP">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoP" value="No" name="yesNoNAP">
+                                  <label class="custom-control-label" for="radioNoP">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableP" value="N/A" name="yesNoNAP">
+                                  <label class="custom-control-label" for="radioNotApplicableP">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="lawsuitsCommentsP" name="lawsuitsCommentsP" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Are other engagements performed for the client by other offices of the firm or network firms, and what was their experience on those engagements?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesQ" value="Yes" name="yesNoNAQ" checked>
+                                  <label class="custom-control-label" for="radioYesQ">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoQ" value="No" name="yesNoNAQ">
+                                  <label class="custom-control-label" for="radioNoQ">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableQ" value="N/A" name="yesNoNAQ">
+                                  <label class="custom-control-label" for="radioNotApplicableQ">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="otherEngagementsCommentsQ" name="otherEngagementsCommentsQ" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Is the identity of client’s principal owners, key management, related parties and those charged with governance known to us?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesR" value="Yes" name="yesNoNAR" checked>
+                                  <label class="custom-control-label" for="radioYesR">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoR" value="No" name="yesNoNAR">
+                                  <label class="custom-control-label" for="radioNoR">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableR" value="N/A" name="yesNoNAR">
+                                  <label class="custom-control-label" for="radioNotApplicableR">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="identityCommentsR" name="identityCommentsR" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Is the business reputation of principal owners, key management, related parties and those charged with governance acceptable to us? 
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesS" value="Yes" name="yesNoNAS" checked>
+                                  <label class="custom-control-label" for="radioYesS">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoS" value="No" name="yesNoNAS">
+                                  <label class="custom-control-label" for="radioNoS">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableS" value="N/A" name="yesNoNAS">
+                                  <label class="custom-control-label" for="radioNotApplicableS">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="reputationCommentsS" name="reputationCommentsS" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Are we familiar with the nature of client’s operations?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesT" value="Yes" name="yesNoNAT" checked>
+                                  <label class="custom-control-label" for="radioYesT">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoT" value="No" name="yesNoNAT">
+                                  <label class="custom-control-label" for="radioNoT">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableT" value="N/A" name="yesNoNAT">
+                                  <label class="custom-control-label" for="radioNotApplicableT">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="familiarCommentsT" name="familiarCommentsT" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Do we have information concerning the attitude of the principal owners, key management, related parties and those charged with governance towards such matters as aggressive the interpretation of accounting standards and the internal control environment?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesU" value="Yes" name="yesNoNAU" checked>
+                                  <label class="custom-control-label" for="radioYesU">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoU" value="No" name="yesNoNAU">
+                                  <label class="custom-control-label" for="radioNoU">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableU" value="N/A" name="yesNoNAU">
+                                  <label class="custom-control-label" for="radioNotApplicableU">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="attitudeCommentsU" name="attitudeCommentsU" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Is the client aggressively concerned with maintaining fees as low as possible?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesV" value="Yes" name="yesNoNAV" checked>
+                                  <label class="custom-control-label" for="radioYesV">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoV" value="No" name="yesNoNAV">
+                                  <label class="custom-control-label" for="radioNoV">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableV" value="N/A" name="yesNoNAV">
+                                  <label class="custom-control-label" for="radioNotApplicableV">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="aggresivelyCommentsV" name="aggresivelyCommentsV" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                  Is there an indication of an inappropriate limitation in the scope of our work?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesW" value="Yes" name="yesNoNAW" checked>
+                                  <label class="custom-control-label" for="radioYesW">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoW" value="No" name="yesNoNAW">
+                                  <label class="custom-control-label" for="radioNoW">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableW" value="N/A" name="yesNoNAW">
+                                  <label class="custom-control-label" for="radioNotApplicableW">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="limitationCommentsW" name="limitationCommentsW" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Are there indications that the client may be involved in money laundering or other criminal activities?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesX" value="Yes" name="yesNoNAX" checked>
+                                  <label class="custom-control-label" for="radioYesX">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoX" value="No" name="yesNoNAX">
+                                  <label class="custom-control-label" for="radioNoX">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableX" value="N/A" name="yesNoNAX">
+                                  <label class="custom-control-label" for="radioNotApplicableX">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="launderingCommentsX" name="launderingCommentsX" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Are there any indications that the client may be involved in activities that meet the definition of NOCLAR as defined by S260 and S360 of the ICAZ code of proffessional conduct?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesY" value="Yes" name="yesNoNAY" checked>
+                                  <label class="custom-control-label" for="radioYesY">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoY" value="No" name="yesNoNAY">
+                                  <label class="custom-control-label" for="radioNoY">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableY" value="N/A" name="yesNoNAY">
+                                  <label class="custom-control-label" for="radioNotApplicableY">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="noclarCommentsY" name="noclarCommentsY" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Do we know the reasons for the proposed appointment of the firm and the non-reappointment of the previous firm?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesZ" value="Yes" name="yesNoNAZ" checked>
+                                  <label class="custom-control-label" for="radioYesZ">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoZ" value="No" name="yesNoNAZ">
+                                  <label class="custom-control-label" for="radioNoZ">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableZ" value="N/A" name="yesNoNAZ">
+                                  <label class="custom-control-label" for="radioNotApplicableZ">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="appointmentCommentsZ" name="appointmentCommentsZ" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Do we have sufficient knowledge of the relevant industry?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesAA" value="Yes" name="yesNoNAAA" checked>
+                                  <label class="custom-control-label" for="radioYesAA">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoAA" value="No" name="yesNoNAAA">
+                                  <label class="custom-control-label" for="radioNoAA">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableAA" value="N/A" name="yesNoNAAA">
+                                  <label class="custom-control-label" for="radioNotApplicableAA">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="industryCommentsAA" name="industryCommentsAA" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Do we have experience with relevant regulatory or reporting requirements?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesAB" value="Yes" name="yesNoNAAB" checked>
+                                  <label class="custom-control-label" for="radioYesAB">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoAB" value="No" name="yesNoNAAB">
+                                  <label class="custom-control-label" for="radioNoAB">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableAB" value="N/A" name="yesNoNAAB">
+                                  <label class="custom-control-label" for="radioNotApplicableAB">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="experienceCommentsAB" name="experienceCommentsAB" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Does the firm have sufficient personnel with the necessary capabilities and competence?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesAC" value="Yes" name="yesNoNAAC" checked>
+                                  <label class="custom-control-label" for="radioYesAC">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoAC" value="No" name="yesNoNAAC">
+                                  <label class="custom-control-label" for="radioNoAC">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableAC" value="N/A" name="yesNoNAAC">
+                                  <label class="custom-control-label" for="radioNotApplicableAC">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="personnelCommentsAC" name="personnelCommentsAC" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Are experts available?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesAD" value="Yes" name="yesNoNAAD" checked>
+                                  <label class="custom-control-label" for="radioYesAD">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoAD" value="No" name="yesNoNAAD">
+                                  <label class="custom-control-label" for="radioNoAD">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableAD" value="N/A" name="yesNoNAAD">
+                                  <label class="custom-control-label" for="radioNotApplicableAD">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="expertsCommentsAD" name="expertsCommentsAD" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Is an EQCR available?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesAE" value="Yes" name="yesNoNAAE" checked>
+                                  <label class="custom-control-label" for="radioYesAE">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoAE" value="No" name="yesNoNAAE">
+                                  <label class="custom-control-label" for="radioNoAE">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableAE" value="N/A" name="yesNoNAAE">
+                                  <label class="custom-control-label" for="radioNotApplicableAE">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="eqcrCommentsAE" name="eqcrCommentsAE" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Is the firm able to complete the engagement within the reporting deadline?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesAF" value="Yes" name="yesNoNAAF" checked>
+                                  <label class="custom-control-label" for="radioYesAF">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoAF" value="No" name="yesNoNAAF">
+                                  <label class="custom-control-label" for="radioNoAF">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableAF" value="N/A" name="yesNoNAAF">
+                                  <label class="custom-control-label" for="radioNotApplicableAF">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="deadlineCommentsAF" name="deadlineCommentsAF" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Are there specialised industry factors that we should be aware of?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesAG" value="Yes" name="yesNoNAAG" checked>
+                                  <label class="custom-control-label" for="radioYesAG">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoAG" value="No" name="yesNoNAAG">
+                                  <label class="custom-control-label" for="radioNoAG">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableAG" value="N/A" name="yesNoNAAG">
+                                  <label class="custom-control-label" for="radioNotApplicableAG">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="factorsCommentsAG" name="factorsCommentsAG" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Does the client have significant branches in locations where we do not have representation?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesAH" value="Yes" name="yesNoNAAH" checked>
+                                  <label class="custom-control-label" for="radioYesAH">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoAH" value="No" name="yesNoNAAH">
+                                  <label class="custom-control-label" for="radioNoAH">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableAH" value="N/A" name="yesNoNAAH">
+                                  <label class="custom-control-label" for="radioNotApplicableAH">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="branchesCommentsAH" name="branchesCommentsAH" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Does the deadline coincide with existing client pressures?
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesAI" value="Yes" name="yesNoNAAI" checked>
+                                  <label class="custom-control-label" for="radioYesAI">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoAI" value="No" name="yesNoNAAI">
+                                  <label class="custom-control-label" for="radioNoAI">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableAI" value="N/A" name="yesNoNAAI">
+                                  <label class="custom-control-label" for="radioNotApplicableAI">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="pressuresCommentsAI" name="pressuresCommentsAI" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Are there any independence threats, .e.g.
+                                <ul>
+                                  <li>Self interest threat</li>
+                                  <li>Self-review threat</li>
+                                  <li>Advocacy threat</li>
+                                  <li>Familiarity threat</li>
+                                  <li>Intimidation threat</li>
+                                </ul>
+                              </td>
+                              <td>
+                                <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioYesAJ" value="Yes" name="yesNoNAAJ" checked>
+                                  <label class="custom-control-label" for="radioYesAJ">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNoAJ" value="No" name="yesNoNAAJ">
+                                  <label class="custom-control-label" for="radioNoAJ">No</label>
+                                </div>
+
+                                <!-- N/A Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="radioNotApplicableAJ" value="N/A" name="yesNoNAAJ">
+                                  <label class="custom-control-label" for="radioNotApplicableAJ">N/A</label>
+                                </div>
+                                <!-- End of Radio Buttons -->
+                              </td>
+                              <td>
+                                <textarea class="form-control form-control-sm" id="independenceCommentsAJ" name="independenceCommentsAJ" cols="150" rows="4"></textarea>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Conclusion Card -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  
+                </div>
+                <div class="card-body">
+                  WHERE WE HAVE DECIDED THAT IT IS INAPPROPRIATE TO ACCEPT AN ENGAGEMENT, ALL DOCUMENTATION PREPARED AT ARRIVING AT THAT DECISION HAS BEEN FILED BY THE CEO’S SECRETARY.", "WHERE WE HAVE DECIDED THAT IT IS INAPPROPRIATE TO ACCEPT AN ENGAGEMENT, ALL DOCUMENTATION PREPARED AT ARRIVING AT THAT DECISION HAS BEEN FILED BY THE OMQC.
+                </div>
+              </div>
+
+              <button class="btn btn-info btn-long" type="submit" data-toggle="modal" data-target="#confirmModal" >Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal" onclick="window.location.href='/pre-engagement/client-acceptance'">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+  <!--Script to get today's date-->
+  <script>
+    var field = document.querySelector('#today');
+    var date = new Date();
+
+    // Set the date
+    field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + '-' + date.getDate().toString().padStart(2, 0);
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 10.45D - SR Assessment</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------10.45D - SR Assessment------</h4>            
+          </div>          
+
+
+          <form action="/pre-engagement/risk-assessment-d" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              <% include partials/engagementCard.ejs %>
+
+
+              <!--Risk Analysis Card-->
+              <div class="card shadow mb-4">
+
+                    <!-- Card Header - Accordion -->
+                    <a href="#riskAnalysisCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                        <h6 class="m-0 font-weight-bold text-primary">Risk Analysis</h6>
+                    </a>
+    
+                    <!-- Card Content - Collapse -->
+                    <div class="collapse" id="riskAnalysisCard">
+    
+                      <div class="card-body">
+                        <b>Objective:</b>
+                        <br>
+                        To identify significant risks related to the audit engagement and to determine the necessary audit procedures to be completed to mitigate those risks.
+                        <br><br>
+                        <b>Approach:</b>
+                        <br>
+                        According to ISA315:28, in exercising judgement as to whether a risk is significant the auditor shall consider at least the following:
+                        <br>
+                        (a) Whether the risk is a risk of fraud
+                        <br>
+                        (b) Whether the risk is related to recent significant economic, accounting or other developments
+                        <br>
+                        (c) The complexity of transactions
+                        <br>
+                        (d) Whether the risk involves significant transactions with related parties
+                        <br>
+                        (e) The degree of subjectivity in the measurement of financial information related to the risk, especially those measurements involving a wide range of measurement uncertainty, and
+                        <br>
+                        (f) Whether the risk involves significant transactions that are outside the normal course of business for the entity, or that otherwise appear to be unusual.
+                        <br><br>
+                        ** Assess whether the identified risks at assertion level, as assessed on <10.45B> and <10.45C> are significant by considering (a) to (f) above.
+                        <br>
+                        Respond to each of the 6 significant risk factors as follows:
+                        <br>
+                        0 = NO
+                        <br>
+                        1 = YES
+                        <br><br>
+                        ** The responses provided above, will result in an overall % as follows: 
+                        <br>
+                        0% - 49%                          Not a Significant Risk
+                        <br>
+                        50% - 100%                       Significant risk
+                      </div>
+                    </div>
+                  </div>
+
+              <!--Property, Plant and Equipment Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#propertyPlantAndEquipmentCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">Property Plant And Equipment</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="propertyPlantAndEquipmentCard">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="ppeTable" width="100%" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <b>Risk</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="ppeRisk" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Balance or Transactions</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="ppeBalanceOrTransactions" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Assertion</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="ppeAssertion" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="ppeRiskFactorsTable" width="100%" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>RISK FACTORS FOR CONSIDERATION</th>
+                              <th>YES = 1 / NO = 0</th>
+                              <th>EXPLANATION OF ASSESSMENT</th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              Risk of fraud
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="riskOfFraudValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="riskOfFraudExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Relates to specific economic or accounting developments
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="specificEconomicOrAccountingValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="specificEconomicOrAccountingExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Complex transaction
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="complexTransactionsValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="complexTransactionsExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Transaction with related parties
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="relatedPartiesValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="relatedPartiesExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              High degree of subjectivity in the measurement
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="subjectivityValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="subjectivityExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Outside of ordinary course of business
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="ordinaryCourseValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="ordinaryCourseExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Risk was identified in the prior year
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="priorYearValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="priorYearExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Likely to occur
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="likelyToOccurValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="likelyToOccurExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Monetarily material
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="monetarilyMaterialValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="monetarilyMaterialExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <label class="small font-weight-bold" for="ppeRiskForMistatement">Risk of Material Mistatement
+                      <input class="form-control form-control-sm" type="text" id="ppeRiskForMistatement" name="ppeRiskForMistatement">
+                    </label>                    
+                    
+                    <label class="small font-weight-bold" for="ppeSignificantRisk">Significant Risk
+                        <input class="form-control form-control-sm" type="text" id="ppeSignificantRisk" name="ppeSignificantRisk">
+                    </label>                
+                                    
+                    <label class="small font-weight-bold" for="relatedWorkingPaper">Related Working Paper
+                        <input class="form-control form-control-sm" type="text" id="relatedWorkingPaper" name="relatedWorkingPaper">
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Inventory Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#inventoryCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">Inventory</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="inventoryCard">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="inventoryTable" width="100%" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <b>Risk</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="inventoryRisk" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Balance or Transactions</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="inventoryBalanceOrTransactions" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Assertion</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="inventoryAssertion" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="inventoryRiskFactorsTable" width="100%" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>RISK FACTORS FOR CONSIDERATION</th>
+                              <th>YES = 1 / NO = 0</th>
+                              <th>EXPLANATION OF ASSESSMENT</th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              Risk of fraud
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="inventoryRiskOfFraudValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="inventoryRiskOfFraudExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Relates to specific economic or accounting developments
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="inventorySpecificEconomicOrAccountingValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="inventorySpecificEconomicOrAccountingExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Complex transaction
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="inventoryComplexTransactionsValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="inventoryComplexTransactionsExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Transaction with related parties
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="inventoryRelatedPartiesValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="inventoryRelatedPartiesExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              High degree of subjectivity in the measurement
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="inventorySubjectivityValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="inventorySubjectivityExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Outside of ordinary course of business
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="inventoryOrdinaryCourseValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="inventoryOrdinaryCourseExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Risk was identified in the prior year
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="inventoryPriorYearValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="inventoryPriorYearExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Likely to occur
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="inventoryLikelyToOccurValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="inventoryLikelyToOccurExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Monetarily material
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="inventoryMonetarilyMaterialValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="inventoryMonetarilyMaterialExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <label class="small font-weight-bold" for="inventoryRiskForMistatement">Risk of Material Mistatement
+                      <input class="form-control form-control-sm" type="text" id="inventoryRiskForMistatement" name="inventoryRiskForMistatement">
+                    </label>                    
+                    
+                    <label class="small font-weight-bold" for="inventorySignificantRisk">Significant Risk
+                        <input class="form-control form-control-sm" type="text" id="inventorySignificantRisk" name="inventorySignificantRisk">
+                    </label>                
+                                    
+                    <label class="small font-weight-bold" for="inventoryRelatedWorkingPaper">Related Working Paper
+                        <input class="form-control form-control-sm" type="text" id="inventoryRelatedWorkingPaper" name="inventoryRelatedWorkingPaper">
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Trade and Other Receivables Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#tradeAndOtherReceivablesCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">Trade And Other Receivables</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="tradeAndOtherReceivablesCard">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="tradeAndOtherReceivablesTable" width="100%" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <b>Risk</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="torRisk" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Balance or Transactions</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="torBalanceOrTransactions" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Assertion</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="torAssertion" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="torRiskFactorsTable" width="100%" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>RISK FACTORS FOR CONSIDERATION</th>
+                              <th>YES = 1 / NO = 0</th>
+                              <th>EXPLANATION OF ASSESSMENT</th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              Risk of fraud
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="torRiskOfFraudValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="torRiskOfFraudExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Relates to specific economic or accounting developments
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="torSpecificEconomicOrAccountingValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="torSpecificEconomicOrAccountingExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Complex transaction
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="torComplexTransactionsValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="torComplexTransactionsExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Transaction with related parties
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="torRelatedPartiesValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="torRelatedPartiesExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              High degree of subjectivity in the measurement
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="torSubjectivityValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="torSubjectivityExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Outside of ordinary course of business
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="torOrdinaryCourseValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="torOrdinaryCourseExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Risk was identified in the prior year
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="torPriorYearValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="torPriorYearExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Likely to occur
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="torLikelyToOccurValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="torLikelyToOccurExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Monetarily material
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="torMonetarilyMaterialValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="torMonetarilyMaterialExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <label class="small font-weight-bold" for="torRiskForMistatement">Risk of Material Mistatement
+                      <input class="form-control form-control-sm" type="text" id="torRiskForMistatement" name="torRiskForMistatement">
+                    </label>                    
+                    
+                    <label class="small font-weight-bold" for="torSignificantRisk">Significant Risk
+                        <input class="form-control form-control-sm" type="text" id="torSignificantRisk" name="torSignificantRisk">
+                    </label>                
+                                    
+                    <label class="small font-weight-bold" for="torRelatedWorkingPaper">Related Working Paper
+                        <input class="form-control form-control-sm" type="text" id="torRelatedWorkingPaper" name="torRelatedWorkingPaper">
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Taxation Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#taxationCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">Taxation</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="taxationCard">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="taxationTable" width="100%" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <b>Risk</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="taxationRisk" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Balance or Transactions</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="taxationBalanceOrTransactions" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Assertion</b>
+                              </td>
+                              <td>
+                                  <textarea class="form-control form-control-sm" id="taxationAssertion" cols="80" rows="4"></textarea>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="taxationRiskFactorsTable" width="100%" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>RISK FACTORS FOR CONSIDERATION</th>
+                              <th>YES = 1 / NO = 0</th>
+                              <th>EXPLANATION OF ASSESSMENT</th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              Risk of fraud
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="taxationRiskOfFraudValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="taxationRiskOfFraudExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Relates to specific economic or accounting developments
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="taxationSpecificEconomicOrAccountingValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="taxationSpecificEconomicOrAccountingExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Complex transaction
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="taxationComplexTransactionsValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="taxationComplexTransactionsExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Transaction with related parties
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="taxationRelatedPartiesValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="taxationRelatedPartiesExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              High degree of subjectivity in the measurement
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="taxationSubjectivityValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="taxationSubjectivityExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Outside of ordinary course of business
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="taxationOrdinaryCourseValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="taxationOrdinaryCourseExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Risk was identified in the prior year
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="taxationPriorYearValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="taxationPriorYearExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Likely to occur
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="taxationLikelyToOccurValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="taxationLikelyToOccurExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Monetarily material
+                            </td>
+                            <td>
+                              <input class="user-form-control" type="text" id="taxationMonetarilyMaterialValue">
+                            </td>
+                            <td>
+                                <textarea class="form-control form-control-sm" id="taxationMonetarilyMaterialExplanation" cols="50" rows="4"></textarea>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <label class="small font-weight-bold" for="taxationRiskForMistatement">Risk of Material Mistatement
+                      <input class="form-control form-control-sm" type="text" id="taxationRiskForMistatement" name="taxationRiskForMistatement">
+                    </label>                    
+                    
+                    <label class="small font-weight-bold" for="taxationSignificantRisk">Significant Risk
+                        <input class="form-control form-control-sm" type="text" id="taxationSignificantRisk" name="taxationSignificantRisk">
+                    </label>                
+                                    
+                    <label class="small font-weight-bold" for="taxationRelatedWorkingPaper">Related Working Paper
+                        <input class="form-control form-control-sm" type="text" id="taxationRelatedWorkingPaper" name="taxationRelatedWorkingPaper">
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <!-- Conclusion Card -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Conclusion:</h6>
+                </div>
+                <div class="card-body">
+                  Based on the detail above, we have appropriately identified and raised all risks identified at planning stage.
+                </div>
+              </div>
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>

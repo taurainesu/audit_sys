@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 10.10 - Threats Declaration</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------10.10 - Threats Declaration------</h4>            
+          </div>          
+
+
+          <form action="/planning/threats-declaration" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>
+
+              <!-- Additional Engagement Card-->                
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Meeting Details</h6>
+                </div>
+                <div class="card-body">
+                    
+                    <label class="small font-weight-bold" for="engagementPartner">Engagement Partner
+                        <input class="form-control form-control-sm" type="text" id="engagementPartner" name="engagementPartner">
+                    </label>                    
+                    <label class="small font-weight-bold" for="meetingDate">Date
+                        <input class="form-control form-control-sm" type="date" id="today" name="today" readonly>
+                    </label>
+                    <label class="small font-weight-bold" for="teamMembers">Team Members
+                        <textarea class="form-control form-control-sm" id="teamMembers" name="teamMembers" cols="150" rows="5"></textarea>
+                    </label>                    
+                    
+                </div>
+              </div>        
+
+
+              <!--Independence Declaration Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#independenceDeclarationCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">INDEPENDENCE DECLARATION<br>THREATS TO INDEPENDENCE</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="independenceDeclarationCard">
+
+                  <div class="card-body">
+                    I hereby wish to inform the firm that the following threats to independence have occurred:
+                      
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="threatsTable" width="100%" cellspacing="0">
+                            
+                            <thead class="table-header-row">
+                              <tr>
+                                <th>Threat</th>
+                                <th>Details</th>                                
+                              </tr>
+                            </thead>
+                          <tbody>
+                            <tr>
+                              <td>Self-Interest Threat (*)</td>
+                              <td contenteditable="true"></td>                                                            
+                            </tr>
+                            <tr>
+                                <td>Self-Review Threat (!)</td>
+                                <td contenteditable="true"></td>                                                            
+                            </tr>
+                            <tr>
+                                <td>Advocacy Threat (#)</td>
+                                <td contenteditable="true"></td>                                                            
+                            </tr>
+                            <tr>
+                                <td>Familiarity Threat ($)</td>
+                                <td contenteditable="true"></td>                                                            
+                            </tr>
+                            <tr>
+                                <td>Intimidation Threat (%)</td>
+                                <td contenteditable="true"></td>                                                            
+                            </tr>                          
+
+                          </tbody>
+                          
+
+                        </table>                        
+                    </div>
+
+                    <br><br>
+                    * Self-Interest Threat: When a firm or member of the assurance team could benefit from a financial interest in an assurance client. 
+                    <br><br>
+                    ! Self-Review Threat: When a judgment from a previous assurance engagement or non-assurance engagement needs to be re-evaluated in reaching conclusions on the assurance engagement or when a member of the assurance team was previously a director or officer of the client.
+                    <br><br>
+                    # Advocacy Threat: Where a firm or a member of the assurance team promotes an assurance client’s position or opinion.  
+                    <br><br>
+                    $ Familiarity Threat: When, by virtue of a close relationship with an assurance client, its directors, officers or employees, a firm or a member of the assurance team becomes too sympathetic to the client’s interests.  
+                    <br><br>
+                    % Intimidation Threat: When a member of the assurance team may be deterred from acting objectively and exercising professional scepticism by threats, actual or perceived, from the directors, officers or employees of an assurance client.
+                    <br><br>
+
+                    <label class="small font-weight-bold" for="teamMember1">Team Member
+                        <input class="form-control form-control-sm" type="text" id="teamMember1" name="teamMember1">
+                    </label>                    
+                    <label class="small font-weight-bold" for="signature1">Signature
+                        <input class="form-control form-control-sm" type="text" id="signature1" name="signature1" readonly>
+                    </label>
+                    <br>
+                    <label class="small font-weight-bold" for="teamMember2">Team Member
+                        <input class="form-control form-control-sm" type="text" id="teamMember2" name="teamMember2">
+                    </label>                    
+                    <label class="small font-weight-bold" for="signature2">Signature
+                        <input class="form-control form-control-sm" type="text" id="signature2" name="signature2" readonly>
+                    </label>
+                    <br>
+                    <label class="small font-weight-bold" for="teamMember3">Team Member
+                        <input class="form-control form-control-sm" type="text" id="teamMember3" name="teamMember3">
+                    </label>                    
+                    <label class="small font-weight-bold" for="signature3">Signature
+                        <input class="form-control form-control-sm" type="text" id="signature3" name="signature3" readonly>
+                    </label>
+                    <br>
+                    <label class="small font-weight-bold" for="teamMember4">Team Member
+                        <input class="form-control form-control-sm" type="text" id="teamMember4" name="teamMember4">
+                    </label>                    
+                    <label class="small font-weight-bold" for="signature4">Signature
+                        <input class="form-control form-control-sm" type="text" id="signature4" name="signature4" readonly>
+                    </label>
+                    <br><br>
+                    By signing this document the engagement team acknowledge that they are aware of the IFAC code and they are not aware of any transgressions thereof
+                    <br><br>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="decisionsTable" width="100%" cellspacing="0">
+                            
+                            <thead class="table-header-row">
+                              <tr>
+                                <th>Decision Taken</th>
+                                <th>Yes</th>                                
+                              </tr>
+                            </thead>
+                          <tbody>
+                            <tr>
+                              <td>Keep team member but institute safeguards</td>
+                              <td contenteditable="true"></td>                                                            
+                            </tr>
+                            <tr>
+                                <td>Remove team member</td>
+                                <td contenteditable="true"></td>
+                            </tr>                                                      
+                                               
+                          </tbody>
+                          
+
+                        </table>                        
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+             
+
+
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+  <!--Script to get today's date-->
+  <script>
+    var field = document.querySelector('#today');
+    var date = new Date();
+
+    // Set the date
+    field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + '-' + date.getDate().toString().padStart(2, 0);
+  </script>
+
+</body>
+
+</html>

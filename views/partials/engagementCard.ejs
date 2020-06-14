@@ -1,0 +1,33 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Engagement Details</h6>
+    </div>
+    <div class="card-body">
+        <label class="small font-weight-bold" for="company">Company            
+            <SELECT class="form-control form-control-sm" id="company" name="company">
+                <% for (var i = 0; i<items.length ; i++) { %>
+                    <option>"<%= items[i] %>" 
+                <% } %>                
+            </SELECT>
+        </label>                    
+        &nbsp;&nbsp;
+        
+        <label class="small font-weight-bold" for="engagementYearEnd">Year-End
+            <SELECT class="form-control form-control-sm" id="engagementYearEnd" name="engagementYearEnd">
+                    <% for (var i = 0; i<itemsYear.length ; i++) { %>
+                        <option>"<%= itemsYear[i] %>" 
+                    <% } %>                
+            </SELECT>
+        </label><br>  
+         
+                            
+        <label class="small font-weight-bold" for="preparedBy">Prepared By
+            <input class="form-control form-control-sm" type="text" id="preparedBy" name="preparedBy">
+        </label><br>
+
+        <label class="small font-weight-bold" for="reviewedBy">Reviewed By
+            <input class="form-control form-control-sm" type="text" id="reviewedBy" name="reviewedBy">
+        </label>        
+        
+    </div>
+</div>
