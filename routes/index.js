@@ -380,18 +380,41 @@ router.get('/pre-engagement/finalize-pre-engagement', function(req, res){
 		var yearEndArray = [];
 
 		// using promise (mongoose 4+)
-		PreEngagement.find({auditAuthorised:"true"}).then( function(docs) {
+		PreEngagement.find({auditAuthorised:false}).then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
+				//companyArray.push(doc.company);
 				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('finalize-pre-engagement', { items: docs, data:sess, user: sess.username });
 		});
-
-		res.render('finalize-pre-engagement', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
+		
 	} else {
 		res.redirect('/login');
 	}
 });
+
+router.get('/pre-engagement/edit-failed-pre-engagement', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		var companyArray = [];
+		var yearEndArray = [];
+
+		// using promise (mongoose 4+)
+		PreEngagement.find({auditAuthorised:false}).then( function(docs) {
+			docs.forEach(function (doc) {
+				//companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
+			});
+			console.log(docs);
+			res.render('edit-failed-pre-engagement', { items: docs, data:sess, user: sess.username });
+		});
+		
+	} else {
+		res.redirect('/login');
+	}
+});
+
+
 
 router.get('/field-work/tb-ledger-upload', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
@@ -719,14 +742,20 @@ router.get('/planning/going-concern', function(req, res){
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find().then( function(docs) {
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				//console.log(doc);
+				//companyArray.push(doc);
+				//yearEndArray.push(doc.engagementYearEnd);
 			});
+			console.log(docs);
+			res.render('going-concern', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('going-concern', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
+
+
+		console.log(companyArray);
+		//res.render('going-concern', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -941,20 +970,40 @@ router.get('/planning/work-and-time-allocation', function(req,res){
 	}
 });
 
+router.get('/planning/analytical-review-a', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		const companyArray = [];
+		const yearEndArray = [];
+
+		PreEngagement.find().then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('analytical-review-a', { items: docs, data:sess, user: sess.username });
+		});
+		
+	} else {
+		res.redirect('/login');
+	}
+});
+
 router.get('/work-papers/work-papers-by-client', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find({auditAuthorised:'true'}).then( function(docs) {
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
 			});
+			res.render('work-papers-by-client', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('work-papers-by-client', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
+		//res.render('work-papers-by-client', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}

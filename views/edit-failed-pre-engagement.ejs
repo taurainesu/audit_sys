@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Audit v2.3.1 - Pre-Engagement Authorization</title>
+  <title>Audit v2.3.1 - "Failed" List: Pre-Engagement</title>
 
   <!-- Custom fonts for this template-->
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -48,11 +48,14 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h4 class="m-0 font-weight-bold text-primary">Pre-Engagement Authorization</h4>            
-          </div>          
+            <h4 class="m-0 font-weight-bold text-primary">"Failed" List: Pre-Engagement</h4>            
+          </div>
+          
+          Click on Client Name to edit the relevant Work Paper...
+          <br><br>          
 
 
-          <form action="/pre-engagement/finalize-pre-engagement" method="POST">
+          <form action="/pre-engagement/finalize-pre-engagement/:user" method="POST">
             <!-- Content Row -->
           <div class="row">
 
@@ -78,7 +81,7 @@
                                         Year End
                                     </th>
                                     <th>
-                                      Select
+                                      Work Paper Reference
                                     </th>
                                 </tr>
                             </thead>
@@ -86,14 +89,14 @@
                               <%
                                 for(var counter=0; counter<items.length; counter++){ %>
                                   <tr id="headerRow">
-                                    <td>
-                                        <%= items[counter].company %>
+                                    <td id="clientName">
+                                        <a href="/pre-engagement/client-acceptance"><%= items[counter].company %></a>
                                     </td>
-                                    <td>
+                                    <td id="yearEnd">
                                       <%= items[counter].engagementYearEnd %>
                                     </td>
-                                    <td>
-                                      <input type="checkbox" id="authoriseCheckbox" name="authoriseCheckbox">
+                                    <td id="wpRef">
+                                        <%= items[counter].wpRef %>
                                     </td>                                    
                                 </tr>
                                 <% } %>                                
@@ -102,7 +105,7 @@
                         </table>
                     </div> 
                     <br><br>
-                    <button class="btn btn-info">Authorize Audits</button>                   
+                    
                                               
                     
                 </div>
@@ -188,6 +191,24 @@
   <!-- Page level custom scripts -->
   <script src="/js/demo/chart-area-demo.js"></script>
   <script src="/js/demo/chart-pie-demo.js"></script>
+
+  <!--Script to load the WP to be edited-->
+  <script>
+    var engagementName = document.getElementById('clientName');
+    var yearEnd = document.getElementById('yearEnd');
+    var wpRef = document.getElementById('wpRef');
+
+    engagementName.onclick=goToWP;
+
+    function goToWP(){      
+      if(wpRef=='10.14A'){
+        window.location.href = "/pre-engagement/client-acceptance";
+      }
+      else{
+        window.location.href = "/pre-engagement/continuance-evaluation-of-client-relationship";        
+      }      
+    }
+  </script>
 
 </body>
 

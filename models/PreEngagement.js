@@ -308,15 +308,15 @@ const  PreEngagementSchema =  new mongoose.Schema({
         required: false
     },
     scoreCount:{
-        type: String,
+        type: Number,
         required: false
     },
     aboveThreshold:{
-        type: String,
+        type: Boolean,
         required: false
     },
     auditAuthorised:{
-        type: String,
+        type: Boolean,
         required: false
     }
 
