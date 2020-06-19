@@ -152,3 +152,8 @@
   tr.clickable-row { 
     cursor: pointer; 
   }
+
+
+.form-control-no-border {
+  border: 0px;
+}

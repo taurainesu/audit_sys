@@ -5,15 +5,15 @@ mongoose.pluralize(null);
 const  UserSchema =  new mongoose.Schema({
     username: {
         type: String,
-        required: true
+        required: false
     },
     email: {
         type: String,
-        required: true
+        required: false
     },
     password: {
         type: String,
-        required: true
+        required: false
     },
     date: {
         type: Date,
@@ -21,15 +21,15 @@ const  UserSchema =  new mongoose.Schema({
     },
     role:{
         type: String,
-        required: true
+        required: false
     },
     name: {
         type: String,
-        required: true
+        required: false
     },
     surname: {
         type: String,
-        required: true
+        required: false
     }
 
 });

@@ -128,32 +128,32 @@
 
                     Update on audit progress:
                     <br>
-                    <textarea class="form-control form-control-sm" id="updateOnAuditProgress" cols="150" rows="8"></textarea>
+                    <textarea class="form-control form-control-sm" id="updateOnAuditProgress" name="updateOnAuditProgress" cols="150" rows="8"></textarea>
                     <br><br>
 
                     Independence
                     <br>
-                    <textarea class="form-control form-control-sm" id="independence" cols="150" rows="8"></textarea>
+                    <textarea class="form-control form-control-sm" id="independence" name="independence" cols="150" rows="8"></textarea>
                     <br><br>
 
                     Review of work:
                     <br>
-                    <textarea class="form-control form-control-sm" id="reviewOfWork" cols="150" rows="8"></textarea>
+                    <textarea class="form-control form-control-sm" id="reviewOfWork" name="reviewOfWork" cols="150" rows="8"></textarea>
                     <br><br>
 
                     Fraud and error considerations:
                     <br>
-                    <textarea class="form-control form-control-sm" id="fraud" cols="150" rows="8"></textarea>
+                    <textarea class="form-control form-control-sm" id="fraud" name="fraud" cols="150" rows="8"></textarea>
                     <br><br>
 
                     Sample selection:
                     <br>
-                    <textarea class="form-control form-control-sm" id="sampleSelection" cols="150" rows="8"></textarea>
+                    <textarea class="form-control form-control-sm" id="sampleSelection" name="sampleSelection" cols="150" rows="8"></textarea>
                     <br><br>
 
                     Any other issues brought by the audit team:
                     <br>
-                    <textarea class="form-control form-control-sm" id="anyOtherIssues" cols="150" rows="8"></textarea>
+                    <textarea class="form-control form-control-sm" id="anyOtherIssues" name="anyOtherIssues" cols="150" rows="8"></textarea>
 
                   </div>
                 </div>
@@ -162,7 +162,7 @@
 
 
 
-              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-info btn-long" type="submit"  data-toggle="modal" data-target="#confirmModal">Submit</button>
               <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
 
             </div>
@@ -196,13 +196,13 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h3>Client Acceptance Creation Success</h3>
+          <h3>Discussion Among Audit Team Creation Success</h3>
         </div>
         <div class="modal-body">
-          <p>Client successfully created!</p>
+          <p>10.08A Discussion Among Audit Team record successfully created!</p>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+          <button class="btn btn-default" type="button" data-dismiss="modal"  onclick="window.location.href='/planning/discussion-among-audit-team'">Close</button>
         </div>
       </div>
     </div>

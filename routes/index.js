@@ -6,6 +6,8 @@ const User = require('../models/User');
 const PreEngagement =  require('../models/PreEngagement');
 const Investment = require('../models/InvestmentProperty');
 const Risk = require('../models/RiskAssessment');
+const GoingConcern = require('../models/GoingConcern');
+const DiscussionAmongAuditTeam = require('../models/DiscussionAmongAuditTeam');
 
 
 var sessionChecker = (req, res, next) => {
@@ -761,6 +763,43 @@ router.get('/planning/going-concern', function(req, res){
 	}
 });
 
+router.post('/planning/going-concern', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+
+		
+		//create model for data to be sent to database
+		const item = {
+			company: req.body.company,
+			engagementYearEnd: req.body.engagementYearEnd,
+			date: req.body.today,
+			wpRef: '02.20',
+			doesMaterialityUncertaintyA: req.body.doesMaterialityUncertaintyA,
+			commentA: req.body.commentA,
+			doesMaterialityUncertaintyB: req.body.doesMaterialityUncertaintyB,
+			commentB: req.body.commentB,
+			doesMaterialityUncertaintyD: req.body.doesMaterialityUncertaintyD,
+			commentD: req.body.commentD,
+			doesMaterialityUncertaintyE: req.body.doesMaterialityUncertaintyE,
+			commentE: req.body.commentE,
+			doesMaterialityUncertaintyF: req.body.doesMaterialityUncertaintyF,
+			commentF: req.body.commentF
+		};
+
+		// a new document instance
+		const new_going_concern = new GoingConcern(item);
+
+		// save model to database
+		new_going_concern.save(function (err, insert_values) {
+			if (err) return console.error(err);
+			console.log(insert_values.company + " successfully inserted");
+		});
+
+		console.log('Client Acceptance record created for client: '+req.body.company);
+	} else {
+		res.redirect('/login');
+	}
+});
+
 router.get('/planning/opening-balances-verification', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
@@ -805,18 +844,54 @@ router.get('/planning/discussion-among-audit-team', function(req, res){
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find().then( function(docs) {
+		PreEngagement.find({ auditAuthorised:true }).then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('discussion-among-audit-team', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('discussion-among-audit-team', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
 });
+
+
+router.post('/planning/discussion-among-audit-team', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+
+		
+		//create model for data to be sent to database
+		const item = {
+			company: req.body.company,
+			engagementYearEnd: req.body.engagementYearEnd,
+			wpRef: '10.08A',
+			meetingDate: req.body.meetingDate,
+			updateOnAuditProgress: req.body.updateOnAuditProgress,
+			independence: req.body.independence,
+			reviewOfWork: req.body.reviewOfWork,
+			fraud: req.body.fraud,
+			sampleSelection: req.body.sampleSelection,
+			anyOtherIssues: req.body.anyOtherIssues
+		};
+
+		// a new document instance
+		const new_discussion_among_audit_team = new DiscussionAmongAuditTeam(item);
+
+		// save model to database
+		new_discussion_among_audit_team.save(function (err, insert_values) {
+			if (err) return console.error(err);
+			console.log(insert_values.company + " successfully inserted");
+		});
+
+		console.log('Discussion Among Audit Team record created for client: '+req.body.company);
+	} else {
+		res.redirect('/login');
+	}
+});
+
+
 
 router.get('/planning/discussion-with-those-charged-with-governance-1d', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {

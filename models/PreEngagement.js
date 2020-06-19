@@ -5,11 +5,11 @@ mongoose.pluralize(null);
 const  PreEngagementSchema =  new mongoose.Schema({
     company:{
         type: String,
-        required: false
+        required: true
     },
     engagementYearEnd:{
         type: String,
-        required: false
+        required: true
     },
     date:{
         type: String,
@@ -17,7 +17,7 @@ const  PreEngagementSchema =  new mongoose.Schema({
     },
     wpRef:{
         type: String,
-        required: false
+        required: true
     },
     commWithPrevAuditors:{
         type: String,
