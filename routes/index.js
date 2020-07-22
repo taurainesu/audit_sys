@@ -58,6 +58,7 @@ router.route('/login')
 			}
 
 		});
+
 	});
 
 router.get('/', function(req, res){
@@ -449,9 +450,10 @@ router.get('/field-work/investment-property', function(req, res){
 				companyArray.push(doc.company);
 				yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('investment-property', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('investment-property', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
+		
 	} else {
 		res.redirect('/login');
 	}
@@ -497,12 +499,12 @@ router.get('/field-work/intangible-assets-a', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('intangible-assets-a', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('intangible-assets-a', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -516,12 +518,12 @@ router.get('/field-work/intangible-assets-b', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('intangible-assets-b', { items: docs,data:sess, user: sess.username });
 		});
 
-		res.render('intangible-assets-b', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -535,12 +537,12 @@ router.get('/field-work/intangible-assets-c', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('intangible-assets-c', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('intangible-assets-c', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -554,12 +556,12 @@ router.get('/field-work/group-loans', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('group-loans', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('group-loans', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -583,12 +585,12 @@ router.get('/planning/assessment-of-staff-for-engagement', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('assessment-of-staff-for-engagement', { items: docs,data:sess, user: sess.username });
 		});
 
-		res.render('assessment-of-staff-for-engagement', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -602,12 +604,12 @@ router.get('/planning/risk-assessment-a', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('risk-assessment-a', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('risk-assessment-a', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -652,12 +654,12 @@ router.get('/planning/risk-assessment-b', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('risk-assessment-b', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('risk-assessment-b', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -671,12 +673,12 @@ router.get('/planning/risk-assessment-c', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('risk-assessment-c', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('risk-assessment-c', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -690,12 +692,12 @@ router.get('/planning/risk-assessment-d', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('risk-assessment-d', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('risk-assessment-d', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -709,12 +711,12 @@ router.get('/planning/identifying-risks-through-understanding-the-entity', funct
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('identifying-risks-through-understanding-the-entity', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('identifying-risks-through-understanding-the-entity', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -728,11 +730,11 @@ router.get('/planning/client-service-plan', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('client-service-plan', { items: docs, data:sess, user: sess.username });
 		});
-		res.render('client-service-plan', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -750,7 +752,6 @@ router.get('/planning/going-concern', function(req, res){
 				//companyArray.push(doc);
 				//yearEndArray.push(doc.engagementYearEnd);
 			});
-			console.log(docs);
 			res.render('going-concern', { items: docs, data:sess, user: sess.username });
 		});
 
@@ -808,12 +809,12 @@ router.get('/planning/opening-balances-verification', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('opening-balances-verification', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('opening-balances-verification', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -827,12 +828,12 @@ router.get('/planning/planning-minutes', function(req, res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('planning-minutes', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('planning-minutes', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -901,12 +902,12 @@ router.get('/planning/discussion-with-those-charged-with-governance-1d', functio
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('discussion-with-those-charged-with-governance-1d', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('discussion-with-those-charged-with-governance-1d', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -920,12 +921,12 @@ router.get('/planning/discussion-with-those-charged-with-governance-1c', functio
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('discussion-with-those-charged-with-governance-1c', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('discussion-with-those-charged-with-governance-1c', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -939,12 +940,12 @@ router.get('/planning/discussion-with-those-charged-with-governance-1b', functio
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('discussion-with-those-charged-with-governance-1b', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('discussion-with-those-charged-with-governance-1b', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -958,12 +959,12 @@ router.get('/planning/discussion-with-those-charged-with-governance-1a', functio
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('discussion-with-those-charged-with-governance-1a', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('discussion-with-those-charged-with-governance-1a', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -977,12 +978,12 @@ router.get('/planning/preAudit-meeting-with-those-charged-with-governance', func
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('preAudit-meeting-with-those-charged-with-governance', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('preAudit-meeting-with-those-charged-with-governance', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -996,12 +997,12 @@ router.get('/planning/threats-declaration', function(req,res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('threats-declaration', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('threats-declaration', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -1015,12 +1016,12 @@ router.get('/planning/partner-independence-declaration', function(req,res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('partner-independence-declaration', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('partner-independence-declaration', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
@@ -1034,12 +1035,12 @@ router.get('/planning/work-and-time-allocation', function(req,res){
 
 		PreEngagement.find().then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('work-and-time-allocation', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('work-and-time-allocation', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
 	} else {
 		res.redirect('/login');
 	}
