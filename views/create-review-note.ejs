@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Audit v2.3.1 - Upload Supporting Documents</title>
+  <title>Audit v2.3.1 - Create Review Note</title>
 
   <!-- Custom fonts for this template-->
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -48,11 +48,11 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h4 class="m-0 font-weight-bold text-primary">------Upload Supporting Documents------</h4>            
+            <h4 class="m-0 font-weight-bold text-primary">------Create Review Note------</h4>            
           </div>          
 
 
-          <form action="/field-work/tb-ledger-upload" method="POST">
+          <form action="/file-review/create-review-note" method="POST">
             <!-- Content Row -->
           <div class="row">
 
@@ -67,39 +67,73 @@
               <div class="card shadow mb-4">
 
                     <!-- Card Header - Accordion -->
-                    <a href="#uploadFilesCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                        <h6 class="m-0 font-weight-bold text-primary">UPLOAD FILES</h6>
+                    <a href="#createReviewNoteCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                        <h6 class="m-0 font-weight-bold text-primary">CREATE REVIEW NOTE</h6>
                     </a>
     
                     <!-- Card Content - Collapse -->
-                    <div class="collapse" id="uploadFilesCard">
+                    <div class="collapse" id="createReviewNoteCard">
     
                       <div class="card-body">
-                        
-                        <label class="small font-weight-bold" for="tbUpload">Select Trial Balance file:</label>
-                        <input class="form-control file-picker" type="file" id="tbUpload">
 
                         <br>
-                    
-                    
-                        <label class="small font-weight-bold" for="ledgerUpload">Select Ledger file:</label>
-                        <input class="form-control file-picker" type="file" id="ledgerUpload">                                               
+                        
+                        <label class="small font-weight-bold" for="reviewNoteTitle">Review Note Title
+                            <input class="form-control form-control-sm" type="text" id="reviewNoteTitle" name="reviewNoteTitle">
+                        </label>
+
+                        <br>
+
+                        <label class="small font-weight-bold" for="reviewNoteDescription">Review Note Description
+                            <textarea class="form-control" id="reviewNoteDescription" name="reviewNoteDescription" rows="3" cols="150"></textarea>
+                        </label>
+
+                        <br><br>
+
+                        <label class="small font-weight-bold" for="attachToWPCheckbox">Attach Review Note to Work Paper
+                            <input type="checkbox" id="attachToWPCheckbox" name="attachToWPCheckbox">
+                        </label>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <label class="small font-weight-bold" for="wpToAttachTo">Work Paper Reference
+                          <select class="form-control form-control-sm" id="wpToAttachTo" name="wpToAttachTo">
+                            <option>10.22</option>
+                            <option>10.24</option>
+                          </select>
+                        </label>
+
+                        <br><br>
+
+                        <label class="small font-weight-bold" for="priority">Priority
+                            <select class="form-control form-control-sm" id="priority" name="priority">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                        </label>
+
+                        <br><br>
+
+                        <label class="small font-weight-bold" for="assignTo">Assign To
+                            <select class="form-control form-control-sm" id="assignTo" name="assignTo">
+                                <% for (var i = 0; i<usersList.length ; i++) { %>
+                                    <option><%= usersList[i]+" "+usersSurnames[i] %> 
+                                <% } %>
+                            </select>
+                        </label>                        
+
+                        <br><br>
+
                         
                       </div>
                     </div>
-                  </div>
+              </div>
 
               
 
-              <!-- Conclusion Card -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Conclusion:</h6>
-                </div>
-                <div class="card-body">
-                    Verify that the 2 files selected are correct. Select "Upload" when finished!
-                </div>
-              </div>
 
               <button class="btn btn-info btn-long" type="submit">Upload</button>
               <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>

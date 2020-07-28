@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Audit v2.3.1 - Client Work Papers</title>
+  <title>Audit v2.3.1 - Client Review Notes</title>
 
   <!-- Custom fonts for this template-->
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -48,11 +48,11 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h4 class="m-0 font-weight-bold text-primary">------Client Work Papers------</h4>            
+            <h4 class="m-0 font-weight-bold text-primary">------Review Notes For Client------</h4>            
           </div>          
 
 
-          <form action="/work-papers/work-papers-by-client" method="POST">
+          <form action="/finalisation/review-notes-by-client" method="POST">
             <!-- Content Row -->
           <div class="row">
 
@@ -63,68 +63,36 @@
                 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Engagement Details</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Results</h6>
                     </div>
                     <div class="card-body">
-                        <label class="small font-weight-bold" for="company">Company            
-                            <SELECT class="form-control form-control-sm" id="company" name="company">
-                                <% for (var i = 0; i<items.length ; i++) { %>
-                                    <option><%= items[i].company %> 
-                                <% } %>                
-                            </SELECT>
-                        </label>                    
-                        &nbsp;&nbsp;
                         
-                        <label class="small font-weight-bold" for="engagementYearEnd">Year-End
-                            <SELECT class="form-control form-control-sm" id="engagementYearEnd" name="engagementYearEnd">
-                                    <% for (var i = 0; i<items.length ; i++) { %>
-                                        <option><%= items[i].engagementYearEnd %> 
-                                    <% } %>                
-                            </SELECT>
-                        </label>
-                        &nbsp;&nbsp;
-                        
-                        <button class="btn btn-info">Display</button>
-                        <br><br><br><br>
 
-                        <div class="table-responsive" id="workPaperTable">
+                        <div class="table-responsive" id="reviewNotesTable">
                             <table class="table">
                                 <thead id="headerTable">
                                     <tr>
                                         <th>
-                                            WP Ref
+                                            Title
                                         </th>
                                         <th>
-                                            Work Paper Name
+                                            Description
                                         </th>
                                         <th>
-                                            Prepared By
+                                            Assigned To
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr id="headerRow" class="clickable-row" data-href="#">
-                                        <td>
-                                            10.12
-                                        </td>
-                                        <td>
-                                            Work and Time Allocation
-                                        </td>
-                                        <td>
-                                            Ngoni Ndlovu
-                                        </td>
-                                    </tr>
-                                    <tr id="headerRow"  class="clickable-row" data-href="#">
-                                        <td>
-                                            10.10
-                                        </td>
-                                        <td>
-                                            Threats Declaration
-                                        </td>
-                                        <td>
-                                            Ngoni Ndlovu
-                                        </td>
-                                    </tr>
+
+                                    <% for (var i = 0; i<reviewNotes.length ; i++) { %>
+                                        <tr id="headerRow" class="clickable-row" data-href="#">
+                                            <td><%= reviewNotes[i].reviewNoteTitle %></td>
+                                            <td><%= reviewNotes[i].reviewNoteDescription %></td>
+                                            <td><%= reviewNotes[i].assignTo %></td>
+                                        </tr> 
+                                    <% } %>
+
                                 </tbody>
                             </table>
                         </div>

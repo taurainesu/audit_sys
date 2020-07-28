@@ -8,6 +8,9 @@ const Investment = require('../models/InvestmentProperty');
 const Risk = require('../models/RiskAssessment');
 const GoingConcern = require('../models/GoingConcern');
 const DiscussionAmongAuditTeam = require('../models/DiscussionAmongAuditTeam');
+const IntangibleAssetsA = require('../models/IntangibleAssetsA');
+const UploadSupportingDoc = require('../models/UploadSupportingDoc');
+const CreateReviewNote = require('../models/CreateReviewNote');
 
 
 var sessionChecker = (req, res, next) => {
@@ -419,21 +422,49 @@ router.get('/pre-engagement/edit-failed-pre-engagement', function(req, res){
 
 
 
-router.get('/field-work/tb-ledger-upload', function(req, res){
+router.get('/file-assembly/upload-supporting-doc', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		const companyArray = [];
 		const yearEndArray = [];
 
 		// using promise (mongoose 4+)
-		PreEngagement.find().then( function(docs) {
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
+			res.render('upload-supporting-doc', { items: docs, data:sess, user: sess.username });
 		});
 
-		res.render('tb-ledger-upload', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.post('/file-assembly/upload-supporting-doc', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+
+		
+		//create model for data to be sent to database
+		const item = {
+			company: req.body.company,
+			engagementYearEnd: req.body.engagementYearEnd,
+			workPapers: req.body.workPapers,
+			additionalComments: req.body.additionalComments			
+		};
+
+		// a new document instance
+		const new_upload_supporting_doc = new UploadSupportingDoc(item);
+
+		// save model to database
+		new_upload_supporting_doc.save(function (err, insert_values) {
+			if (err) return console.error(err);
+			console.log(insert_values.company + " upload supporting doc successfully inserted");
+		});
+		//redirect to index route
+		res.redirect('/main');
+
 	} else {
 		res.redirect('/login');
 	}
@@ -445,10 +476,10 @@ router.get('/field-work/investment-property', function(req, res){
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find().then( function(docs) {
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
-				companyArray.push(doc.company);
-				yearEndArray.push(doc.engagementYearEnd);
+				// companyArray.push(doc.company);
+				// yearEndArray.push(doc.engagementYearEnd);
 			});
 			res.render('investment-property', { items: docs, data:sess, user: sess.username });
 		});
@@ -497,7 +528,7 @@ router.get('/field-work/intangible-assets-a', function(req, res){
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find().then( function(docs) {
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
 				// companyArray.push(doc.company);
 				// yearEndArray.push(doc.engagementYearEnd);
@@ -510,13 +541,52 @@ router.get('/field-work/intangible-assets-a', function(req, res){
 	}
 });
 
+router.post('/field-work/intangible-assets-a', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		//create model for data to be sent to database
+		var item = {
+			company:req.body.company,
+			engagementYearEnd:req.body.engagementYearEnd,
+			preparedBy:req.body.preparedBy,
+			reviewedBy:req.body.reviewedBy,
+			wpRef:'23.40A',
+			overallMaterialityAmount:req.body.overallMaterialityAmount,
+			overallMaterialityWPRef:req.body.overallMaterialityWPRef,
+			significantRiskPerfMaterialityAmount:req.body.significantRiskPerfMaterialityAmount,
+			significantRiskPerfMaterialityWPRef:req.body.significantRiskPerfMaterialityWPRef,
+			nonSignificantRiskPerfMaterialityAmount:req.body.nonSignificantRiskPerfMaterialityAmount,
+			nonSignificantRiskPerfMaterialityWPRef:req.body.nonSignificantRiskPerfMaterialityWPRef,
+			clearlyTrivialAmount:req.body.clearlyTrivialAmount,
+			clearlyTrivialWPRef:req.body.clearlyTrivialWPRef,
+			intangibleAssetsPerAFS2018:req.body.intangibleAssetsPerAFS2018,
+			intangibleAssetsPerAFSWPRef:req.body.intangibleAssetsPerAFSWPRef,
+			intangibleAssetsPerAFS2017:req.body.intangibleAssetsPerAFS2017
+		};
+
+		// a new document instance
+		const new_intangible_assets_a = new IntangibleAssetsA(item);
+
+		// save model to database
+		new_intangible_assets_a.save(function (err, insert_values) {
+			if (err) return console.error(err);
+			console.log(insert_values.company + "  Intangible Assets(Movement Schedule) successfully updated");
+		});
+
+		//redirect to index route
+		res.redirect('/main');
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
 router.get('/field-work/intangible-assets-b', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find().then( function(docs) {
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
 				// companyArray.push(doc.company);
 				// yearEndArray.push(doc.engagementYearEnd);
@@ -535,7 +605,7 @@ router.get('/field-work/intangible-assets-c', function(req, res){
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find().then( function(docs) {
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
 				// companyArray.push(doc.company);
 				// yearEndArray.push(doc.engagementYearEnd);
@@ -554,7 +624,7 @@ router.get('/field-work/group-loans', function(req, res){
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find().then( function(docs) {
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
 				// companyArray.push(doc.company);
 				// yearEndArray.push(doc.engagementYearEnd);
@@ -583,7 +653,7 @@ router.get('/planning/assessment-of-staff-for-engagement', function(req, res){
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find().then( function(docs) {
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
 				// companyArray.push(doc.company);
 				// yearEndArray.push(doc.engagementYearEnd);
@@ -602,7 +672,7 @@ router.get('/planning/risk-assessment-a', function(req, res){
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find().then( function(docs) {
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
 				// companyArray.push(doc.company);
 				// yearEndArray.push(doc.engagementYearEnd);
@@ -752,6 +822,7 @@ router.get('/planning/going-concern', function(req, res){
 				//companyArray.push(doc);
 				//yearEndArray.push(doc.engagementYearEnd);
 			});
+			console.log(docs);
 			res.render('going-concern', { items: docs, data:sess, user: sess.username });
 		});
 
@@ -1065,7 +1136,7 @@ router.get('/planning/analytical-review-a', function(req, res){
 	}
 });
 
-router.get('/work-papers/work-papers-by-client', function(req, res){
+router.get('/file-assembly/work-papers-by-client', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		const companyArray = [];
@@ -1080,6 +1151,109 @@ router.get('/work-papers/work-papers-by-client', function(req, res){
 		});
 
 		//res.render('work-papers-by-client', { items: companyArray, itemsYear: yearEndArray,data:sess, user: sess.username });
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/file-review/create-review-note', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+		const usersList = [];
+		const usersSurnames = [];
+
+		//query users collection to get list of users
+		User.find().then(function(records){
+			records.forEach(function (record){
+				usersList.push(record.name);
+				usersSurnames.push(record.surname);
+			});
+		});
+
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('create-review-note', { items: docs, data:sess, user: sess.username, usersList:usersList, usersSurnames:usersSurnames });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.post('/file-review/create-review-note', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+
+		
+		//create model for data to be sent to database
+		const item = {
+			company: req.body.company,
+			engagementYearEnd: req.body.engagementYearEnd,
+			preparedBy: req.body.preparedBy,
+			reviewNoteTitle: req.body.reviewNoteTitle,
+			reviewNoteDescription: req.body.reviewNoteDescription,
+			wpToAttachTo: req.body.wpToAttachTo,
+			priority: req.body.priority,
+			assignTo: req.body.assignTo
+		};
+
+		// a new document instance
+		const new_create_review_note = new CreateReviewNote(item);
+
+		// save model to database
+		new_create_review_note.save(function (err, insert_values) {
+			if (err) return console.error(err);
+			console.log("Review note for " + insert_values.company + " successfully created");
+		});
+		res.redirect('/main');
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/finalisation/review-notes-by-client', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+
+
+
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('review-notes-by-client', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.post('/finalisation/review-notes-by-client', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+
+		var noteCompany = req.body.company;
+		var noteEngagementYearEnd = req.body.engagementYearEnd;
+
+
+		CreateReviewNote.find({ company:noteCompany, engagementYearEnd:noteEngagementYearEnd }).then(function(reviews){
+			reviews.forEach(function(review){
+
+			});
+			res.render('review-notes-by-client-results', { data:sess, user: sess.username,  reviewNotes:reviews });
+			console.log(reviews);
+		});
+
 	} else {
 		res.redirect('/login');
 	}
