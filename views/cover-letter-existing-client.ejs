@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Audit v2.3.1 - Client Work Papers</title>
+  <title>Audit v2.3.1 - 02.90A - Cover Letter(Existing Client)</title>
 
   <!-- Custom fonts for this template-->
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,6 +20,10 @@
 
   <!-- Custom specific styles -->
   <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+  <!--Printjs library-->
+  <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+  <link rel="stylsheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
 
 </head>
 
@@ -48,59 +52,58 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h4 class="m-0 font-weight-bold text-primary">------Client Work Papers------</h4>            
+            <h4 class="m-0 font-weight-bold text-primary">------02.90A - Cover Letter(Existing Client)------</h4>            
           </div>          
 
 
-          <form action="/file-assembly/work-papers-by-client" method="POST">
+          <form action="/field-work/investment-property" method="POST" id="printJS-form">
             <!-- Content Row -->
           <div class="row">
 
             <!-- Content Column -->
             <div class="col-lg-12 mb-4">
 
-              <!-- Engagement Selection Card -->              
-                
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Engagement Details</h6>
-                    </div>
-                    <div class="card-body">
-                        <label class="small font-weight-bold" for="company">Company            
-                            <SELECT class="form-control form-control-sm" id="company" name="company">
-                                <% for (var i = 0; i<items.length ; i++) { %>
-                                    <option><%= items[i].company %> 
-                                <% } %>                
-                            </SELECT>
-                        </label>                    
-                        &nbsp;&nbsp;
+              <!-- Engagement details Card -->
+              <% include partials/engagementCard.ejs %>
+
+
+              <!-- Final Management Report Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#finalManagementReportCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">FINAL MANAGEMENT REPORT</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="finalManagementReportCard">
+
+                  <div class="card-body">
+                      <label class="small font-weight-bold" for="introduction">INTRODUCTION
+                        <textarea class="form-control form-control-sm" id="introduction" name="introduction" cols="150" rows="8"></textarea>
+                      </label>
+                      <br><br>
+                      <label class="small font-weight-bold" for="ourResponsibilities">OUR RESPONSIBILITIES
+                        <textarea class="form-control form-control-sm" id="ourResponsibilities" name="ourResponsibilities" cols="150" rows="15"></textarea>
+                      </label>
+                      <br><br>
+                      <label class="small font-weight-bold" for="directorsResponsibilities">THE DIRECTORS' RESPONSIBILITIES
+                        <textarea class="form-control form-control-sm" id="directorsResponsibilities" name="directorsResponsibilities" cols="150" rows="15"></textarea>
+                      </label>
+                      <br><br>
+                      <label class="small font-weight-bold" for="actionsTaken">ACTIONS TAKEN TO ADDRESS MATTERS PREVIOUSLY REPORTED
+                        <textarea class="form-control form-control-sm" id="actionsTaken" name="actionsTaken" cols="150" rows="15"></textarea>
+                      </label>
+                      <br><br>                       
                         
-                        <label class="small font-weight-bold" for="engagementYearEnd">Year-End
-                            <SELECT class="form-control form-control-sm" id="engagementYearEnd" name="engagementYearEnd">
-                                    <% for (var i = 0; i<items.length ; i++) { %>
-                                        <option><%= items[i].engagementYearEnd %> 
-                                    <% } %>                
-                            </SELECT>
-                        </label>
-                        &nbsp;&nbsp;
-                        
-                        <button class="btn btn-info">Display</button>
-                        <br><br><br><br>
+                  </div>
+                </div>
+              </div>
 
 
-
-
-                         
-                                                 
-                        
-                    </div>
-                </div>             
-
-
-            <!-- submit and reset buttons not necessary
-              <button class="btn btn-info btn-long" type="submit">Sign and Submit</button>
+              <button class="btn btn-success btn-long" type="button" onclick="printJS('printJS-form', 'html')">Print/Email</button>
+              <!-- <button class="btn btn-info btn-long" type="submit">Submit</button>  -->
               <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
-              -->
 
             </div>
             
@@ -181,22 +184,8 @@
   <script src="/js/demo/chart-area-demo.js"></script>
   <script src="/js/demo/chart-pie-demo.js"></script>
 
-  <!--Script to get today's date-->
-  <script>
-    var field = document.querySelector('#today');
-    var date = new Date();
-
-    // Set the date
-    field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + '-' + date.getDate().toString().padStart(2, 0);
-  </script>
-
-  <script>
-      jQuery(document).ready(function($) {
-            $(".clickable-row").click(function() {
-                window.location = $(this).data("href");
-            });
-        });
-  </script>
+   <!--Printjs javascript-->
+   <script src="print.js"></script>
 
 </body>
 

@@ -24,6 +24,7 @@
     "morgan": "~1.9.1",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "print-js": "^1.0.63",
     "req-flash": "0.0.3"
   }
 }

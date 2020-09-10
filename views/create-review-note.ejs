@@ -84,7 +84,7 @@
 
                         <br>
 
-                        <label class="small font-weight-bold" for="reviewNoteDescription">Review Note Description
+                        <label class="small font-weight-bold" for="reviewNoteDescription">Review Note Details
                             <textarea class="form-control" id="reviewNoteDescription" name="reviewNoteDescription" rows="3" cols="150"></textarea>
                         </label>
 
@@ -98,8 +98,35 @@
 
                         <label class="small font-weight-bold" for="wpToAttachTo">Work Paper Reference
                           <select class="form-control form-control-sm" id="wpToAttachTo" name="wpToAttachTo">
+                            <option>02.20</option>
+                            <option>10.09</option>
+                            <option>10.00</option>
+                            <option>10.02</option>
+                            <option>10.07</option>
+                            <option>10.08</option>
+                            <option>10.08A</option>
+                            <option>10.08A1</option>
+                            <option>10.08A2</option>
+                            <option>10.09</option>
                             <option>10.22</option>
                             <option>10.24</option>
+                            <option>11.21</option>
+                            <option>11.39</option>
+                            <option>11.40</option>
+                            <option>11.45</option>
+                            <option>12.31</option>
+                            <option>12.32</option>
+                            <option>12.33</option>
+                            <option>12.34</option>
+                            <option>20.41</option>
+                            <option>20.42</option>
+                            <option>21.40</option>
+                            <option>23.40</option>
+                            <option>30.30</option>
+                            <option>40.80</option>
+                            <option>51.40</option>
+                            <option>51.50</option>
+                            <option>61.50</option>
                           </select>
                         </label>
 
@@ -120,7 +147,7 @@
                         <label class="small font-weight-bold" for="assignTo">Assign To
                             <select class="form-control form-control-sm" id="assignTo" name="assignTo">
                                 <% for (var i = 0; i<usersList.length ; i++) { %>
-                                    <option><%= usersList[i]+" "+usersSurnames[i] %> 
+                                    <option><%= usersList[i] %> 
                                 <% } %>
                             </select>
                         </label>                        

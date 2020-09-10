@@ -1156,19 +1156,43 @@ router.get('/file-assembly/work-papers-by-client', function(req, res){
 	}
 });
 
+router.post('/file-assembly/work-papers-by-client', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+
+		var noteCompany = req.body.company;
+		var noteEngagementYearEnd = req.body.engagementYearEnd;
+
+
+		GoingConcern.find({ company:noteCompany, engagementYearEnd:noteEngagementYearEnd }).then(function(workPapers){
+			workPapers.forEach(function(workPaper){
+
+			});
+			res.render('work-papers-by-client-results', { data:sess, user: sess.username,  workPapers:workPapers });
+			console.log(workPapers);
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+
 router.get('/file-review/create-review-note', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		// const companyArray = [];
 		// const yearEndArray = [];
 		const usersList = [];
-		const usersSurnames = [];
+		// const usersSurnames = [];
 
 		//query users collection to get list of users
 		User.find().then(function(records){
 			records.forEach(function (record){
-				usersList.push(record.name);
-				usersSurnames.push(record.surname);
+				usersList.push(record.username);
+				// usersSurnames.push(record.surname);
 			});
 		});
 
@@ -1177,7 +1201,7 @@ router.get('/file-review/create-review-note', function(req, res){
 				/*companyArray.push(doc.company);
 				yearEndArray.push(doc.engagementYearEnd);*/
 			});
-			res.render('create-review-note', { items: docs, data:sess, user: sess.username, usersList:usersList, usersSurnames:usersSurnames });
+			res.render('create-review-note', { items: docs, data:sess, user: sess.username, usersList:usersList });
 		});
 
 	} else {
@@ -1252,6 +1276,27 @@ router.post('/finalisation/review-notes-by-client', function(req,res){
 			});
 			res.render('review-notes-by-client-results', { data:sess, user: sess.username,  reviewNotes:reviews });
 			console.log(reviews);
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/final-reports/cover-letter-existing-client', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+
+
+
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('cover-letter-existing-client', { items: docs, data:sess, user: sess.username });
 		});
 
 	} else {
