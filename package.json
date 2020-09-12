@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start":"nodemon app.js"
   },
   "dependencies": {
     "assert": "^2.0.0",
@@ -17,14 +17,15 @@
     "express": "~4.16.1",
     "express-flash": "0.0.2",
     "express-session": "^1.17.1",
-    "express-validator": "^6.5.0",
+    "express-validator": "^6.6.1",
     "http-errors": "~1.6.3",
-    "mongodb": "^3.5.8",
-    "mongoose": "^5.9.18",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.5",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "print-js": "^1.0.63",
+    "print-js": "^1.1.1",
     "req-flash": "0.0.3"
   }
 }
