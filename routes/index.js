@@ -1308,7 +1308,13 @@ router.get('/planning/revenue-recognition-ifrs-a', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('revenue-recognition-a', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-a', { items: docs, data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1319,7 +1325,13 @@ router.get('/planning/revenue-recognition-ifrs-b', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('revenue-recognition-b', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-b', { items: docs, data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1330,7 +1342,13 @@ router.get('/planning/revenue-recognition-ifrs-c', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('revenue-recognition-c', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-c', { items: docs, data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1341,7 +1359,13 @@ router.get('/planning/revenue-recognition-ifrs-d', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('revenue-recognition-d', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-d', { items: docs, data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1352,7 +1376,13 @@ router.get('/planning/revenue-recognition-ifrs-e', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('revenue-recognition-e', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-e', { items: docs, data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
