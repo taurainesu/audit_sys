@@ -1359,6 +1359,73 @@ router.get('/planning/revenue-recognition-ifrs-e', function(req, res){
 	}
 });
 
+//task 2
+router.get('/planning/ppe-estimates', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		res.render('ppe-estimates', {items:[],data:sess, user: sess.username });
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/legal-letter-considerations', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		res.render('legal-letter-considerations', {items:[],data:sess, user: sess.username });
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/materiality', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		res.render('materiality', {items:[],data:sess, user: sess.username });
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/risks-through-understanding-the-entity', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		res.render('risks-through-understanding-entity', {items:[],data:sess, user: sess.username });
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/auditor-checklist-to-fraud', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		res.render('auditor-checklist-fraud', {items:[],data:sess, user: sess.username });
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/control-risk-assessment', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		res.render('control-risk-assessment', {items:[],data:sess, user: sess.username });
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
 module.exports = router;
 
 
