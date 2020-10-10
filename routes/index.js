@@ -1399,7 +1399,7 @@ router.get('/planning/ppe-estimates', function(req, res){
 				/*companyArray.push(doc.company);
 				yearEndArray.push(doc.engagementYearEnd);*/
 			});
-		    res.render('ppe-estimates', {items:[],data:sess, user: sess.username });
+		    res.render('ppe-estimates', {items:docs,data:sess, user: sess.username });
 		});
 
 	} else {
@@ -1416,7 +1416,7 @@ router.get('/planning/legal-letter-considerations', function(req, res){
 				/*companyArray.push(doc.company);
 				yearEndArray.push(doc.engagementYearEnd);*/
 			});
-		    res.render('legal-letter-considerations', {items:[],data:sess, user: sess.username });
+		    res.render('legal-letter-considerations', {items:docs,data:sess, user: sess.username });
 		});
 
 	} else {
@@ -1433,7 +1433,7 @@ router.get('/planning/materiality', function(req, res){
 				/*companyArray.push(doc.company);
 				yearEndArray.push(doc.engagementYearEnd);*/
 			});
-		res.render('materiality', {items:[],data:sess, user: sess.username });
+		res.render('materiality', {items:docs,data:sess, user: sess.username });
 		});
 
 	} else {
@@ -1449,7 +1449,7 @@ router.get('/planning/risks-through-understanding-the-entity', function(req, res
 				/*companyArray.push(doc.company);
 				yearEndArray.push(doc.engagementYearEnd);*/
 			});
-		    res.render('risks-through-understanding-entity', {items:[],data:sess, user: sess.username });
+		    res.render('risks-through-understanding-entity', {items:docs,data:sess, user: sess.username });
 		});
 
 	} else {
@@ -1465,7 +1465,7 @@ router.get('/planning/auditor-checklist-to-fraud', function(req, res){
 				/*companyArray.push(doc.company);
 				yearEndArray.push(doc.engagementYearEnd);*/
 			});
-		    res.render('auditor-checklist-fraud', {items:[],data:sess, user: sess.username });
+		    res.render('auditor-checklist-fraud', {items:docs,data:sess, user: sess.username });
 		});
 
 	} else {
@@ -1481,9 +1481,9 @@ router.get('/planning/control-risk-assessment', function(req, res){
 				/*companyArray.push(doc.company);
 				yearEndArray.push(doc.engagementYearEnd);*/
 			});
-		    res.render('control-risk-assessment', {items:[],data:sess, user: sess.username });
+		    res.render('control-risk-assessment', {items:docs,data:sess, user: sess.username });
 		});
-		
+
 	} else {
 		res.redirect('/login');
 	}
