@@ -1308,7 +1308,13 @@ router.get('/planning/revenue-recognition-ifrs-a', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('revenue-recognition-a', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-a', { items: docs, data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1319,7 +1325,13 @@ router.get('/planning/revenue-recognition-ifrs-b', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('revenue-recognition-b', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-b', { items: docs, data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1330,7 +1342,13 @@ router.get('/planning/revenue-recognition-ifrs-c', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('revenue-recognition-c', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-c', { items: docs, data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1341,7 +1359,13 @@ router.get('/planning/revenue-recognition-ifrs-d', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('revenue-recognition-d', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-d', { items: docs, data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1352,7 +1376,13 @@ router.get('/planning/revenue-recognition-ifrs-e', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('revenue-recognition-e', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-e', { items: docs, data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1363,8 +1393,14 @@ router.get('/planning/revenue-recognition-ifrs-e', function(req, res){
 router.get('/planning/ppe-estimates', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
-		
-		res.render('ppe-estimates', {items:[],data:sess, user: sess.username });
+	
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('ppe-estimates', {items:[],data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1375,7 +1411,13 @@ router.get('/planning/legal-letter-considerations', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
-		res.render('legal-letter-considerations', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('legal-letter-considerations', {items:[],data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1386,7 +1428,13 @@ router.get('/planning/materiality', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
 		
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
 		res.render('materiality', {items:[],data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1396,8 +1444,13 @@ router.get('/planning/materiality', function(req, res){
 router.get('/planning/risks-through-understanding-the-entity', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
-		
-		res.render('risks-through-understanding-entity', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('risks-through-understanding-entity', {items:[],data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1407,8 +1460,13 @@ router.get('/planning/risks-through-understanding-the-entity', function(req, res
 router.get('/planning/auditor-checklist-to-fraud', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
-		
-		res.render('auditor-checklist-fraud', {items:[],data:sess, user: sess.username });
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('auditor-checklist-fraud', {items:[],data:sess, user: sess.username });
+		});
 
 	} else {
 		res.redirect('/login');
@@ -1418,9 +1476,14 @@ router.get('/planning/auditor-checklist-to-fraud', function(req, res){
 router.get('/planning/control-risk-assessment', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('control-risk-assessment', {items:[],data:sess, user: sess.username });
+		});
 		
-		res.render('control-risk-assessment', {items:[],data:sess, user: sess.username });
-
 	} else {
 		res.redirect('/login');
 	}
