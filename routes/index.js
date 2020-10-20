@@ -1304,6 +1304,27 @@ router.get('/final-reports/cover-letter-existing-client', function(req,res){
 	}
 });
 
+router.get('/field-work/fixed-assets-testing-cost-and-nbv-material-a', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+
+
+
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('fixed-assets-testing-cost-and-nbv-material-a', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
 module.exports = router;
 
 

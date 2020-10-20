@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 20.41A Fixed Assets Testing - Cost and NBV Material V0718 - Movement Schedule</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------20.41A Fixed Assets Testing - Cost and NBV Material V0718 - Movement Schedule------</h4>            
+          </div>          
+
+
+          <form action="/field-work/fixed-assets-testing-cost-and-nbv-material-a" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              <% include partials/engagementCard.ejs %>
+
+
+              <!--PROPERTY, PLANT AND EQUIPMENT - MOVEMENT SCHEDULE Card-->
+              <div class="card shadow mb-4">
+
+                    <!-- Card Header - Accordion -->
+                    <a href="#ppeMovementScheduleCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                        <h6 class="m-0 font-weight-bold text-primary">PROPERTY, PLANT AND EQUIPMENT - MOVEMENT SCHEDULE</h6>
+                    </a>
+    
+                    <!-- Card Content - Collapse -->
+                    <div class="collapse" id="ppeMovementScheduleCard">
+    
+                      <div class="card-body">
+                        <b>Objective:</b>
+                        <br>
+                        To test that fixed assets register agrees to the trial balance and general ledger.
+                        <br><br>
+                        <b>Audit Approach:</b>
+                        <br>
+                        Obtain a fixed asset register at year end, with comparative figures for the previous year, and:
+                        <br>
+                        1) Agree comparative figures with the lead sheet and financial statements;
+                        <br>
+                        2) Review the list and investigate unusual items;
+                        <br>
+                        3) Agree the list to the trial balance and financial statements;
+                        <br>
+                        4) Reperform selected casts and calculations to ensure numerical accuracy of the list;
+                        <br>
+                        5) Compare items per category with previous years and obtain reasons for unusual changes.
+                        <br><br><br>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="additionsTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                      <th>Factor</th>
+                                      <th>Amount</th>
+                                      <th>WP Reference</th>                                      
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                        Overall Materiality
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="overallMaterialityAmount" name="overallMaterialityAmount">
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width-red" type="text" id="overallMaterialityWPRef" name="overallMaterialityWPRef">                                      
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        Significant Risk performance materiality
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="significantRiskPerfMaterialityAmount" name="significantRiskPerfMaterialityAmount">
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width-red" type="text" id="significantRiskPerfMaterialityWPRef" name="significantRiskPerfMaterialityWPRef">                                      
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        Clearly trivial
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="clearlyTrivialAmount" name="clearlyTrivialAmount">
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width-red" type="text" id="clearlyTrivialWPRef" name="clearlyTrivialWPRef">                                      
+                                    </td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                            <br><br>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="additionsTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                          <th>-</th>
+                                          <th>2018</th>
+                                          <th>WP Reference</th>
+                                          <th>2017</th>                                      
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          PPE per AFS:
+                                        </td>
+                                        <td>
+                                            <input class="user-form-control-fixed-width" type="text" id="intangibleAssetsPerAFS2018" name="intangibleAssetsPerAFS2018">
+                                        </td>
+                                        <td>
+                                            <input class="user-form-control-fixed-width-red" type="text" id="intangibleAssetsPerAFSWPRef" name="intangibleAssetsPerAFSWPRef">                                      
+                                        </td>
+                                        <td>
+                                            <input class="user-form-control-fixed-width" type="text" id="intangibleAssetsPerAFS2017" name="intangibleAssetsPerAFS2017">
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+              <!--Cost Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#costCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">COST</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="costCard">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="costTable" width="100%" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>Description</th>
+                                <th>Opening Balance</th>
+                                <th>Additions</th>
+                                <th>Disposals</th>
+                                <th>Closing Balance</th>
+                                <th>Balance per TB</th>
+                                <th>Difference</th>
+                                <th>Ref</th>                                
+                              </tr>
+                            </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                  Land
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="landOpeningBal">                                
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="landAdditions">
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="landDisposals">
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="landClosingBal">
+                              </td>
+                              <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="landBalPerTB">
+                              </td>
+                              <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="landDiff">
+                              </td>
+                              <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="landRef">
+                              </td>          
+                            </tr>
+                            <tr>
+                                <td>
+                                    Buildings
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="buildingsOpeningBal">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="buildingsAdditions">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="buildingsDisposals">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="buildingsClosingBal">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="buildingsBalPerTB">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="buildingsDiff">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="buildingsRef">
+                                </td>          
+                            </tr>
+                            <tr>
+                                <td>
+                                    Motor Vehicle
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="motorVehicleOpeningBal">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="motorVehicleAdditions">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="motorVehicleDisposals">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="motorVehicleClosingBal">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="motorVehicleBalPerTB">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="motorVehicleDiff">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="motorVehicleRef">
+                                </td>          
+                            </tr>
+                            <tr>
+                                <td>
+                                    Computer & Electronics
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="computerElectronicsOpeningBal">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="computerElectronicsAdditions">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="computerElectronicsDisposals">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="computerElectronicsClosingBal">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="computerElectronicsBalPerTB">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="computerElectronicsDiff">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="computerElectronicsRef">
+                                </td>          
+                            </tr>
+                            <tr>
+                                <td>
+                                    Furniture & fittings
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsOpeningBal">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsAdditions">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsDisposals">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsClosingBal">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsBalPerTB">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsDiff">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsRef">
+                                </td>          
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Totals</b>
+                              </td>
+                              <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="OpeningBalTot">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="AdditionsTot">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="DisposalsTot">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="ClosingBalTot">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="BalPerTBTot">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="DiffTot">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="RefTot">
+                                </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div> 
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accumulated Depreciation Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#accumulatedDepreciationCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">ACCUMULATED DEPRECIATION</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="accumulatedDepreciationCard">
+
+                  <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-bordered" id="accumulatedDepreciationTable" width="100%" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>Description</th>
+                                <th>Opening Balance</th>
+                                <th>Current Depreciation</th>
+                                <th>Disposals</th>
+                                <th>Closing Balance</th>
+                                <th>Balance per TB</th>
+                                <th>Difference</th>
+                                <th>Ref</th>                                
+                              </tr>
+                            </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                  Land
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="landOpeningBal">                                
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="landAdditions">
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="landDisposals">
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="landClosingBal">
+                              </td>
+                              <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="landBalPerTB">
+                              </td>
+                              <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="landDiff">
+                              </td>
+                              <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="landRef">
+                              </td>          
+                            </tr>
+                            <tr>
+                                <td>
+                                    Buildings
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="buildingsOpeningBal">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="buildingsAdditions">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="buildingsDisposals">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="buildingsClosingBal">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="buildingsBalPerTB">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="buildingsDiff">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="buildingsRef">
+                                </td>          
+                            </tr>
+                            <tr>
+                                <td>
+                                    Motor Vehicle
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="motorVehicleOpeningBal">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="motorVehicleAdditions">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="motorVehicleDisposals">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="motorVehicleClosingBal">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="motorVehicleBalPerTB">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="motorVehicleDiff">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="motorVehicleRef">
+                                </td>          
+                            </tr>
+                            <tr>
+                                <td>
+                                    Computer and Electronics
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="computerElectronicsOpeningBal">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="computerElectronicsAdditions">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="computerElectronicsDisposals">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="computerElectronicsClosingBal">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="computerElectronicsBalPerTB">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="computerElectronicsDiff">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="computerElectronicsRef">
+                                </td>          
+                            </tr>
+                            <tr>
+                                <td>
+                                    Furniture and Fittings
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsOpeningBal">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsAdditions">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsDisposals">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsClosingBal">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsBalPerTB">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsDiff">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsRef">
+                                </td>          
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Totals</b>
+                              </td>
+                              <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="accumulatedDepreciationOpeningBalTot">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="accumulatedDepreciationAdditionsTot">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="accumulatedDepreciationDisposalsTot">
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="accumulatedDepreciationClosingBalTot">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="accumulatedDepreciationBalPerTBTot">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="accumulatedDepreciationDiffTot">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="accumulatedDepreciationRefTot">
+                                </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <br><br>
+
+                      <label class="small font-weight-bold" for="depreciationPerGeneralLedger">Depreciation per the general ledger:
+                        <input class="user-form-control-fixed-width" type="text" id="depreciationPerGeneralLedger">
+                      </label>
+                      <br>
+                      <label class="small font-weight-bold" for="depreciationPerGeneralLedgerWPRef">WP Ref:
+                        <input class="user-form-control-fixed-width-red" type="text" id="depreciationPerGeneralLedgerWPRef">                                
+                      </label>
+                      <br><br>
+                      <label class="small font-weight-bold" for="depreciationDiff">Difference:
+                        <input class="user-form-control-fixed-width" type="text" id="depreciationDiff">                                
+                      </label>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Net Book Value Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#netBookValueCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">NET BOOK VALUE</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="netBookValueCard">
+
+                  <div class="card-body">                
+                      <div class="table-responsive">
+                          <table class="table table-bordered" id="netBookValueTable" width="100%" cellspacing="0">
+                              <thead>
+                                <tr>
+                                  <th>Description</th>
+                                  <th>Opening NBV</th>                                  
+                                  <th>Closing NBV</th>                                
+                                </tr>
+                              </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                    Land
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="landOpeningNBV">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="landClosingNBV">
+                                </td>          
+                              </tr>
+                              <tr>
+                                <td>
+                                    Furniture and Fittings
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsOpeningNBV">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="furnitureFittingsClosingNBV">
+                                </td>          
+                              </tr>
+                              <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>                                
+                              </tr>
+                              <tr>
+                                <td>
+                                  <b>Totals</b>
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="openingNBVTot">                                
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="closingNBVTot">
+                                </td>                                                                  
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <label class="small font-weight-bold" for="agreesComment">-
+                          <input class="user-form-control-fixed-width-green" type="text" id="agreesComment">
+                        </label>
+                        <br>
+                        <label class="small font-weight-bold" for="NBVPRef">WP Ref:
+                          <input class="user-form-control-fixed-width-red" type="text" id="NBVPRef">                                
+                        </label>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Fixed Asset Proof Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#fixedAssetProofCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">FIXED ASSET PROOF</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="fixedAssetProofCard">
+
+                  <div class="card-body">                    
+                    <label class="small font-weight-bold" for="nbvBOY">Net book value BOY
+                        <input class="form-control form-control-sm" type="text" id="nbvBOY" name="nbvBOY">
+                    </label>
+                    <br>
+                    <label class="small font-weight-bold" for="lessDepreciation">Less: Depreciation
+                        <input class="form-control form-control-sm" type="text" id="lessDepreciation" name="lessDepreciation">
+                    </label>
+                    <br>
+                    <label class="small font-weight-bold" for="addAdditions">Add: Additions
+                        <input class="form-control form-control-sm" type="text" id="addAdditions" name="addAdditions">
+                    </label>
+                    <br>
+                    <label class="small font-weight-bold" for="lessDisposals">Less: Disposals
+                        <input class="form-control form-control-sm" type="text" id="lessDisposals" name="lessDisposals">
+                    </label>
+                    <br>
+                    <label class="small font-weight-bold" for="closingNetBookVal">Closing Net Book Value At End Of Year
+                        <input class="form-control form-control-sm" type="text" id="closingNetBookVal" name="closingNetBookVal">
+                    </label>
+                    <br><br>
+                    <label class="small font-weight-bold" for="perLeadsheet"><b>PER LEADSHEET</b>
+                        <input class="form-control form-control-sm" type="text" id="perLeadsheet" name="perLeadsheet">
+                    </label>
+                    <br>
+                    <label class="small font-weight-bold" for="diff">Diff
+                        <input class="form-control form-control-sm" type="text" id="diff" name="diff">
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <b>Key to ticks</b><br>
+              B py afs - Balance agrees to prior year financial statement<br>
+              ^ - Casts
+              <br><br>
+
+              <!-- Conclusion Card -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Conclusion:</h6>
+                </div>
+                <div class="card-body">
+                  No exceptions found in procedures performed. Based on the audit work performed above, in our opinion, the test objectives have been met.
+                </div>
+              </div>
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
