@@ -1489,6 +1489,23 @@ router.get('/planning/control-risk-assessment', function(req, res){
 	}
 });
 
+
+router.get('/field-work/movement-schedule', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('movement-schedule', {items:docs,data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
 module.exports = router;
 
 
