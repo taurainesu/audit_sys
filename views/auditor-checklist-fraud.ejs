@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 11.40 Auditor's Checklist to Consider Fraud</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------11.40 Auditor's Checklist to Consider Fraud  ------</h4>            
+          </div>          
+
+
+          <form action="/planning/risk-assessment-b" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>
+                
+              <!--Risk Analysis Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#revenueRecognitionCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">BACKGROUND AND GENERAL INSTRUCTIONS</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="revenueRecognitionCard">
+                  <div class="card-body">
+                    ISA 240, <i>The Auditor’s Responsibility to Consider Fraud and Error in an Audit of Financial Statements,</i> requires that we make inquiries of management to obtain their understanding regarding the risk of fraud within their organization and to determine whether they have knowledge of fraud that has been perpetrated on or within the organization.  Form 1213, Checklist for Management’s Assessment of Fraud Risk, can be used to facilitate such inquiries.	
+                    <br><br>
+                    Based on these discussions with management and supplemented by our knowledge of the client and their business, we are then required to:
+                    <br>
+                    - Consider the risk of fraud in planning audit.
+                    <br>
+                    - Communicate the areas that are susceptible to mistatement to the audit engagement team
+                    <br>
+                    - Revise the audit plan appropriately if the risk of fraud or error exists<br>
+
+                    - Consider whether any misstatements identified were the result of fraud<br>
+
+                    - Communicate misstatements to management and to the audit committee
+                    <br>
+
+                    Communicate, as appropriate, identified fraud to management, audit committee or Board of Directors.<br><br>
+
+                    Completion of this audit checklist ensures that our audit is in accordance with the International standards on auditing and is required to be reviewed and approved by the audit partner.
+
+
+
+                    <br><br>
+                    
+                  </div>
+                </div>
+              </div>
+                   
+            
+              <!--Revenue Recognition Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#partA" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">PART A - PLANNING</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="partA">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="openingBalancesTable" width="100%" cellspacing="0">
+                            <thead class="table-header-row">
+                                <tr>
+                                    <th></th>
+                                    <th>Consideration of Fraud and Error in the Planning Stages of the Audit</th>
+                                    <th>Yes/No/NA</th>
+                                    <th>W/P Reference</th>
+                                </tr>
+                            </thead>
+                          <tbody>
+                            <tr>
+                              <td>1.</td>
+                              <td >
+                                ENQUIRIES OF MANAGEMENT<br>
+                                Have we made enquiries of management:<br>
+                                1)	To obtain an understanding of management’s assessment of the risk that that financial statements may be materially misstated as a result of fraud?<br> 
+                                2)	To obtain an understanding of the internal controls in place to address the risk of fraud and prevent and detect error?<br>
+                                3)	To determine whether management is aware of any known fraud that has affected the entity, or suspected fraud?<br> 
+                                4)	To determine whether management has discovered any material errors?
+                              </td>
+                              <td contenteditable="true"></td>
+                              <td contenteditable="true"></td> 
+                            </tr>
+
+                            <tr>
+                                <td>2.</td>
+                                <td >
+                                DOCUMENTATION<br>
+                                Consider whether the following additional fraud-risk factors are present that may indicate the possibility of fraud:<br>
+                                Fraud risk factors relating to management’s characteristics and influence over the control environment:<br>
+                                •	management displays a significant disregard for regulatory or legislative authorities<br>
+                                •	frequent disputes with the current or a predecessor auditor on accounting, auditing or reporting matters<br>
+                                •	domineering management behaviour in dealing with the auditor, especially involving attempts to influence the scope of the auditor’s work<br>
+                                Fraud risk factors relating to industry conditions:
+                                •	a high degree of competition or market saturation, accompanied by declining margins<br>
+                                •	a declining industry with increasing business failures and significant declines in customer demand<br><br>
+
+                                Fraud risk factors relating to operating characteristics and financial stability:<br><br>
+
+                                •	inability to generate cash flows from operations while reporting earnings and earnings growth<br>
+                                •	significant bank accounts or subsidiary or branch operations in tax-haven jurisdictions for which there appears to be no clear business justification<br>
+                                •	a poor or deteriorating financial position when management has personally guaranteed significant debts of the entity<br>
+                                •	assets, liabilities, revenues or expenses based on significant estimates that involve unusually subjective judgments or uncertainties, or that are subject to potential significant change in the near term in a manner that may have a financially disruptive effect on the entity (for example, the ultimate collectibility of receivables, the timing of revenue recognition, the realizability of financial instruments based on highly subjective valuation of collateral or difficult-to-assess repayment sources, or a significant deferral of costs)<br>
+                                •	a threat of imminent bankruptcy, foreclosure or hostile takeover<br><br>
+
+
+
+                                Fraud risk factors relating to susceptibility of assets to misappropriation:<br><br>
+
+                                •	large amounts of cash on hand or processed<br>
+                                •	inventory characteristics, such as small size combined with high value and high demand<br>
+                                •	easily convertible assets, such as bearer bonds, diamonds or computer chips<br>
+                                •	fixed asset characteristics, such as small size combined with marketability and lack of ownership identification<br>
+                                •	Anticipated future layoffs that are known to the workforce<br>
+                                •	Employees with access to assets susceptible to misappropriations that are known to be dissatisfied<br>
+                                •	Unusual changes in behaviour or lifestyle of employees with access to assets susceptible to misappropriations<br>
+                                •	Personal financial pressures affecting employees with access to assets susceptible to misappropriation<br>
+                                <br>
+                                Fraud risk factors relating to controls:<br><br>
+
+                                •	inadequate record keeping for assets susceptible to misappropriation<br>
+                                •	lack of an appropriate segregation of duties or independent check<br>
+                                •	lack of an appropriate system of authorization and approval of  transactions (for example, in purchasing)<br>
+                                •	poor physical safeguards over cash, investments, inventory or fixed assets<br>
+                                •	lack of timely and appropriate documentation for transactions<br>
+                                •	lack of mandatory vacations for employees performing key control functions<br>
+
+                                Engagement factors that may provide the client with an incentive to commit fraud in order to improve the financial results:<br><br>
+
+                                •	Will financial statements be used for an initial public offering of securities?
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+
+                              <tr>
+                                <td>3.</td>
+                                <td >
+                                    3A. Have we compared management’s responses obtained during our discussions with management to our preliminary assessment of risks, including fraud related risks as documented, <br><br>
+
+                                    3B. If additional risks were identified, was <WP 10.45> updated for these risks?<br><br>
+
+                                    3C. For all fraud risk factors identified, either pervasive to the audit engagement or specific to an account balance, have we documented the risk(s) in the “RISKS IDENTIFED AND RESPONSES” section of <WP 10.45>  (Ensure that fraud risk factors identified in Step 2 are also included).<br><br>
+
+                                    3D. Is there LIKELIHOOD OF INTENTIONAL MISREPRESENTATION” <br>
+                                    
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+
+                              <tr>
+                                <td>4.</td>
+                                <td >
+                                    Has the audit partner discussed with the other members of the audit team the risk of material misstatements in the financial statements resulting from fraud or error as it relates to the client/engagement?                                        
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+
+                              <tr>
+                                <td>5.</td>
+                                <td >
+                                    Are we satisfied that our preliminary audit plan considers the risk of material misstatements resulting from fraud? 
+
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+
+                              <tr>
+                                <td>6.</td>
+                                <td >
+                                    Are we satisfied that where fraud risk factors are present in the client’s situation, our audit plan addresses these risks and includes documentation of the impact on audit procedures, whether pervasive or specific to an account balance (e.g. which member of the audit team will conduct certain enquiries or audit procedures, what type of audit evidence, such as faxed confirmations, etc. will not be considered appropriate audit evidence, etc)  
+
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+
+                              <tr>
+                                <td>7.</td>
+                                <td >
+                                    If discussions with management revealed weaknesses in the internal controls to prevent and detect errors from fraud, are we satisfied that we do not plan on testing and relying on those specific internal controls for purpose of planning a control-reliance audit approach?
+
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+
+                              <tr>
+                                <td>8.</td>
+                                <td >
+                                    If discussions with management revealed that specific internal controls mitigate the risk of errors resulting from fraud, have we performed tests of these controls and documented our results and assessment as to the effectiveness of the mitigating control? 
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+
+                              <tr>
+                                <td>9.</td>
+                                <td >
+                                    If discussions with management revealed that fraud risk factors are present and mitigating controls, if any, have been tested and proven to be ineffective, have we revised WP <10.45> to include the risk?  
+                                        Are we satisfied that our audit plan does not rely on these ineffective controls? (The presence of fraud risk factors may indicate that the auditor will be unable to assess control risk below maximum (R of 3 is maximum) for certain financial statement assertions) 
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+                          </tbody>
+                          <br><br>
+
+                        </table>
+                      </div>
+                  </div>
+                </div>               
+              </div>
+
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#partB" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">PART B - PERFORMING THE AUDIT</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="partB">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="openingBalancesTable" width="100%" cellspacing="0">
+                            <thead class="table-header-row">
+                                <tr>
+                                    <th></th>
+                                    <th>Consideration of Fraud and Error in Performing the Audit</th>
+                                    <th>Yes/No/NA</th>
+                                    <th>Reference/Comments</th>
+                                </tr>
+                            </thead>
+                          <tbody>
+                            <tr>
+                              <td>10.</td>
+                              <td >
+                                If fraud risk factors are present, did we continue to assess control for financial statement assertions?
+                                <br><br>If yes, refer to the documentation of the mitigating controls relied upon and tested 
+
+                              </td>
+                              <td contenteditable="true"></td>
+                              <td contenteditable="true"></td> 
+                            </tr>
+
+                            <tr>
+                                <td>11.</td>
+                                <td >
+                                    If fraud risk factors are present, are the audit procedures (including both tests of controls and substantive procedures) already planned sufficient to respond to the fraud risk factors?
+                                    <br><br>If yes, refer to the documentation of this assessment
+
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+
+                              <tr>
+                                <td>12.</td>
+                                <td >
+                                    If fraud risk factors are present and the audit procedures initially planned are not sufficient to respond to the fraud risk factors, were changes in audit procedures, such as nature, timing and extent, including both tests of controls and substantive procedures, made to respond to the fraud risk factors?    
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+
+                              <tr>
+                                <td>13.</td>
+                                <td >
+                                    Have we obtained written representations from management that:<br><br>
+                                        •	They acknowledge their responsibility for the implementation and operation of internal controls that are designed to prevent and detect fraud and error<br>
+                                        •	They believe the effects of those uncorrected financial statement misstatements aggregated by us during the audit are immaterial, both individually and in the aggregate, to the financial statements taken as a whole (A summary of such items should be attached to the management representation letter)<br>
+                                        •	They have disclosed to us all significant facts relating to any fraud or suspected fraud known to management that may have affected the entity<br>
+                                        •	They have disclosed to us the results of their assessment of risk that the financial statements may be materially misstated as a result of fraud
+                                                                                
+                                </td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                              </tr>
+                          </tbody>
+                          <br><br>
+
+                        </table>
+                      </div> 
+                  </div>
+                </div>               
+              </div>
+
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#partC" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">PART C - FRAUD/ERROR IS SUSPECTED OR DETECTED</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="partC">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                            <table class="table table-bordered" id="openingBalancesTable" width="100%" cellspacing="0">
+                                <thead class="table-header-row">
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>Yes/No/NA</th>
+                                        <th>Reference/Comments</th>
+                                    </tr>
+                                </thead>
+                              <tbody>
+                                <tr>
+                                  <td>14.</td>
+                                  <td >
+                                    If we encountered circumstances that indicate that there may be a misstatement in the financial statements resulting from fraud or error, have we performed procedures to determine whether the financial statements are materially misstated? 
+                                  </td>
+                                  <td contenteditable="true"></td>
+                                  <td contenteditable="true"></td> 
+                                </tr>
+
+                                <tr>
+                                    <td>15.</td>
+                                    <td >
+                                        For each misstatement identified during the audit, including those subsequently corrected by management, did we consider whether the misstatement might have occurred as a result of fraud?  
+                                    </td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td> 
+                                  </tr>
+
+                                  <tr>
+                                    <td>16.</td>
+                                    <td >
+                                        If we concluded that a misstatement is, or may be, the result of fraud, have we further investigated to be able to conclude whether the fraud or error is an isolated occurrence?   
+                                    </td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td> 
+                                  </tr>
+
+                                  <tr>
+                                    <td>17.</td>
+                                    <td >
+                                        If we conclude that a misstatement is a result of fraud and that the circumstances are pervasive to the engagement, have we considered:<br>
+                                        •	the quality of evidence previously obtained,<br>
+                                        •	the genuineness of accounting records and documentation,<br>
+                                        •	completeness and truthfulness of representations made,<br>
+                                        •	the possibility of collusion involving employees, management or third parties when reconsidering the reliability of evidence<br><br>
+                                        If we conclude that the circumstances resulting in a misstatement from fraud or error is pervasive to the engagement, or we cannot conclude that the circumstance is isolated, have we consulted with National Office?                                        
+                                    </td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td> 
+                                  </tr>
+
+                                  <tr>
+                                    <td>18.</td>
+                                    <td >
+                                        If we have identified a misstatement resulting from fraud, or a suspected fraud, or error, have we communicated that information to the appropriate level of management, the audit committee or equivalent, and in some circumstances, to regulatory and enforcement authorities? [240.56]<br><br>
+                                        Note:  National Office should first be consulted before any communication takes place.  
+   
+                                    </td>
+                                    <td contenteditable="true"></td>
+                                    <td contenteditable="true"></td> 
+                                  </tr>
+                              </tbody>
+                              <br><br>
+    
+                            </table>
+                          </div>
+                  </div>
+                </div>               
+              </div>
+
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#partD" class="d-block card-header" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">PART D - REPORTING AND CONCLUDING</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="partD">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="openingBalancesTable" width="100%" cellspacing="0">
+                                <thead class="table-header-row">
+                                    <tr>
+                                        <th></th>
+                                        <th>Considerations of Fraud and Error when Concluding and Reporting</th>
+                                        <th>Yes/No/NA</th>
+                                        <th>Reference/Comments</th>
+                                    </tr>
+                                </thead>
+                              <tbody>
+                                <tr>
+                                  <td>19.</td>
+                                  <td >
+                                    When the audit committee or equivalent plays an active role in oversight of how management has discharged its responsibilities, auditors are encouraged to seek their views on the adequacy of accounting and control systems in place to prevent and detect fraud and error, the risk of fraud and error, and the competence and integrity of management 
+                                  </td>
+                                  <td contenteditable="true"></td>
+                                  <td contenteditable="true"></td> 
+                                </tr>
+                              </tbody>
+                              <br><br>
+    
+                            </table>
+                          </div>
+
+                    </div>
+                </div>               
+              </div>
+              
+               <!-- Conclusion Card -->
+               <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Conclusion:</h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                        <input class="form-control"/>
+                    </div>
+                  </div>
+                </div>
+
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>

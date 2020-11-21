@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 11.46 - Control risk assessment</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------11.46 - Control risk assessment------</h4>            
+          </div>          
+
+
+          <form action="/planning/materiality" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>          
+                   
+            
+              <!--Risks at Financial Statement Level Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#control-risk" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">MONITORING</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="control-risk">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="materiality-a-table" width="100%" cellspacing="0">
+                          <thead class="table-header-row">
+                            <tr>
+                              <th style="width: 20%;">Questions as per ISA-315</th>
+                              <th style="width:10%">Yes/No</th>
+                              <th style="width:15%">Description</th>
+                              <th style="width:15%">If the control is relevant to the audit, explain how you determined that it was implemented</th>
+                              <th style="width:10%">Risk</th>
+                              <th style="width:10%">RTM Point , Yes / No</th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                                32. Are monitoring systems in place to assess the effectiveness of internal control performance over time and is action taken when necessary?  Describe sources of information that is used for monitoring.	
+                            </td>
+                            <td>
+                               <select class="form-control">
+                                   <option>Yes</option>
+                                   <option>No</option>
+                                   <option>N/A</option>
+                               </select>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                    <option>None</option>
+                                </select>
+                             </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                33. Have methods been established to measure actual performance against budgets and to communicate that information on a timely basis?		
+                            </td>
+                            <td>
+                               <select class="form-control">
+                                   <option>Yes</option>
+                                   <option>No</option>
+                                   <option>N/A</option>
+                               </select>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                    <option>None</option>
+                                </select>
+                             </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                34. Are management accounts produced promptly and with different levels of reports to suit the needs of different levels of management?		
+                            </td>
+                            <td>
+                               <select class="form-control">
+                                   <option>Yes</option>
+                                   <option>No</option>
+                                   <option>N/A</option>
+                               </select>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                    <option>None</option>
+                                </select>
+                             </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                35. Has management selected appropriate key performance indicators to measure business performance over time?
+- Authority to load, amend and release transactions.</td>
+                            <td>
+                               <select class="form-control">
+                                   <option>Yes</option>
+                                   <option>No</option>
+                                   <option>N/A</option>
+                               </select>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                    <option>None</option>
+                                </select>
+                             </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                36. Has responsibility for dealing with revenue and regulatory authorities been allocated clearly to facilitate prompt completion and submission of returns required?		
+                            </td>
+                            <td>
+                               <select class="form-control">
+                                   <option>Yes</option>
+                                   <option>No</option>
+                                   <option>N/A</option>
+                               </select>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                    <option>None</option>
+                                </select>
+                             </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                37. Are adequate insurance arrangements in place to cover principal business risks (indicate any significant uninsured risks)?		
+                            </td>
+                            <td>
+                               <select class="form-control">
+                                   <option>Yes</option>
+                                   <option>No</option>
+                                   <option>N/A</option>
+                               </select>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                    <option>None</option>
+                                </select>
+                             </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                38. Are staff required to take holidays?
+                            </td>
+                            <td>
+                               <select class="form-control">
+                                   <option>Yes</option>
+                                   <option>No</option>
+                                   <option>N/A</option>
+                               </select>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                    <option>None</option>
+                                </select>
+                             </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                39. Is the business subject to regulation from external bodies?		
+                            </td>
+                            <td>
+                               <select class="form-control">
+                                   <option>Yes</option>
+                                   <option>No</option>
+                                   <option>N/A</option>
+                               </select>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                    <option>None</option>
+                                </select>
+                             </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>                    
+                    <br>
+                    <b>Source(s) from which information was obtained during gaining an understanding of the entity. (1)	</b><br>
+                    <div class="form-row my-4">
+                        <div class="col-md-1">
+                            <label for="">Source</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text">
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#materiality-b" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">CONCLUSION</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="materiality-b">
+
+                  <div class="card-body">
+                        <div class="form-row">
+                            <div class="col">
+                                <b>Assess the risk that management's monitoring of controls may fail to detect ineffective controls:</b>
+                            </div>
+                            <div class="col">
+                                <select class="form-control">
+                                    <option>Low</option>
+                                    <option>Medium</option>
+                                    <option>High</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row mt-3">
+                            <div class="col">
+                                <b>Overall control risk assessment:</b>
+                            </div>
+                            <div class="col">
+                                <select class="form-control">
+                                    <option>Low</option>
+                                    <option>Medium</option>
+                                    <option>High</option>
+                                </select>
+                            </div>
+                        </div>
+                </div>
+                </div>
+              </div>
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+
+</body>
+
+</html>

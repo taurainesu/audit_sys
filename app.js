@@ -11,6 +11,8 @@ const MongoStore = require('connect-mongo')(session);
 var passport = require('passport');
 var Local_Strategy  = require('passport-local');
 var flash = require('req-flash');
+const hostname = '127.0.0.1';
+const port = 3000;
 
 
 
@@ -85,5 +87,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 module.exports = app;
+
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
 
 

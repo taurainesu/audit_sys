@@ -1304,6 +1304,7 @@ router.get('/final-reports/cover-letter-existing-client', function(req,res){
 	}
 });
 
+<<<<<<< HEAD
 router.get('/field-work/fixed-assets-testing-cost-and-nbv-material-a', function(req,res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
@@ -1312,12 +1313,207 @@ router.get('/field-work/fixed-assets-testing-cost-and-nbv-material-a', function(
 
 
 
+=======
+router.get('/planning/revenue-recognition-ifrs-a', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
 		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
 				/*companyArray.push(doc.company);
 				yearEndArray.push(doc.engagementYearEnd);*/
 			});
+			res.render('revenue-recognition-a', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/revenue-recognition-ifrs-b', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-b', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/revenue-recognition-ifrs-c', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-c', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/revenue-recognition-ifrs-d', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-d', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/revenue-recognition-ifrs-e', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('revenue-recognition-e', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+//task 2
+router.get('/planning/ppe-estimates', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+	
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('ppe-estimates', {items:docs,data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/legal-letter-considerations', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('legal-letter-considerations', {items:docs,data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/materiality', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		res.render('materiality', {items:docs,data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/risks-through-understanding-the-entity', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('risks-through-understanding-entity', {items:docs,data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/auditor-checklist-to-fraud', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('auditor-checklist-fraud', {items:docs,data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/planning/control-risk-assessment', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('control-risk-assessment', {items:docs,data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+
+router.get('/field-work/movement-schedule', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+>>>>>>> f14cd5ff8ac64acb897dc09cb72c2cd31209d8fe
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+<<<<<<< HEAD
 			res.render('fixed-assets-testing-cost-and-nbv-material-a', { items: docs, data:sess, user: sess.username });
+=======
+		    res.render('movement-schedule', {items:docs,data:sess, user: sess.username });
+>>>>>>> f14cd5ff8ac64acb897dc09cb72c2cd31209d8fe
 		});
 
 	} else {

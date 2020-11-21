@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 10.60 - Materiality</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------10.60 - Materiality------</h4>            
+          </div>          
+
+
+          <form action="/planning/materiality" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>          
+                   
+            
+              <!--Risks at Financial Statement Level Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#materiality-a" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">A. OVERALL MATERIALITY</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="materiality-a">
+
+                  <div class="card-body">
+                      <p>(ISA 320.10, ISA 320.14)<br>
+                    (materiality for the F/S as a whole)<br>
+                    Use of professional judgement as to the highest amount of misstatement(s) that could be included in the financial statements without affecting the conomic decisions taken by a financial statement user.
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="materiality-a-table" width="100%" cellspacing="0">
+                          <thead class="table-header-row">
+                            <tr>
+                              <th></th>
+                              <th>Basis for calculation</th>
+                              <th>Current Period</th>
+                              <th>Prior period</th>
+                              <th>Benchmark % applied</th>
+                              <th>Range</th>
+                              <th>Possible materiality</th>
+                              <th>Comments</th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                          <tr>
+                            <td rowspan="5">
+                                Preliminary
+                            </td>
+                            <td>
+                                Income before tax from continuing operations (after adjusting for bonuses, etc.)
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                Gross revenues
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                Assets
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                                Equity
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                                Other
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td rowspan="5">
+                                Final
+                            </td>
+                            <td>
+                                Income before tax from continuing operations (after adjusting for bonuses, etc.)
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                Gross revenues
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                Assets
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                                Equity
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                                Other
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="text" id="fraudCorruptionRiskSignificant" name="fraudCorruptionRiskSignificant">
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>                    
+                    <br>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="materiality-a-table-2" width="100%" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>Conclusions</th>
+                                <th>Amount</th>
+                                <th>Comments</th>
+                              </tr>
+                            </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                Prior
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                              </td>
+                              <td>
+                                <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                  Preminilary
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="premilinary-amount" >
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="premilinary-comments" >
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Final (Provide reasons for any)
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="final-amount" >
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="text" id="fianl-comments" >
+                                </td>
+                              </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    
+                    <p><b>Note:</b> If overall materiality is lower than in previous audits, consider whether misstatements may exist in opening balances.</p>
+                  </div>
+                </div>
+              </div> 
+              
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#materiality-b" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">B. PERFORMANCE MATERIALITY</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="materiality-b">
+
+                  <div class="card-body">
+                    <p>(ISA 320.11, ISA 320.14)<br>
+                        (used to reduce the risk that the aggregate of misstatements(s) could exceed overall materiality)<br>
+                        Set performance materiality at an amount(s) that is based upon, but lower than, overall materiality (such as between 60% and 75% of overall materiality). Use professional judgment about expectations of misstatements that could arise in the current period. Consider the business and fraud risks identified (Forms 520E or equivalent), the results of performing risk assessment procedures and the nature/extent of misstatements identified in previous audits.		
+                        </p>
+                        <div class="form-group">
+                            <div>
+                                Performance materiality is calculated based on moderate risk
+                            </div>
+                            <select class="form-control">
+                                <option>20%</option>
+                                <option>25%</option>
+                                <option>30%</option>
+                                <option>35%</option>
+                                <option>40%</option>
+                                <option>45%</option>
+                                <option>50%</option>
+                                <option>55%</option>
+                                <option>60%</option>
+                                <option>65%</option>
+                                <option>70%</option>
+                                <option>75%</option>
+                                <option>80%</option>
+                            </select>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="materiality-a-table-2" width="100%" cellspacing="0">
+                                <thead>
+                                  <tr>
+                                    <th>Conclusions</th>
+                                    <th>Amount</th>
+                                    <th>Comments</th>
+                                  </tr>
+                                </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    Prior
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                  </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      Preminilary
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="premilinary-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="premilinary-comments" >
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Final (Provide reasons for any)
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="final-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="fianl-comments" >
+                                    </td>
+                                  </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                        <br><br>
+                        
+                        <div class="table-responsive">
+                            <p><b>Adjusted peformance materiality levels</b><br>(where considered necessary to address particular risks of misstatement in a class of transactions, account balance or F/S disclosure)										
+                            </p>
+                            <table class="table table-bordered" id="materiality-a-table-2" width="100%" cellspacing="0">
+                                <thead>
+                                  <tr>
+                                    <th>F/S area or disclosure</th>
+                                    <th>Final</th>
+                                    <th>Preliminary</th>
+                                    <th>Prior period</th>
+                                    <th>Comments</th>
+                                  </tr>
+                                </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                   Revenue
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                  </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      Intercompany
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="premilinary-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="premilinary-comments" >
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="premilinary-amount" >
+                                      </td>
+                                      <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="premilinary-comments" >
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Employee costs
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="final-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="fianl-comments" >
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                      </td>
+                                      <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                      </td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td>
+                                      Others
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="final-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="fianl-comments" >
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                      </td>
+                                      <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                      </td>
+                                  </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#materiality-c" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">C. MATERIALITY FOR SPECIFIC CIRCUMSTANCES</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="materiality-c">
+
+                  <div class="card-body">
+                    <p>(ISA 320.10, ISA 320.14)<br>
+                        Specific user expectations that require a materiality level less than overall materiality for certain areas. Refer to ISA 320.10. What specific expectations, sensitivities and legal/regulatory requirements would influence economic the decisions of a user?	
+                        </p>
+                        <div class="form-group">
+                            <label><b>
+                                Describe the user expectation/ sensitivity
+                                and the specific transactions, balances or
+                                disclosures affected	
+                                </b>
+                            </label>
+                            <textarea rows="4" class="form-control">
+
+                            </textarea>
+                        </div>
+                        <br> 
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="materiality-a-table-2" width="100%" cellspacing="0">
+                                <thead>
+                                  <tr>
+                                    <th>F/S area or disclosure</th>
+                                    <th>Final</th>
+                                    <th>Preliminary</th>
+                                    <th>Prior period</th>
+                                    <th>Comments</th>
+                                  </tr>
+                                </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                   Revenue
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                  </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      Intercompany
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="premilinary-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="premilinary-comments" >
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="premilinary-amount" >
+                                      </td>
+                                      <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="premilinary-comments" >
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Employee costs
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="final-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="fianl-comments" >
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                      </td>
+                                      <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                      </td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td>
+                                      Others
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="final-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="fianl-comments" >
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                      </td>
+                                      <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                      </td>
+                                  </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#materiality-d" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">D. PERFORMANCE MATERIALITY FOR SPECIFIC CIRCUMSTANCES IN STEP C.</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="materiality-d">
+
+                  <div class="card-body">
+                    <p>(ISA 320.11 AND A.12)</p>
+                        <br> 
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="materiality-d-table" width="100%" cellspacing="0">
+                                <thead>
+                                  <tr>
+                                    <th>F/S area or disclosure</th>
+                                    <th>Final</th>
+                                    <th>Preliminary</th>
+                                    <th>Prior period</th>
+                                    <th>Comments</th>
+                                  </tr>
+                                </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                   Revenue
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                  </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      Intercompany
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="premilinary-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="premilinary-comments" >
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="premilinary-amount" >
+                                      </td>
+                                      <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="premilinary-comments" >
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Employee costs
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="final-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="fianl-comments" >
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                      </td>
+                                      <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                      </td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td>
+                                      Others
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="final-amount" >
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="fianl-comments" >
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                      </td>
+                                      <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                      </td>
+                                  </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#materiality-e" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">E. TRIVIAL MISSTATEMENTS</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="materiality-e">
+
+                  <div class="card-body">
+                    <p>(ISA 450.15)</p>
+                    <br> 
+                    <div class="form-row">
+                        <div class="col">
+                            <b>Trivial misstatement is calculated based on (%)</b>
+                        </div>
+                        <div class="col">
+                            <input type="number" max="57" min="1" value="1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row my-3">
+                        <div class="col">
+                            <b>Amount below which misstatements would be clearly trivial.</b>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <b>Comments</b>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#materiality-f" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">F. FINAL MATERIALITY ASSESSMENTS</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="materiality-f">
+
+                  <div class="card-body">
+                    <p>(ISA 320.12, ISA 320.13, ISA 320.14, ISA 450.10)</p>
+                        <br> 
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="materiality-a-table-2" width="100%" cellspacing="0">
+                                <thead>
+                                  <tr>
+                                    <th>Revision to materiality</th>
+                                    <th>Yes/No</th>
+                                    <th>Comments</th>
+                                    <th>W/P Ref</th>
+                                  </tr>
+                                </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    1. Have revisions (if any) to overall and related performance materiality been recorded above and the reasons noted? Consider changes in operations/results, new information obtained and misstatements identified during the audit.		
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-amount">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-fixed-width" type="text" id="prior-comments">
+                                  </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2. Has the impact of any revisions in overall and performance materiality been addressed in the risk assessments and in the nature, extent and timing of further audit procedures required?		
+                                    </td>
+                                    <td>
+                                      <input class="user-form-control-fixed-width" type="text" id="premilinary-amount" >
+                                    </td>
+                                    <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="premilinary-amount" >
+                                      </td>
+                                      <td>
+                                        <input class="user-form-control-fixed-width" type="text" id="premilinary-comments" >
+                                      </td>
+                                  </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                </div>
+                </div>
+              </div>
+
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+
+</body>
+
+</html>
