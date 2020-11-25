@@ -1304,16 +1304,6 @@ router.get('/final-reports/cover-letter-existing-client', function(req,res){
 	}
 });
 
-<<<<<<< HEAD
-router.get('/field-work/fixed-assets-testing-cost-and-nbv-material-a', function(req,res){
-	if (req.session.user && req.cookies.user_sid) {
-		sess = req.session.user;
-		// const companyArray = [];
-		// const yearEndArray = [];
-
-
-
-=======
 router.get('/planning/revenue-recognition-ifrs-a', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
@@ -1503,17 +1493,12 @@ router.get('/planning/control-risk-assessment', function(req, res){
 router.get('/field-work/movement-schedule', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 		sess = req.session.user;
->>>>>>> f14cd5ff8ac64acb897dc09cb72c2cd31209d8fe
 		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
 			docs.forEach(function (doc) {
 				/*companyArray.push(doc.company);
 				yearEndArray.push(doc.engagementYearEnd);*/
 			});
-<<<<<<< HEAD
-			res.render('fixed-assets-testing-cost-and-nbv-material-a', { items: docs, data:sess, user: sess.username });
-=======
 		    res.render('movement-schedule', {items:docs,data:sess, user: sess.username });
->>>>>>> f14cd5ff8ac64acb897dc09cb72c2cd31209d8fe
 		});
 
 	} else {
