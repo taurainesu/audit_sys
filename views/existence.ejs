@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 20.41B - Existence</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------20.41B - Existence------</h4>            
+          </div>          
+
+
+          <form action="/field-work/existence-a" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>          
+                   
+            
+              <!--Risks at Financial Statement Level Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#existenceCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">PROPERTY, PLANT AND EQUIPMENT - EXISTENCE</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="existenceCard">
+
+                  <div class="card-body">
+                    <p><b>Objectives :</b></p>
+                    <p>To verify the existence of property and equipment</p><br>
+
+                    <p><b>Audit Approach :</b></p>
+                    <p>Select material assets from ledger or fixed asset register and:</p>
+                    <p>a) Follow them through to the physical assets.</p>
+                    <p>b) Confirm the rights and obligation of onwership.<br>(Inspect title deeds for Land and building/Registration documentation for vehicles)</p>
+                    <p>c) Ensure by recalculation that depreciation was correctly calculated for  the year;</p>
+                    <p>d) Inspect the assets for any signs of impairment and where impairment is visible obtain confirmation of the impairment  calculations from management and determine if the carrying value is reasonable based on supporting evidence.</p>
+                    <p>e) Ensure that land and buildings are accounted for separately, even if acquired together (IAS16.58).</p>
+                    <div>
+                        <table class="table table-borderless">
+                           <tbody>
+                              <tr>
+                                  <td>
+                                    Area:
+                                  </td>
+                                  <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                  </td>
+                              </tr>
+                              <tr><td>
+                                Purpose of the test:
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                          </td></tr>
+                              <tr><td>
+                                Population:
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                          </td></tr>
+                              <tr><td>
+                                Planning materiality:
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                          </td></tr>
+                              <tr><td>
+                                Performance materiality:
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                          </td></tr>
+                              <tr><td>
+                                Risk:
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                          </td></tr>
+                              <tr><td>
+                                Source:
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                          </td></tr>
+                              <tr><td>
+                                Sample size:
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                          </td></tr>
+                              <tr><td>
+                                Description for selecting sample:
+                            </td>
+                            <td>
+                                <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant"> 
+                          </td></tr>
+                           </tbody>
+                        </table>
+                    </div>
+                    
+                    <div>
+                        <strong><p>Sample Size Calculation:</p></strong>
+                        <div>
+                            <table class="table table-borderless">
+                                <thead>
+                                    <th colspan="2"></th>
+                                    <th>Sample size</th>
+                                </thead>
+                                <tbody>
+                                   <tr>
+                                       <td>
+                                        Financial statement balance
+                                       </td>
+                                       <td>
+                                         <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                       </td>
+                                       
+                                   </tr>
+                                   <tr><td>
+                                     Negative items (credit/debit balances):
+                                 </td>
+                                 <td>
+                                     <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                               </td></tr>
+                                   <tr><td>
+                                     Individual material items:
+                                 </td>
+                                 <td>
+                                     <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                               </td></tr>
+                                   <tr><td>
+                                     Population for sampling:
+                                 </td>
+                                 <td>
+                                     <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                               </td></tr>
+                                   <tr><td>
+                                     Performance materiality:
+                                 </td>
+                                 <td>
+                                     <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                               </td></tr>
+                                   <tr><td>
+                                     Sample of excess population:
+                                 </td>
+                                 <td>
+                                     <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                               </td>
+                               <td>
+                                <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                          </td>   
+                            </tr>
+                            <tr><td>
+                                Basis of sample selection:
+                            </td>
+                            <td colspan="2">
+                                <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                          </td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+
+                    <div>
+                        <table class="table table-bordered" style="overflow-x: auto;">
+                            <thead>
+                                <th>#</th>
+                                <th>Asset Description</th>
+                                <th>Category</th>
+                                <th>Cost per Fixed asset register</th>
+                                <th>NBV @ EOY per Fixed asset register</th>
+                                <th>Existence Verified ?</th>
+                                <th>Rights and obligations verified?</th>
+                                <th>Classification as PPE correct?</th>
+                                <th>Indication of Impairment?</th>
+                                <th>Useful life</th>
+                                <th>Depreciation recalculated</th>
+                                <th>Depreciation per FAR</th>
+                                <th>Difference</th>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+
+                <a href="#cost" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">COST</h6>
+                </a>
+
+                <div class="collapse" id="cost">
+
+                    <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-bordered" id="risksAtFSLTable2" width="100%" cellspacing="0">
+                              <thead>
+                                <tr>
+                                  <th>Description</th>
+                                  <th>Opening Balance</th>
+                                  <th>Additions</th>
+                                  <th>Disposals</th>
+                                  <th>Closing Balance</th>
+                                  <th>Balance per TB</th>
+                                  <th>Difference</th>
+                                  <th>Ref</th>
+                                </tr>
+                              </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  Land
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Buildings
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Motor Vehicle
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Computer & Electronics
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Furniture and Fittings
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Total
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </div>  
+                    </div>
+                  </div>
+                
+                  <a href="#accumulatedDepreciation" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">ACCUMULATED DEPRECIATION</h6>
+                </a>
+
+                <div class="collapse" id="accumulatedDepreciation">
+
+                    <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-bordered" id="risksAtFSLTable2" width="100%" cellspacing="0">
+                              <thead>
+                                <tr>
+                                  <th>Description</th>
+                                  <th>Opening Balance</th>
+                                  <th>Additions</th>
+                                  <th>Disposals</th>
+                                  <th>Closing Balance</th>
+                                  <th>Balance per TB</th>
+                                  <th>Difference</th>
+                                  <th>Ref</th>
+                                </tr>
+                              </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  Land
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Buildings
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Motor Vehicle
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Computer & Electronics
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Furniture and Fittings
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Total
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <br>
+                            <div class="form-group">
+                                <label>Depreciation per the general ledger: </label>
+                                <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">  
+                            </div><br>
+
+                            <div class="form-group">
+                                <label>Difference: </label>
+                                <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">  
+                            </div>
+                      </div>  
+                    </div>
+                  </div>
+
+
+                  <a href="#netbookvalue" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">NET BOOK VALUE</h6>
+                </a>
+
+                <div class="collapse" id="netbookvalue">
+
+                    <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-bordered" id="risksAtFSLTable2" width="100%" cellspacing="0">
+                              <thead>
+                                <tr>
+                                  <th>Description</th>
+                                  <th>Opening NBV</th>
+                                  <th>Closing NBV</th>
+                                </tr>
+                              </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  Land
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              
+                              <tr>
+                                <td>
+                                  Furniture and fittings
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Total
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                                <td>
+                                    <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+                                </td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                      </div>  
+                    </div>
+                  </div>
+
+                  <a href="#fixedassetproof" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">FIXED ASSET PROOF</h6>
+                </a>
+
+                <div class="collapse" id="fixedassetproof">
+
+                    <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-bordered" id="risksAtFSLTable2" width="100%" cellspacing="0">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  Net book value BOY
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                              </tr>
+                              
+                              <tr>
+                                <td>
+                                  Less: Depreciation
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Add: Additions 
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>
+                                  Less: Disposals 
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>
+                                  Closing net book value at end of year
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>
+                                  PER LEADSHEET
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>
+                                  Difference: 
+                                </td>
+                                <td>
+                                  <input class="user-form-control-fixed-width" type="number" id="managementOverrideRiskCategory" value="Fraud risk">
+                                </td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+
+                      </div>  
+                    </div>
+                  </div>
+
+              </div>  
+              
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">CONCLUSION:</h6>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                      <input class="form-control"/>
+                  </div>
+                </div>
+              </div>
+
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+
+</body>
+
+</html>
