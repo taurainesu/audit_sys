@@ -1,11 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var assert = require('assert');
+var mongoose = require('mongoose');
 const { body, check, validationResult } = require('express-validator');
 const User = require('../models/User');
 const PreEngagement =  require('../models/PreEngagement');
 const Investment = require('../models/InvestmentProperty');
 const Risk = require('../models/RiskAssessment');
+const CompanyDocument = require('../models/CompanyDocument');
+const Company = require('../models/Company');
 const GoingConcern = require('../models/GoingConcern');
 const DiscussionAmongAuditTeam = require('../models/DiscussionAmongAuditTeam');
 const IntangibleAssetsA = require('../models/IntangibleAssetsA');
@@ -116,7 +119,7 @@ router.get('/pre-engagement/client-acceptance',function(req, res){
 router.post('/pre-engagement/client-acceptance', function(req, res){
 
 	if (req.session.user && req.cookies.user_sid) {
-
+		
 		//create score counter and calculate overall score
 		let scoreCount = 0;
 		let aboveThreshold = false;
@@ -168,7 +171,7 @@ router.post('/pre-engagement/client-acceptance', function(req, res){
 			}
 		}
 		calcThreshold();
-
+         
 		//create model for data to be sent to database
 		const item = {
 			company: req.body.company,
@@ -255,13 +258,33 @@ router.post('/pre-engagement/client-acceptance', function(req, res){
 		// a new document instance
 		const new_pre_engagement = new PreEngagement(item);
 
+		const documentsData = {
+			year:req.body.engagementYearEnd,
+			preengagement:[
+				new_pre_engagement
+			],
+			planning:[],
+			field_work:[],
+		}
+
+		// create company model
+		const companyData = {
+			name: req.body.company,
+			documents:[
+				new CompanyDocument(documentsData),
+			],
+		}; 
+		
+		//create company object
+		const company = new Company(companyData);
+		
 		// save model to database
-		new_pre_engagement.save(function (err, insert_values) {
+		company.save(function (err, insert_values) {
 			if (err) return console.error(err);
 			console.log(insert_values.company + " successfully inserted");
 		});
 
-		console.log('Client Acceptance record created for client: '+req.body.company);
+		console.log('Client Acceptance record created for client: '+ company.name);
 	} else {
 		res.redirect('/login');
 	}
@@ -317,8 +340,7 @@ router.post('/pre-engagement/continuance-evaluation-of-client-relationship', fun
 
 		//create model for data to be sent to database
 		var item = {
-			company:req.body.company,
-			engagementYearEnd:req.body.engagementYearEnd,
+			
 			date:req.body.today,
 			wpRef:'10.14B',
 			honestRelationship:req.body.yesNoNAA,
@@ -366,12 +388,15 @@ router.post('/pre-engagement/continuance-evaluation-of-client-relationship', fun
 		// a new document instance
 		const new_pre_engagement = new PreEngagement(item);
 		// save model to database
-		new_pre_engagement.save(function (err, insert_values) {
-			if (err) return console.error(err);
-			console.log(insert_values.company + " successfully inserted");
+
+		//try finding object from database
+		Company.update(
+			{ name:req.body.company, "documents.year":req.body.engagementYearEnd },
+			{ $push: { "documents.$.preengagement": new_pre_engagement } }
+			).then((value) => {
+			console.log(value)
 		});
 
-		console.log('Continuance Evaluation record created for client: '+req.body.company);
 
 	} else {
 		res.redirect('/login');
@@ -1165,7 +1190,6 @@ router.post('/file-assembly/work-papers-by-client', function(req,res){
 		var noteCompany = req.body.company;
 		var noteEngagementYearEnd = req.body.engagementYearEnd;
 
-
 		GoingConcern.find({ company:noteCompany, engagementYearEnd:noteEngagementYearEnd }).then(function(workPapers){
 			workPapers.forEach(function(workPaper){
 
@@ -1516,6 +1540,38 @@ router.get('/field-work/existence', function(req, res){
 				yearEndArray.push(doc.engagementYearEnd);*/
 			});
 		    res.render('existence', {items:docs,data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/field-work/additions', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('additions', {items:docs,data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.get('/field-work/impairment-sme', function(req, res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+		    res.render('impairment-sme', {items:docs,data:sess, user: sess.username });
 		});
 
 	} else {

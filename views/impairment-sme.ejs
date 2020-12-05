@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 20.41D - Impairment</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------20.41D Impairment------</h4>            
+          </div>          
+
+
+          <form action="/field-work/existence-a" method="POST">
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>          
+                   
+            
+              <!--Risks at Financial Statement Level Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#existenceCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">PROPERTY, PLANT AND EQUIPMENT - IMPAIRMENT</h6>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="existenceCard">
+
+                  <div class="card-body">
+                    <p><b>Objectives :</b></p>
+                    <p>To test that the Fixed Assets are not materially misstated</p><br>
+
+                    <p><b>Audit Approach :</b></p>
+                    <p>Assess whether there is an indication that an asset or group of assets may be impaired reference to market value, adverse technological , market, economic or legal changes, increase in interest rates, obsolescence or physical damage, etc.</p>
+                    
+                    <div>
+                       <p><b>In terms of Section 27 of IFRS for SMEs:</b></p>
+                       <p>An entity shall assess at each reporting date whether there is any indication that an asset may be impaired. If any such indication exists, the entity shall estimate the recoverable amount of the asset. If there is no indication of impairment, it is not necessary to estimate the recoverable amount.
+                        In assessing whether there is any indication that an asset may be impaired, an entity shall consider, as a minimum, the following indications:</p>
+                    </div>
+                    
+                    <div>
+                        <p>(a) During the period, an asset’s market value has declined significantly more than would be expected as a result of the passage of time or normal use.</p>
+
+                        <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant"> <br>
+
+                        <p>(b) Significant changes with an adverse effect on the entity have taken place during the period, or will take place in the near future, in the technological, market, economic or legal environment in which the entity operates or in the market to which an asset is dedicated..</p>
+
+                        <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant"><br>
+
+                        <p>(c) Market interest rates or other market rates of return on investments have increased during the period, and those increases are likely to affect materially the discount rate used in calculating an asset’s value in use and decrease the asset’s fair value less costs to sell.</p>
+
+                        <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant"><br>
+
+                        <p>(d) Evidence is available of obsolescence or physical damage of an asset.</p>
+
+                        <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant"><br>
+
+                        <p>(e) Significant changes with an adverse effect on the entity have taken place during the period, or \ are expected to take place in the near future, in the extent to which, or manner in which, an asset is used or is expected to be used. These changes include the asset becoming idle, plans to discontinue or restructure the operation to which an asset belongs, plans to dispose of an asset before the previously expected date, and reassessing the useful life of an asset as finite rather than indefinite</p>
+
+                        <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant"><br>
+
+                        <p>(f) Evidence is available from internal reporting that indicates that the economic performance of an asset is, or will be, worse than expected. In this context economic performance includes operating results and cash flows.</p>
+
+                        <input class="user-form-control-wider" type="number" id="managementOverrideRiskSignificant">
+
+                        
+                    </div>
+                  </div>
+                </div>
+
+               
+
+                
+              </div>  
+              
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">CONCLUSION:</h6>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                      <input class="form-control"/>
+                  </div>
+                </div>
+              </div>
+
+
+              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+            </div>
+            
+          </div>
+          </form>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
+
+
+</body>
+
+</html>

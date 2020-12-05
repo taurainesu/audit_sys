@@ -30,8 +30,6 @@ const  GoingConcernSchema =  new mongoose.Schema({
         required: false
     },
     
-    
-    
     doesMaterialityUncertaintyD:{
         type: String,
         required: false
