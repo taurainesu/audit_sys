@@ -4,18 +4,18 @@
     </div>
     <div class="card-body">
         <label class="small font-weight-bold" for="company">Company            
-            <SELECT class="form-control form-control-sm" id="company" name="company">
-                <% for (var i = 0; i<items.length ; i++) { %>
-                    <option><%= items[i].company %> 
+            <SELECT class="form-control form-control-sm" style="color:black" id="company" name="company">
+                <% for (var i = 0; i<companies.length ; i++) { %>
+                    <option><%= companies[i] %> 
                 <% } %>                
             </SELECT>
         </label>                    
         &nbsp;&nbsp;
         
         <label class="small font-weight-bold" for="engagementYearEnd">Year-End
-            <SELECT class="form-control form-control-sm" id="engagementYearEnd" name="engagementYearEnd">
-                    <% for (var i = 0; i<items.length ; i++) { %>
-                        <option><%= items[i].engagementYearEnd %> 
+            <SELECT class="form-control form-control-sm"  id="engagementYearEnd" name="engagementYearEnd">
+                    <% for (var i = 0; i<years.length ; i++) { %>
+                        <option><%= years[i] %> 
                     <% } %>                
             </SELECT>
         </label><br>  

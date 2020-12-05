@@ -841,14 +841,18 @@ router.get('/planning/going-concern', function(req, res){
 		const companyArray = [];
 		const yearEndArray = [];
 
-		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+		Company.find({"documents.preengagement.auditAuthorised":true}).then(function(docs) {
 			docs.forEach(function (doc) {
-				//console.log(doc);
-				//companyArray.push(doc);
-				//yearEndArray.push(doc.engagementYearEnd);
+				console.log(doc.name);
+				companyArray.push(doc.name);
+				doc.documents.forEach(function(d){
+					yearEndArray.push(d.year);
+				})
+				
+				
 			});
-			console.log(docs);
-			res.render('going-concern', { items: docs, data:sess, user: sess.username });
+			//console.log("My documents - " + docs);
+			res.render('going-concern', { items:docs,companies: companyArray,years:yearEndArray, data:sess, user: sess.username });
 		});
 
 
@@ -863,11 +867,8 @@ router.get('/planning/going-concern', function(req, res){
 router.post('/planning/going-concern', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 
-		
 		//create model for data to be sent to database
 		const item = {
-			company: req.body.company,
-			engagementYearEnd: req.body.engagementYearEnd,
 			date: req.body.today,
 			wpRef: '02.20',
 			doesMaterialityUncertaintyA: req.body.doesMaterialityUncertaintyA,
@@ -885,11 +886,18 @@ router.post('/planning/going-concern', function(req, res){
 		// a new document instance
 		const new_going_concern = new GoingConcern(item);
 
+		Company.update(
+			{ name:req.body.company, "documents.year":req.body.engagementYearEnd },
+			{ $push: { "documents.$.planning": new_going_concern } }
+			).then((value) => {
+			console.log(value)
+		});
+
 		// save model to database
-		new_going_concern.save(function (err, insert_values) {
+		/*new_going_concern.save(function (err, insert_values) {
 			if (err) return console.error(err);
 			console.log(insert_values.company + " successfully inserted");
-		});
+		});*/
 
 		console.log('Client Acceptance record created for client: '+req.body.company);
 	} else {
