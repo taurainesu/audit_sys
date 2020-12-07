@@ -1506,6 +1506,316 @@ router.get('/field-work/movement-schedule', function(req, res){
 	}
 });
 
+
+
+
+
+
+router.get('/planning/inspection-of-minutes', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+		const dummy=[{
+				id:"1",
+  				date: '05/04/2020',
+  				meetingType: 'Audit Comitee',
+  					agenda: 'Any dealings between Motec & Amtec to  be at arms length after the effective date of the recapitalisation',
+  					followUp: 'implemented'
+				},
+
+				{
+				id:"2",
+  				date:'05/04/2020',
+  				meetingType: 'Audit Comitee',
+  					agenda: 'Any dealings between Motec & Amtec to  be at arms length after the effective date of the recapitalisation',
+  					followUp: 'implemented'
+				}];
+
+
+
+
+
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('inspection-of-minutes', {dummy:dummy, items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+router.post('/planning/inspection-of-minutes/add/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+
+		data['date']="05/04/2020";
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
+
+
+router.post('/planning/inspection-of-minutes/followup/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
+
+router.post('/planning/inspection-of-minutes/conclude/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
+
+
+router.get('/planning/noclar', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+	
+
+
+
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('noclar', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+
+
+router.post('/planning/noclar/add/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
+
+
+router.post('/planning/noclar/conclude/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
+
+router.post('/planning/doubtful-debts/add/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
+
+
+router.get('/planning/doubtful-debts', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+	
+
+
+
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('doubtful-debts', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+
+router.post('/planning/doubtful-debts/conclude/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
+
+router.post('/planning/income-tax/add/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
+
+
+router.get('/planning/income-tax', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+	
+
+
+
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('income-tax', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+
+router.post('/planning/income-tax/conclude/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
+router.get('/planning/journal-entry', function(req,res){
+	if (req.session.user && req.cookies.user_sid) {
+		sess = req.session.user;
+		// const companyArray = [];
+		// const yearEndArray = [];
+	
+
+
+
+		PreEngagement.find({auditAuthorised:true}).then( function(docs) {
+			docs.forEach(function (doc) {
+				/*companyArray.push(doc.company);
+				yearEndArray.push(doc.engagementYearEnd);*/
+			});
+			res.render('journal-entry', { items: docs, data:sess, user: sess.username });
+		});
+
+	} else {
+		res.redirect('/login');
+	}
+});
+
+
+
+
+router.post('/planning/journal-entry/add/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
+
+
+router.post('/planning/journal-entry/conclude/', function(req, res,callback){
+
+	if (req.session.user && req.cookies.user_sid) {
+		let data=req.body;
+		console.log(data);
+
+			res.send(data);
+
+	} else {
+		res.redirect('/login');
+	}
+
+});
+
 module.exports = router;
 
 
