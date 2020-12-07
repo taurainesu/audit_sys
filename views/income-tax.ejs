@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 10.55 - Income Tax</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+
+
+  <style type="text/css">
+    
+
+    th {
+    white-space: nowrap;
+}
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+<h4 class="m-0 font-weight-bold text-primary">------10.55 - Income Tax  ------</h4>            
+          </div>          
+
+
+          
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>
+
+                                   <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Meeting Details</h6>
+                </div>
+                <div class="card-body">
+                    
+                    <label class="small font-weight-bold" for="engagementPartner">Engagement Partner
+                        <input class="form-control form-control-sm" type="text" id="engagementPartner" name="engagementPartner">
+                    </label>
+                    <label class="small font-weight-bold" for="assistingPartner">Assisting Partner
+                        <input class="form-control form-control-sm" type="text" id="assistingPartner" name="assistingPartner">
+                    </label>
+                    <label class="small font-weight-bold" for="meetingDate">Date
+                        <input class="form-control form-control-sm" type="date" id="today" name="today" readonly>
+                    </label>                    
+                    
+                </div>
+              </div>
+
+
+
+
+                   <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">In Attendance:</h6>
+                </div>
+                <div class="card-body">
+                                      
+                    <label class="small font-weight-bold" for="nolands">Nolands:
+                        <textarea class="form-control form-control-sm" id="nolands" name="nolands" cols="150" rows="4"></textarea>
+                    </label>
+                    <label class="small font-weight-bold" for="client">Client:
+                        <textarea class="form-control form-control-sm" id="client" name="client" cols="150" rows="4"></textarea>
+                    </label>               
+                                        
+                </div>
+              </div>  
+
+
+
+                
+              <!--Going Concern Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#openingBalanceVerificationCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample" id="incomeCollapse">
+                    <h6 class="m-0 font-weight-bold text-primary">Income  Tax</h6>
+
+                       <div class="progress progress-sm mb-2">
+<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="incomeProgress"  style="width:0%"></div>
+                                    </div>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="openingBalanceVerificationCard">
+
+                  <div class="card-body">
+
+
+
+
+<form  method="POST" id="doubtfulDebtsForm" data-post-url="/planning/income-tax/add/">
+  
+
+<div class="card itemCard"  style="margin-top: 1em" id="1">
+  <div class="card-header">
+    <label class="font-weight-bold">
+   How do  you calculate taxable income?
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="taxableIncome" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="2" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+ How  do you apply the provisions of the Income Tax Act
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="IncomeTaxAct" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="3" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+Who prepares the tax computation?
+</label>
+</div>
+  <div class="card-body">
+  
+
+   <textarea class="form-control form-control-sm" id="" name="taxComputator" placeholder="" rows="4"></textarea>
+
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="4"  hidden="true">
+  <div class="card-header">
+    <label class="font-weight-bold">
+ Is the deductibility of pertinent expenses considered?
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="deductibilityConsideration" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="5" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+   Is the taxability of pertinent incomes considered?
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="taxabilityConsiderations" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="6"  hidden="true">
+  <div class="card-header">
+    <label class="font-weight-bold">
+   Is a Tax FAR maintained?
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="taxFAR" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="7"    hidden="true">
+  <div class="card-header">
+    <label class="font-weight-bold">
+  Are temporary differencces accounted for?
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="temporaryDiffrences" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="8" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+Is CGT considered in the tax calculation?
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="CGTConsideration" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+
+
+      <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+   
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="9" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+Are the correct tax rates applied?
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="taxRateApplication" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="10" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+Who reviews the tax computation?
+
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="taxReviewer" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info " type="submit"  style="margin-bottom: 2em;margin-left: 1em;">Finish</button>
+
+</div>
+</div>
+</div>
+
+
+</form>
+ 
+
+
+
+                  </div>
+                </div>
+              </div>
+              <form  method="POST" action="/planning/income-tax/conclude/">
+               <!-- Conclusion Card -->
+               <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Conclusion:</h6>
+                  </div>
+                  <div class="card-body">
+                    
+                      
+
+
+                    
+                    <textarea class="form-control form-control-sm" id="goingConcernConclusion" name="incomeTaxConclusion" placeholder="State conclusion" rows="4"></textarea>
+                  </div>
+                </div>
+                <button class="btn btn-info btn-long" type="submit">Submit</button>
+        <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+
+                </form>
+
+
+              
+
+            </div>
+            
+          </div>
+       
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="commentModal">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+           <div class="modal-header">
+          <h3>Add a Comment</h3>
+        </div>
+     
+        <div class="modal-body">
+<form id="noclarComment">
+
+              <input type="text" name="minuteId" id="minuteId"   value="" hidden="true">
+
+            <div class="form-group">
+         <textarea class="form-control" name="myComment" id="comment" value=""></textarea>
+       </div>
+          <button  class="btn btn-info" type="button" id="commentSubmitButton">Add</button>
+
+
+          </form>
+        
+        </div>
+        <div class="modal-footer">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+
+
+
+
+
+
+ <script type="text/javascript">
+   $(".nextButton").click(function(){
+    var cardId = $(this).parent().parent().parent().attr("id");
+    var myCardId = parseInt(cardId);
+    var nextCardId=myCardId+1;
+    var progressInt=myCardId*10;
+    var progressString=progressInt.toString()+"%";
+    var nextCardSelector="#"+nextCardId.toString();
+    var myCardSelector="#"+cardId;
+    $(myCardSelector).attr("hidden",true);
+    $(nextCardSelector).attr("hidden",false);
+    $("#incomeProgress").css({"width":progressString});
+
+})
+</script>
+
+ <script type="text/javascript">
+   $("#incomeCollapse").click(function(){
+  $([document.documentElement, document.body]).animate({
+  scrollTop: $("#incomeCollapse").offset().top}, 1000);
+
+})
+</script>
+
+
+
+<script type="text/javascript">
+$("#doubtfulDebtsForm").submit(function(event){
+    event.preventDefault();
+ // Get some values from elements on the page:
+  var form = $(this);
+  var formData=form.serialize();
+
+ $.ajax({
+        url: form.attr("data-post-url"),
+        data:formData ,
+        type: 'post',
+        dataType: 'json',
+        success: function (data) {
+          
+          $("#incomeProgress").css({"width": "100%"});
+          $("#incomeCollapse").trigger("click");
+          $("#incomeProgress").css({"backgroundColor": "#1cc88a"});
+          
+          },
+
+          error:function(){
+          alert('error in request');
+        },
+
+        complete:function(){
+              console.log("complete");
+            }
+      });
+
+
+  });
+</script>
+
+</body>
+
+</html>

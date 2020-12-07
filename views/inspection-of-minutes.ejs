@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 10.53 - Inspection Of Minutes</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+
+  <style type="text/css">
+    
+
+    th {
+    white-space: nowrap;
+}
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------10.53 - Inspection of Minutes------</h4>            
+          </div>          
+
+
+          
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>
+
+                                   <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Meeting Details</h6>
+                </div>
+                <div class="card-body">
+                    
+                    <label class="small font-weight-bold" for="engagementPartner">Engagement Partner
+                        <input class="form-control form-control-sm" type="text" id="engagementPartner" name="engagementPartner">
+                    </label>
+                    <label class="small font-weight-bold" for="assistingPartner">Assisting Partner
+                        <input class="form-control form-control-sm" type="text" id="assistingPartner" name="assistingPartner">
+                    </label>
+                    <label class="small font-weight-bold" for="meetingDate">Date
+                        <input class="form-control form-control-sm" type="date" id="today" name="today" readonly>
+                    </label>                    
+                    
+                </div>
+              </div>
+
+
+
+
+                   <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">In Attendance:</h6>
+                </div>
+                <div class="card-body">
+                                      
+                    <label class="small font-weight-bold" for="nolands">Nolands:
+                        <textarea class="form-control form-control-sm" id="nolands" name="nolands" cols="150" rows="4"></textarea>
+                    </label>
+                    <label class="small font-weight-bold" for="client">Client:
+                        <textarea class="form-control form-control-sm" id="client" name="client" cols="150" rows="4"></textarea>
+                    </label>               
+                                        
+                </div>
+              </div>  
+
+
+
+                
+              <!--Going Concern Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#openingBalanceVerificationCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample" id="collapse">
+                    <h6 class="m-0 font-weight-bold text-primary">INSPECTION OF MINUTES</h6>
+
+
+                    <div class="progress progress-sm mb-2">
+<div class="progress-bar" role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="inspectionProgress"></div>
+                                    </div>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="openingBalanceVerificationCard">
+
+                  <div class="card-body">
+
+
+
+
+<form  method="POST" id="minutesForm" data-post-url="/planning/inspection-of-minutes/add/">
+
+
+  <div class="row">
+    <div class="col">
+              <label class="small font-weight-bold" for="reviewedBy">Meeting Date 
+        </label>   
+        <input class="form-control form-control-sm" type="date" id="" name="date" >
+    </div>
+    <div class="col">
+      
+                         <label class="small font-weight-bold" for="">Meeting Type
+        </label>
+        <input class="form-control form-control-sm" type="text" id="" name="meetingType" >
+    </div>
+  </div>
+
+
+     
+
+       
+
+
+        <label class="small font-weight-bold" for="reviewedBy">Agenda
+        </label>   
+        <textarea class="form-control" type="text" id="" name="agenda" ></textarea>
+
+
+
+        <label class="small font-weight-bold" for="reviewedBy">Follow Up
+        </label>   
+        <input class="form-control form-control-sm" type="text" id="" name="followUp" >
+
+
+
+        <button class="btn btn-info btn-long" type="submit" id="submitButton">Save and Continue</button>
+
+
+<button class="btn btn-info btn-long" >Done</button>
+
+
+                    </form>
+
+
+
+                    <table class="table"  id="myTable" style="margin-top:5em !important">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Meeting Type</th>
+      <th scope="col">Agenda</th>
+      <th scope="col">Follow Up</th>
+      <th scope="col"></th>
+    </tr>
+
+
+     <% dummy.forEach(function(dummy){ %>
+ <tr id="dummy">
+   <td><%= dummy.date %></td>
+    <td><%= dummy.meetingType %></td>
+      <td><%= dummy.agenda %></td>
+        <td><p class=<%=dummy.id%> > <%= dummy.followUp %></p></td>
+        <td><button class="btn btn-info updateButton" id=<%= dummy.id %> > Update</button></td>
+
+
+ </tr>
+  <% }) %>
+
+  </thead>
+  <tbody>
+        
+  </tbody>
+</table>
+
+
+
+
+
+
+     
+
+
+<button class="btn btn-info"  id="confirmButton"type="button" hidden="true">Confirm</button>
+
+                  </div>
+                </div>
+              </div>
+              <form  method="POST" action="/planning/inspection-of-minutes/conclude/">
+               <!-- Conclusion Card -->
+               <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Conclusion:</h6>
+                  </div>
+                  <div class="card-body">
+                    
+                      
+
+
+                    
+                    <textarea class="form-control form-control-sm" id="inspectionOfMinutesConclusion" name="goingConcernConclusion" placeholder="State conclusion" rows="4"></textarea>
+                  </div>
+                </div>
+                <button class="btn btn-info btn-long" type="submit">Submit</button>
+        <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+
+                </form>
+
+
+              
+
+            </div>
+            
+          </div>
+       
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="updateModal">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+           <div class="modal-header">
+          <h3>Follow up on Minute</h3>
+        </div>
+     
+        <div class="modal-body">
+<form id="updateMinuteForm" method="POST" data-post-url="/planning/inspection-of-minutes/followup/">
+
+              <input type="text" name="minuteId" id="minuteId"  hidden="true">
+
+            <div class="form-group">
+         <textarea class="form-control" name="updateMinute" id="updateMinute"></textarea>
+       </div>
+          <button type="submit" class="btn btn-info" type="button">Update</button>
+
+
+          </form>
+        
+        </div>
+        <div class="modal-footer">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <script type="text/javascript">
+    $("#confirmButton").click(function() {
+    $("#collapse").trigger("click");
+    $("#inspectionProgress").css({"width": "100%"});
+    $("#inspectionProgress").css({"backgroundColor": "#1cc88a"});
+})
+
+
+
+  </script>
+
+<script type="text/javascript">
+$("#minutesForm").submit(function(event){
+    event.preventDefault();
+ // Get some values from elements on the page:
+  var form = $(this);
+  var formData=form.serialize();
+
+ $.ajax({
+        url: form.attr("data-post-url"),
+        data:formData ,
+        type: 'post',
+        dataType: 'json',
+        success: function (data) {
+          $('#minutesForm').trigger("reset");
+$('#myTable tr:last').after
+('<tr><td>'+data['date']+'</td> <td>'+data['meetingType']+'</td><td>'+data['agenda']+'</td><td>'+data['followUp']+'</td></tr>');
+
+  $("#confirmButton").attr("hidden",false);
+
+          
+          },
+
+          error:function(){
+          alert('error in request');
+        },
+
+        complete:function(){
+              console.log("complete");
+            }
+      });
+
+
+  });
+</script>
+
+
+
+
+<script type="text/javascript">
+$("#updateMinuteForm").submit(function(event){
+  $('#updateModal').modal('hide');
+    event.preventDefault();
+ // Get some values from elements on the page:
+  var form = $(this);
+  var formData=form.serialize();
+
+ $.ajax({
+        url: form.attr("data-post-url"),
+        data:formData ,
+        type: 'post',
+        dataType: 'json',
+        success: function (data) {
+            var minuteId=data['minuteId'];
+            var update=data['updateMinute'];
+            var myHtml='<p>'+update+'</p>';
+            $('.'+minuteId).after(myHtml);
+            $("#updateMinute").val("");
+},
+
+          error:function(){
+          alert('error in request');
+        },
+
+        complete:function(){
+              console.log("complete");
+            }
+      });
+
+
+  });
+</script>
+
+     
+
+
+
+
+
+
+</body>
+
+</html>

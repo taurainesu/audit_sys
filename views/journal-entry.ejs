@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Audit v2.3.1 - 10.53 - Accounting Records</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom specific styles -->
+  <link href="/css/audit-user-defined.css" rel="stylesheet">
+
+
+  <style type="text/css">
+    
+
+    th {
+    white-space: nowrap;
+}
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include partials/nav.ejs %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <% include partials/top-nav.ejs %>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0 font-weight-bold text-primary">------10.53 - Accounting Records------</h4>            
+          </div>          
+
+
+          
+            <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Engagement details Card -->
+              
+                <% include partials/engagementCard.ejs %>
+
+                                   <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Meeting Details</h6>
+                </div>
+                <div class="card-body">
+                    
+                    <label class="small font-weight-bold" for="engagementPartner">Engagement Partner
+                        <input class="form-control form-control-sm" type="text" id="engagementPartner" name="engagementPartner">
+                    </label>
+                    <label class="small font-weight-bold" for="assistingPartner">Assisting Partner
+                        <input class="form-control form-control-sm" type="text" id="assistingPartner" name="assistingPartner">
+                    </label>
+                    <label class="small font-weight-bold" for="meetingDate">Date
+                        <input class="form-control form-control-sm" type="date" id="today" name="today" readonly>
+                    </label>                    
+                    
+                </div>
+              </div>
+
+
+
+
+                   <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">In Attendance:</h6>
+                </div>
+                <div class="card-body">
+                                      
+                    <label class="small font-weight-bold" for="nolands">Nolands:
+                        <textarea class="form-control form-control-sm" id="nolands" name="nolands" cols="150" rows="4"></textarea>
+                    </label>
+                    <label class="small font-weight-bold" for="client">Client:
+                        <textarea class="form-control form-control-sm" id="client" name="client" cols="150" rows="4"></textarea>
+                    </label>               
+                                        
+                </div>
+              </div>  
+
+
+
+                
+              <!--Going Concern Card-->
+              <div class="card shadow mb-4">
+
+                <!-- Card Header - Accordion -->
+                <a href="#openingBalanceVerificationCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample" id="journalCollapse">
+                    <h6 class="m-0 font-weight-bold text-primary">JOURNAL ENTRIES</h6>
+                    <div class="progress progress-sm mb-2">
+<div class="progress-bar" role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="journalProgress"></div>
+                                    </div>
+                </a>
+
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="openingBalanceVerificationCard">
+
+                  <div class="card-body">
+
+
+
+
+
+                    <form  method="POST" id="journalEntryForm" data-post-url="/planning/journal-entry/add/">
+  
+
+<div class="card itemCard"  style="margin-top: 1em" id="1">
+  <div class="card-header">
+    <label class="font-weight-bold">
+  What is the authorisation procedure for  journal entries?.
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="authorisationProcedure" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="2" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+  How are journal entries processed?
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="journalEntryProccessing" placeholder="" rows="4"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="3" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+ Retention of supporting documentation for allowance raised.
+</label>
+</div>
+  <div class="card-body">
+  
+
+    <input type="file" multiple>
+
+
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="4"  hidden="true">
+  <div class="card-header">
+    <label class="font-weight-bold">
+      Who  processes Journal entries?
+</label>
+</div>
+  <div class="card-body">
+
+       <div class="col-sm-6 mb-3 mb-sm-0">
+        <input class="form-control form-control-user" id="" name="journalEntryProccessor" type="text" placeholder="Name">
+                                    </div>
+  
+  
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="5" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+    Who authorises journal Entries?
+</label>
+</div>
+  <div class="card-body">
+
+
+       <div class="col-sm-6 mb-3 mb-sm-0">
+          <input type="text"  class="form-control form-control-user" id="" name="journalEntryAuthoriser" placeholder="" >
+                                    </div>
+  
+
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="6"  hidden="true">
+  <div class="card-header">
+    <label class="font-weight-bold">
+   How are debtors who have exceeded their payments terms treated?
+</label>
+</div>
+  <div class="card-body">
+  
+  <textarea class="form-control form-control-sm" id="" name="debtorTreatment" placeholder="" rows="2"></textarea>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="7"    hidden="true">
+  <div class="card-header">
+    <label class="font-weight-bold">
+  What is the Minimum monetary level for management authorisation
+</label>
+</div>
+  <div class="card-body">
+
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <input class="form-control form-control-sm" id="" type="number" name="minimumAuthorised" placeholder="">
+                                    </div>
+  
+
+
+  
+
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="8" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+ Are Supporting documents for journal entries  attached to the journal and reviewed by management?
+</label>
+</div>
+  <div class="card-body">
+  
+   <!-- Yes Radio Button -->
+    <!-- radio buttons-->
+                                <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="aDY" value="Yes" name="attachedDocuments" checked>
+                                  <label class="custom-control-label" for="aDY">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-radio custom-control">
+                                  <input type="radio" class="custom-control-input" id="aDN" value="No" name="attachedDocuments">
+                                  <label class="custom-control-label" for="aDN">No</label>
+                                </div>
+
+                               
+                                <!-- End of Radio Buttons -->
+
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="9" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+  Are the monthly management meetings where management accounts  are reviewed?</label>
+</div>
+  <div class="card-body">
+  
+       <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="mMY" value="Yes" name="monthlyMeeting" checked>
+                                  <label class="custom-control-label" for="mMY">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-radio custom-control">
+                                  <input type="radio" class="custom-control-input" id="mMN" value="No" name="monthlyMeeting">
+                                  <label class="custom-control-label" for="mMN">No</label>
+                                </div>
+
+                               
+                                <!-- End of Radio Buttons -->
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton " type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="10" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+   Are deviations from expectations or unusual items identified during the review of the management accounts are investigated? </label>
+</div>
+  <div class="card-body">
+  
+       <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="dIY" value="Yes" name="deviationInvestigation" checked>
+                                  <label class="custom-control-label" for="dIY">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-radio custom-control">
+                                  <input type="radio" class="custom-control-input" id="dIN" value="No" name="deviationInvestigation">
+                                  <label class="custom-control-label" for="dIN">No</label>
+                                </div>
+
+                               
+                                <!-- End of Radio Buttons -->
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info  nextButton" type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="11" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+  Are  meeting  minutes maintained?</label>
+</div>
+  <div class="card-body">
+  
+       <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="mMMY" value="Yes" name="meetingMinutesMantained" checked>
+                                  <label class="custom-control-label" for="mMMY">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                            <div class="custom-radio custom-control">
+                    <input type="radio" class="custom-control-input" id="mMMN" value="No" name="meetingMinutesMantained">
+                                  <label class="custom-control-label" for="mMMN">No</label>
+                                </div>
+
+                               
+                                <!-- End of Radio Buttons -->
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton " type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="12" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+ General Ledger Date</label>
+</div>
+  <div class="card-body">
+
+
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <input type="date" name="gLedgerDate" class="form-control form-control-user">
+
+                                    </div>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton " type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="13" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+General Ledger Description</label>
+</div>
+  <div class="card-body">
+  
+ <div class="col-sm-6 mb-3 mb-sm-0">
+  <input type="text" name="gLedgerDescription" class="form-control form-control-user" placeholder="Description">
+
+                                    </div>  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton " type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="14" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+  Value as per General Ledger</label>
+</div>
+  <div class="card-body">
+   <div class="col-sm-6 mb-3 mb-sm-0">
+          <input class="form-control form-control-sm" id="" type="number" name="gLedgerValue" placeholder="">
+                                    </div>
+
+    
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton " type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="15" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+  Debit Account</label>
+</div>
+  <div class="card-body">
+
+
+     <div class="col-sm-6 mb-3 mb-sm-0">
+           <input type="text" name="debitAccount" class="form-control form-control-user" placeholder="Debit  Account">
+                                    </div>
+  
+
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton " type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="16" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+  Credit Account</label>
+</div>
+  <div class="card-body">
+
+
+     <div class="col-sm-6 mb-3 mb-sm-0">
+            <input type="text" name="creditAccount" class="form-control form-control-user" placeholder="Credit Account">
+                                    </div>
+  
+  
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton " type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="17" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+  Was it properly Authorised ?</label>
+</div>
+  <div class="card-body">
+  
+       <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="pAY" value="Yes" name="properAuthuorisatation" checked>
+                                  <label class="custom-control-label" for="pAY">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-radio custom-control">
+                                  <input type="radio" class="custom-control-input" id="pAN" value="No" name="properAuthuorisatation">
+                                  <label class="custom-control-label" for="pAN">No</label>
+                                </div>
+
+                               
+                                <!-- End of Radio Buttons -->
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton " type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="18" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+      Is the bussiness Logic correct?
+</label>
+</div>
+  <div class="card-body">
+  
+       <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" class="custom-control-input" id="bLY" value="Yes" name="bussinessLogic" checked>
+                                  <label class="custom-control-label" for="bLY">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-radio custom-control">
+                                  <input type="radio" class="custom-control-input" id="bLN" value="No" name="bussinessLogic">
+                                  <label class="custom-control-label" for="bLN">No</label>
+                                </div>
+
+                               
+                                <!-- End of Radio Buttons -->
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton " type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="19" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+      Have the supporting Documents been reviewed?
+</label>
+</div>
+  <div class="card-body">
+  
+       <!-- Yes Radio Button -->
+                                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="sDY" value="Yes" name="reviewedSupport" checked>
+                                  <label class="custom-control-label" for="sDY">Yes</label>
+                                </div>
+
+                                <!-- No Radio Button -->
+                                <div class="custom-radio custom-control">
+              <input type="radio" class="custom-control-input" id="sDN" value="No" name="reviewedSupport">
+                                  <label class="custom-control-label" for="sDN">No</label>
+                                </div>
+
+                               
+                                <!-- End of Radio Buttons -->
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info nextButton " type="button"  style="margin-bottom: 2em;margin-left: 1em;">Next</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="card itemCard"  style="margin-top: 1em" id="20" hidden="true" >
+  <div class="card-header">
+    <label class="font-weight-bold">
+      Details of supporting documents
+  </label>
+</div>
+  <div class="card-body">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+  <input type="text" name="detailsSD" class="form-control form-control-user" placeholder="Description">
+                                    </div>
+  
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+   <button class="btn btn-info " type="submit"  style="margin-bottom: 2em;margin-left: 1em;">Finish</button>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+</form>
+ 
+
+
+
+
+                  </div>
+                </div>
+              </div>
+              <form  method="POST" action="/planning/journal-entry/conclude/">
+               <!-- Conclusion Card -->
+               <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Conclusion:</h6>
+                  </div>
+                  <div class="card-body">
+                    
+                      
+
+
+                    
+                    <textarea class="form-control form-control-sm" id="journalEntryConclusion" name="goingConcernConclusion" placeholder="State conclusion" rows="4"></textarea>
+                  </div>
+                </div>
+                <button class="btn btn-info btn-long" type="submit">Submit</button>
+        <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
+
+
+                </form>
+
+
+              
+
+            </div>
+            
+          </div>
+       
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="updateModal">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+           <div class="modal-header">
+          <h3>Follow up on Minute</h3>
+        </div>
+     
+        <div class="modal-body">
+<form id="updateMinuteForm" method="POST" data-post-url="/planning/inspection-of-minutes/followup/">
+
+              <input type="text" name="minuteId" id="minuteId"  hidden="true">
+
+            <div class="form-group">
+         <textarea class="form-control" name="updateMinute" id="updateMinute"></textarea>
+       </div>
+          <button type="submit" class="btn btn-info" type="button">Update</button>
+
+
+          </form>
+        
+        </div>
+        <div class="modal-footer">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Confirm Modal-->
+  <div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Client Acceptance Creation Success</h3>
+        </div>
+        <div class="modal-body">
+          <p>Client successfully created!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">End Session?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <script type="text/javascript">
+    $(".updateButton").click(function() {
+      var minuteId = $(this).attr("id");
+    $("#minuteId").val(minuteId);
+$('#updateModal').modal('show');
+})
+
+
+
+  </script>
+
+
+ <script type="text/javascript">
+   $("#journalCollapse").click(function(){
+  $([document.documentElement, document.body]).animate({
+  scrollTop: $("#journalCollapse").offset().top}, 1000);
+
+})
+</script>
+
+<script type="text/javascript">
+$("#journalEntryForm").submit(function(event){
+    event.preventDefault();
+ // Get some values from elements on the page:
+  var form = $(this);
+  var formData=form.serialize();
+
+ $.ajax({
+        url: form.attr("data-post-url"),
+        data:formData ,
+        type: 'post',
+        dataType: 'json',
+        success: function (data) {
+
+          $("#journalProgress").css({"width": "100%"});
+          $("#journalCollapse").trigger("click");
+          $("#journalProgress").css({"backgroundColor": "#1cc88a"});
+
+
+          
+          },
+
+          error:function(){
+          alert('error in request');
+        },
+
+        complete:function(){
+              console.log("complete");
+            }
+      });
+
+
+  });
+</script>
+
+
+
+
+<script type="text/javascript">
+$("#updateMinuteForm").submit(function(event){
+  $('#updateModal').modal('hide');
+    event.preventDefault();
+ // Get some values from elements on the page:
+  var form = $(this);
+  var formData=form.serialize();
+
+ $.ajax({
+        url: form.attr("data-post-url"),
+        data:formData ,
+        type: 'post',
+        dataType: 'json',
+        success: function (data) {
+            var minuteId=data['minuteId'];
+            var update=data['updateMinute'];
+            var myHtml='<p>'+update+'</p>';
+            $('.'+minuteId).after(myHtml);
+            $("#updateMinute").val("");
+},
+
+          error:function(){
+          alert('error in request');
+        },
+
+        complete:function(){
+              console.log("complete");
+            }
+      });
+
+
+  });
+</script>
+
+
+ <script type="text/javascript">
+   $(".nextButton").click(function(){
+    var cardId = $(this).parent().parent().parent().attr("id");
+    var myCardId = parseInt(cardId);
+    var nextCardId=myCardId+1;
+    var  progressInt=myCardId*5;
+    var progressString=progressInt.toString()+"%";
+    var nextCardSelector="#"+nextCardId.toString();
+    var nextCardSelector="#"+nextCardId.toString();
+    var myCardSelector="#"+cardId;
+    $(myCardSelector).attr("hidden",true);
+    $(nextCardSelector).attr("hidden",false);
+    $("#journalProgress").css({"width":progressString });
+})
+</script>
+
+     
+
+
+
+
+
+
+</body>
+
+</html>
