@@ -1212,6 +1212,14 @@ router.get('/file-review/create-review-note', function(req, res){
 router.post('/file-review/create-review-note', function(req, res){
 	if (req.session.user && req.cookies.user_sid) {
 
+		//get current date
+		var today = new Date();
+		var dd = String(today.getDate()).padStart(2, '0');
+		var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+		var yyyy = today.getFullYear();
+
+		today = mm + '/' + dd + '/' + yyyy;
+
 		
 		//create model for data to be sent to database
 		const item = {
@@ -1222,7 +1230,8 @@ router.post('/file-review/create-review-note', function(req, res){
 			reviewNoteDescription: req.body.reviewNoteDescription,
 			wpToAttachTo: req.body.wpToAttachTo,
 			priority: req.body.priority,
-			assignTo: req.body.assignTo
+			assignTo: req.body.assignTo,
+			createdDate: today
 		};
 
 		// a new document instance

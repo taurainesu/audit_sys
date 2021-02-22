@@ -32,6 +32,10 @@ const  CreateReviewNoteSchema =  new mongoose.Schema({
     assignTo:{
         type: String,
         required: false
+    },
+    createdDate:{
+        type: String,
+        required: false
     }
 
 });
